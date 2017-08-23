@@ -20,6 +20,9 @@
 		D7C807851F4E031400DA4E33 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807841F4E031400DA4E33 /* Item.swift */; };
 		D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */; };
 		D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807881F4E05F800DA4E33 /* StatsViewController.swift */; };
+		D7C8078B1F4E073F00DA4E33 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */; };
+		D7C8078D1F4E08F200DA4E33 /* Franchise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078C1F4E08F200DA4E33 /* Franchise.swift */; };
+		D7C8078F1F4E08FD00DA4E33 /* MyCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078E1F4E08FD00DA4E33 /* MyCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		D7C807841F4E031400DA4E33 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		D7C807881F4E05F800DA4E33 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		D7C8078C1F4E08F200DA4E33 /* Franchise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Franchise.swift; sourceTree = "<group>"; };
+		D7C8078E1F4E08FD00DA4E33 /* MyCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 		D757AB821F4DBC380086BD94 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -136,7 +143,9 @@
 		D757AB831F4DBC3D0086BD94 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D7C8078C1F4E08F200DA4E33 /* Franchise.swift */,
 				D7C807841F4E031400DA4E33 /* Item.swift */,
+				D7C8078E1F4E08FD00DA4E33 /* MyCollection.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -266,8 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D757AB891F4DD7340086BD94 /* MyCollectionViewController.swift in Sources */,
+				D7C8078B1F4E073F00DA4E33 /* ServiceMock.swift in Sources */,
 				D757AB871F4DD6790086BD94 /* MainTabBarViewController.swift in Sources */,
+				D7C8078F1F4E08FD00DA4E33 /* MyCollection.swift in Sources */,
 				D757AB8D1F4DD7CB0086BD94 /* AddNewItemViewController.swift in Sources */,
+				D7C8078D1F4E08F200DA4E33 /* Franchise.swift in Sources */,
 				D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */,
 				D7C807851F4E031400DA4E33 /* Item.swift in Sources */,
 				D757AB8B1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift in Sources */,
