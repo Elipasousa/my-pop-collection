@@ -1,0 +1,32 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
+  - Alamofire (4.5.0)
+  - IQKeyboardManagerSwift (4.0.10)
+  - Realm (2.8.3):
+    - Realm/Headers (= 2.8.3)
+  - Realm/Headers (2.8.3)
+  - RealmSwift (2.8.3):
+    - Realm (= 2.8.3)
+  - Reveal-SDK (9)
+  - SwiftDate (4.1.7)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0
+  - Alamofire (~> 4.0)
+  - IQKeyboardManagerSwift
+  - RealmSwift
+  - Reveal-SDK
+  - SwiftDate
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
+  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
+  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
+  SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
+
+PODFILE CHECKSUM: e49af3f449c8d6bfc541ab63595890167b14e950
+
+COCOAPODS: 1.1.1
