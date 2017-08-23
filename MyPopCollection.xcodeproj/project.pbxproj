@@ -14,6 +14,9 @@
 		D757AB791F4DBB420086BD94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D757AB771F4DBB420086BD94 /* LaunchScreen.storyboard */; };
 		D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB841F4DBC8B0086BD94 /* Constants.swift */; };
 		D757AB871F4DD6790086BD94 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */; };
+		D757AB891F4DD7340086BD94 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */; };
+		D757AB8B1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB8A1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift */; };
+		D757AB8D1F4DD7CB0086BD94 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		D757AB7A1F4DBB420086BD94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D757AB841F4DBC8B0086BD94 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
+		D757AB8A1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseFranchisesViewController.swift; sourceTree = "<group>"; };
+		D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */,
+				D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */,
+				D757AB8A1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift */,
+				D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,8 +256,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757AB891F4DD7340086BD94 /* MyCollectionViewController.swift in Sources */,
 				D757AB871F4DD6790086BD94 /* MainTabBarViewController.swift in Sources */,
+				D757AB8D1F4DD7CB0086BD94 /* AddNewItemViewController.swift in Sources */,
 				D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */,
+				D757AB8B1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift in Sources */,
 				D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
