@@ -13,6 +13,7 @@
 		D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D757AB751F4DBB420086BD94 /* Assets.xcassets */; };
 		D757AB791F4DBB420086BD94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D757AB771F4DBB420086BD94 /* LaunchScreen.storyboard */; };
 		D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB841F4DBC8B0086BD94 /* Constants.swift */; };
+		D757AB871F4DD6790086BD94 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D757AB781F4DBB420086BD94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D757AB7A1F4DBB420086BD94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D757AB841F4DBC8B0086BD94 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		D757AB801F4DBC2B0086BD94 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D757AB871F4DD6790086BD94 /* MainTabBarViewController.swift in Sources */,
 				D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */,
 				D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */,
 			);
