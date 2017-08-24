@@ -20,7 +20,7 @@
                     <view key="view" contentMode="scaleToFill" id="ADM-NQ-YX6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.60808522248400787" blue="0.30096955114740576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="154-Oa-LvE"/>
                 </viewController>
@@ -39,7 +39,7 @@
                     <view key="view" contentMode="scaleToFill" id="WNX-mv-zhx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.69262509745931655" blue="0.91329072195808669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stats" id="ev0-u5-RWT"/>
                 </viewController>
@@ -68,7 +68,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.46875328333005573" green="0.96507957303403391" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="alI-C3-LpJ" firstAttribute="top" secondItem="Um7-er-8rL" secondAttribute="bottom" id="52b-An-upW"/>
                             <constraint firstItem="Um7-er-8rL" firstAttribute="top" secondItem="VKI-2d-aW3" secondAttribute="bottom" id="fAW-RL-ip6"/>
@@ -113,7 +113,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vhy-nn-HrB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Collection" id="5QT-aL-UFh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p8p-DH-FoT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p8p-DH-FoT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

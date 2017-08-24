@@ -33,6 +33,7 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     //MARK: - NavigationBar
     
     override func setupNavigationBar() {
+        self.title = "My Collections"
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(buttonAddTouched))
     }
