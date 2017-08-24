@@ -33,8 +33,8 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     //MARK: - NavigationBar
     
     override func setupNavigationBar() {
+        super.setupNavigationBar()
         self.title = "My Collections"
-        self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(buttonAddTouched))
     }
     
@@ -73,7 +73,7 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presentMyCollectionDetails()
+        presentMyCollectionDetails(fromCollection: self.myCollections[indexPath.row])
     }
     
     //MARK : - Actions
@@ -116,10 +116,5 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
         }))
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func presentMyCollectionDetails() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCollectionDetailsViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

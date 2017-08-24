@@ -1,5 +1,5 @@
 //
-//  MyCollectionDetailsViewController.swift
+//  FranchiseDetailsViewController.swift
 //  MyPopCollection
 //
 //  Created by Elisabete Sousa on 24/08/2017.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MyCollectionDetailsViewController: BaseViewViewController {
-    
+class FranchiseDetailsViewController: BaseViewViewController {
+
     //MARK : - Outlets
     
     //MARK : - Vars
-    internal var collection: MyCollection!
+    internal var franchise: Franchise!
     
     //MARK : - Lifecycle
     
@@ -32,6 +32,6 @@ class MyCollectionDetailsViewController: BaseViewViewController {
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        self.title = self.collection.name
+        self.title = self.franchise.name
     }
 }

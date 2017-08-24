@@ -49,4 +49,16 @@ class BaseViewViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func presentMyCollectionDetails(fromCollection collection: MyCollection) {
+        let vc: MyCollectionDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCollectionDetailsViewController") as! MyCollectionDetailsViewController
+        vc.collection = collection
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func presentFranchiseDetails(fromFranchise franchise: Franchise) {
+        let vc: FranchiseDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FranchiseDetailsViewController") as! FranchiseDetailsViewController
+        vc.franchise = franchise
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

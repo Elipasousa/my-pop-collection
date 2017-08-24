@@ -23,6 +23,9 @@
 		D757AB9C1F4F21F60086BD94 /* MyCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757AB9B1F4F21F60086BD94 /* MyCollectionTableViewCell.xib */; };
 		D757AB9E1F4F34410086BD94 /* BaseViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB9D1F4F34410086BD94 /* BaseViewViewController.swift */; };
 		D757ABA01F4F38980086BD94 /* MyCollectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB9F1F4F38980086BD94 /* MyCollectionDetailsViewController.swift */; };
+		D757ABA21F4F423A0086BD94 /* FranchiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA11F4F423A0086BD94 /* FranchiseTableViewCell.swift */; };
+		D757ABA41F4F42490086BD94 /* FranchiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757ABA31F4F42490086BD94 /* FranchiseTableViewCell.xib */; };
+		D757ABA61F4F433B0086BD94 /* FranchiseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */; };
 		D7C807851F4E031400DA4E33 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807841F4E031400DA4E33 /* Item.swift */; };
 		D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */; };
 		D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807881F4E05F800DA4E33 /* StatsViewController.swift */; };
@@ -52,6 +55,9 @@
 		D757AB9B1F4F21F60086BD94 /* MyCollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		D757AB9D1F4F34410086BD94 /* BaseViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewViewController.swift; sourceTree = "<group>"; };
 		D757AB9F1F4F38980086BD94 /* MyCollectionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionDetailsViewController.swift; sourceTree = "<group>"; };
+		D757ABA11F4F423A0086BD94 /* FranchiseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FranchiseTableViewCell.swift; sourceTree = "<group>"; };
+		D757ABA31F4F42490086BD94 /* FranchiseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FranchiseTableViewCell.xib; sourceTree = "<group>"; };
+		D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FranchiseDetailsViewController.swift; sourceTree = "<group>"; };
 		D7C807841F4E031400DA4E33 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		D7C807881F4E05F800DA4E33 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */,
 				D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */,
 				D757AB9F1F4F38980086BD94 /* MyCollectionDetailsViewController.swift */,
+				D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -146,6 +153,8 @@
 			children = (
 				D757AB991F4F21EE0086BD94 /* MyCollectionTableViewCell.swift */,
 				D757AB9B1F4F21F60086BD94 /* MyCollectionTableViewCell.xib */,
+				D757ABA11F4F423A0086BD94 /* FranchiseTableViewCell.swift */,
+				D757ABA31F4F42490086BD94 /* FranchiseTableViewCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -252,6 +261,7 @@
 				D757AB9C1F4F21F60086BD94 /* MyCollectionTableViewCell.xib in Resources */,
 				D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */,
 				D757AB901F4F0FEB0086BD94 /* BebasNeue.ttf in Resources */,
+				D757ABA41F4F42490086BD94 /* FranchiseTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +322,7 @@
 			files = (
 				D757AB891F4DD7340086BD94 /* MyCollectionViewController.swift in Sources */,
 				D7C8078B1F4E073F00DA4E33 /* ServiceMock.swift in Sources */,
+				D757ABA21F4F423A0086BD94 /* FranchiseTableViewCell.swift in Sources */,
 				D757AB871F4DD6790086BD94 /* MainTabBarViewController.swift in Sources */,
 				D7C8078F1F4E08FD00DA4E33 /* MyCollection.swift in Sources */,
 				D757AB8D1F4DD7CB0086BD94 /* AddNewItemViewController.swift in Sources */,
@@ -324,6 +335,7 @@
 				D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */,
 				D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */,
 				D757AB951F4F10BB0086BD94 /* DatabaseHelper.swift in Sources */,
+				D757ABA61F4F433B0086BD94 /* FranchiseDetailsViewController.swift in Sources */,
 				D757ABA01F4F38980086BD94 /* MyCollectionDetailsViewController.swift in Sources */,
 				D757AB9E1F4F34410086BD94 /* BaseViewViewController.swift in Sources */,
 			);
