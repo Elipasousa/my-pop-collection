@@ -34,7 +34,7 @@ class BaseViewViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = nil
     }
 
-    // MARK: - Navigation
+    //MARK: - Navigation
  
     func showError(withTitle title: String = "Attention", message: String?) {
     

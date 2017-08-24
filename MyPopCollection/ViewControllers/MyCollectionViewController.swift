@@ -71,10 +71,28 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
         return 80.0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presentMyCollectionDetails()
+    }
+    
     //MARK : - Actions
     
     func buttonAddTouched() {
         presentAddNewCollection()
+    }
+    
+    //MARK : - Auxs
+    
+    func addNewCollection(withName name: String) {
+        if !DatabaseHelper.existsCollection(withName: name) {
+            let c = MyCollection()
+            c.name = name
+            DatabaseHelper.addMyCollection(c)
+            self.reloadMyCollections()
+        } else {
+            self.showError(message: "Already exists a collection named '" + name + "'")
+        }
     }
     
     //MARK : - WireFrame
@@ -93,23 +111,15 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
                                       handler: { (_) in
                                         let textField = alert.textFields!.first!
                                         if let text = textField.text {
-                                            addNewCollection(withName: text)
+                                            self.addNewCollection(withName: text)
                                         }
         }))
         
         self.present(alert, animated: true, completion: nil)
-        
-        //MARK : - Auxs
-        
-        func addNewCollection(withName name: String) {
-            if !DatabaseHelper.existsCollection(withName: name) {
-                let c = MyCollection()
-                c.name = name
-                DatabaseHelper.addMyCollection(c)
-                self.reloadMyCollections()
-            } else {
-                self.showError(message: "Already exists a collection named '" + name + "'")
-            }
-        }
+    }
+    
+    func presentMyCollectionDetails() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCollectionDetailsViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

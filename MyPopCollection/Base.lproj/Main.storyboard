@@ -87,6 +87,24 @@
             </objects>
             <point key="canvasLocation" x="-1188" y="1268"/>
         </scene>
+        <!--My Collection Details View Controller-->
+        <scene sceneID="90b-87-CEZ">
+            <objects>
+                <viewController storyboardIdentifier="MyCollectionDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WB5-J4-if2" customClass="MyCollectionDetailsViewController" customModule="MyPopCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9ur-CM-nFC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mu3-Ip-W5a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4DP-4X-rhN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N0T-PG-qwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1188" y="1959"/>
+        </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="mJN-Fj-jIV">
             <objects>
