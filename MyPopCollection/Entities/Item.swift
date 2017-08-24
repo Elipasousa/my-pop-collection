@@ -40,7 +40,6 @@ class Item : Object {
     dynamic var dateBought: Date?
     dynamic var quantity: Int = 1
     dynamic var rarity: String = "Common"
-    dynamic var itemDescription: String?
     dynamic var franchise: String?
     dynamic var collection: String?
     dynamic var condition: String = "CIB"

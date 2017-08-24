@@ -67,4 +67,10 @@ class BaseViewViewController: UIViewController {
         vc.item = item
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func presentAddItem(_ item: Item) {
+        let vc: AddNewItemViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNewItemViewController") as! AddNewItemViewController
+        vc.item = item
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

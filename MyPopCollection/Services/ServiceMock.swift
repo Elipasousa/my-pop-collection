@@ -38,7 +38,6 @@ class ServiceMock {
         p1.dateBought = Date()
         p1.quantity = 1
         p1.rarity = "Common"
-        p1.itemDescription = "description"
         p1.franchise = "Harry Potter"
         p1.condition = "CIB"
         p1.itemState = "Mint"
@@ -53,7 +52,6 @@ class ServiceMock {
         p2.dateBought = Date()
         p2.quantity = 1
         p2.rarity = "Common"
-        p2.itemDescription = "description"
         p2.franchise = "Harry Potter"
         p2.condition = "CIB"
         p2.itemState = "Mint"

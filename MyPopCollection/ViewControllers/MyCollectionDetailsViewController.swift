@@ -22,7 +22,6 @@ class MyCollectionDetailsViewController: BaseViewViewController, UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         self.items = DatabaseHelper.getAllItems(fromMyCollection: self.collection)
-        setupViews()
         registerNibs()
         self.collectionView.reloadData()
     }

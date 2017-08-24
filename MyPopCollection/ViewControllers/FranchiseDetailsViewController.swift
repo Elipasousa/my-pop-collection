@@ -22,7 +22,6 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.items = ServiceMock.sharedInstance.getItems(fromFranchise: self.franchise)
-        setupViews()
         registerNibs()
         self.collectionView.reloadData()
     }
