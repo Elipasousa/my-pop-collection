@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewItemViewController: UIViewController {
+class AddNewItemViewController: BaseViewViewController {
 
     //MARK : - Outlets
     
@@ -18,28 +18,11 @@ class AddNewItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupNavigationBar()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: - Setups
     
-    func setupViews() {
-
-    }
-    
-    //MARK: - NavigationBar
-    
-    func setupNavigationBar() {
+    override func setupViews() {
 
     }
 }

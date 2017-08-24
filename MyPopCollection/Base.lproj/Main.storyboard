@@ -107,11 +107,11 @@
             </objects>
             <point key="canvasLocation" x="-494" y="-260"/>
         </scene>
-        <!--MY Collection-->
+        <!--My Collection-->
         <scene sceneID="jDz-UZ-dft">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vhy-nn-HrB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MY Collection" id="5QT-aL-UFh"/>
+                    <tabBarItem key="tabBarItem" title="My Collection" id="5QT-aL-UFh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p8p-DH-FoT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

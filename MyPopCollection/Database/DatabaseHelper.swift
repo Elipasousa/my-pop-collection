@@ -14,9 +14,9 @@ class DatabaseHelper {
     class func addItem(_ item: Item) {
         let realm = try! Realm()
         
-        try! realm.write {
+        /*try! realm.write {
             realm.delete(item)
-        }
+        }*/
         
         try! realm.write {
             realm.add(item)
@@ -25,11 +25,7 @@ class DatabaseHelper {
     
     class func addMyCollection(_ collection: MyCollection) {
         let realm = try! Realm()
-        
-        try! realm.write {
-            realm.delete(collection)
-        }
-        
+
         try! realm.write {
             realm.add(collection)
         }
@@ -51,5 +47,12 @@ class DatabaseHelper {
         let predicate = NSPredicate(format: "collection = %@", collection.name)
 
         return Array(realm.objects(Item.self).filter(predicate))
+    }
+    
+    class func existsCollection(withName name: String) -> Bool {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "name = %@", name)        
+        return Array(realm.objects(MyCollection.self).filter(predicate)).count != 0
     }
 }

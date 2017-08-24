@@ -27,5 +27,9 @@ class MyCollectionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setName(_ name: String) {
+        self.labelName.text = name
+    }
 
 }
