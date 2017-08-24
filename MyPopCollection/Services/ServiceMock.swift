@@ -28,7 +28,7 @@ class ServiceMock {
         return [f1, f2, f3, f4]
     }
     
-    func getItemsFromHarryPotter() {
+    func getItems(fromFranchise franchise: Franchise) -> [Item] {
         let p1 = Item()
         p1.name = "Harry Potter"
         p1.number = 01
@@ -58,6 +58,8 @@ class ServiceMock {
         p2.condition = "CIB"
         p2.itemState = "Mint"
         p2.boxState = "Mint"
+        
+        return [p1, p1, p2, p1, p2]
     }
 
 }

@@ -26,6 +26,8 @@
 		D757ABA21F4F423A0086BD94 /* FranchiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA11F4F423A0086BD94 /* FranchiseTableViewCell.swift */; };
 		D757ABA41F4F42490086BD94 /* FranchiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757ABA31F4F42490086BD94 /* FranchiseTableViewCell.xib */; };
 		D757ABA61F4F433B0086BD94 /* FranchiseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */; };
+		D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */; };
+		D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */; };
 		D7C807851F4E031400DA4E33 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807841F4E031400DA4E33 /* Item.swift */; };
 		D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */; };
 		D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807881F4E05F800DA4E33 /* StatsViewController.swift */; };
@@ -58,6 +60,8 @@
 		D757ABA11F4F423A0086BD94 /* FranchiseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FranchiseTableViewCell.swift; sourceTree = "<group>"; };
 		D757ABA31F4F42490086BD94 /* FranchiseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FranchiseTableViewCell.xib; sourceTree = "<group>"; };
 		D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FranchiseDetailsViewController.swift; sourceTree = "<group>"; };
+		D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		D7C807841F4E031400DA4E33 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		D7C807881F4E05F800DA4E33 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				D757AB9B1F4F21F60086BD94 /* MyCollectionTableViewCell.xib */,
 				D757ABA11F4F423A0086BD94 /* FranchiseTableViewCell.swift */,
 				D757ABA31F4F42490086BD94 /* FranchiseTableViewCell.xib */,
+				D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */,
+				D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				D757AB791F4DBB420086BD94 /* LaunchScreen.storyboard in Resources */,
 				D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */,
 				D757AB9C1F4F21F60086BD94 /* MyCollectionTableViewCell.xib in Resources */,
+				D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */,
 				D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */,
 				D757AB901F4F0FEB0086BD94 /* BebasNeue.ttf in Resources */,
 				D757ABA41F4F42490086BD94 /* FranchiseTableViewCell.xib in Resources */,
@@ -331,6 +338,7 @@
 				D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */,
 				D7C807851F4E031400DA4E33 /* Item.swift in Sources */,
 				D757AB8B1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift in Sources */,
+				D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */,
 				D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */,
 				D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */,
 				D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */,
