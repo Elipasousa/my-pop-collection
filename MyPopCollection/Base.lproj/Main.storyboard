@@ -159,6 +159,24 @@
             </objects>
             <point key="canvasLocation" x="-1188" y="1958.7706146926539"/>
         </scene>
+        <!--Item Details View Controller-->
+        <scene sceneID="lyc-nH-I7Z">
+            <objects>
+                <viewController storyboardIdentifier="ItemDetailsViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZMN-5h-2bZ" customClass="ItemDetailsViewController" customModule="MyPopCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dpM-qH-hSB"/>
+                        <viewControllerLayoutGuide type="bottom" id="ckV-2T-936"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Oi-0i-JoZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MlB-XO-4vC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1188" y="2635"/>
+        </scene>
         <!--Franchise Details View Controller-->
         <scene sceneID="vgf-pR-e1z">
             <objects>

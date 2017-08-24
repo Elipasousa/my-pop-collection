@@ -13,6 +13,7 @@ class ItemDetailsViewController: BaseViewViewController {
     //MARK : - Outlets
     
     //MARK : - Vars
+    internal var item: Item!
     
     //MARK : - Lifecycle
     
@@ -25,5 +26,12 @@ class ItemDetailsViewController: BaseViewViewController {
     
     override func setupViews() {
         
+    }
+    
+    //MARK: - NavigationBar
+    
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        self.title = self.item.name
     }
 }

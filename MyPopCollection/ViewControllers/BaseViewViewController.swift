@@ -61,4 +61,10 @@ class BaseViewViewController: UIViewController {
         vc.franchise = franchise
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func presentItemDetails(fromItem item: Item) {
+        let vc: ItemDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ItemDetailsViewController") as! ItemDetailsViewController
+        vc.item = item
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
