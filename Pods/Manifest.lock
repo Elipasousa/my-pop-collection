@@ -14,6 +14,7 @@ DEPENDENCIES:
   - ActionSheetPicker-3.0
   - Alamofire (~> 4.0)
   - IQKeyboardManagerSwift
+  - Realm
   - RealmSwift
   - Reveal-SDK
   - SwiftDate
@@ -27,6 +28,6 @@ SPEC CHECKSUMS:
   Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
   SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
 
-PODFILE CHECKSUM: e49af3f449c8d6bfc541ab63595890167b14e950
+PODFILE CHECKSUM: b671e688bad2fbd87a600abf2d06b74d37689dd3
 
 COCOAPODS: 1.1.1

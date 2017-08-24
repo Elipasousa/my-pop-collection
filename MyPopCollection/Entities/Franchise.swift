@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Franchise {
+class Franchise : Object {
 
-    var name: String?
-    
-    init() {}
+    dynamic var name: String = ""
 }

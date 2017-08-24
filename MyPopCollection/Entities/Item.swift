@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 enum Condition {
     case CIB
@@ -29,21 +30,20 @@ enum Rarity {
     case Common
 }
 
-class Item {
+class Item : Object {
     
-    var name: String?
-    var number: Int?
-    var paidPrice: Double?
-    var estimatedValue: Double?
-    var dateBought: Date?
-    var quantity: Int?
-    var rarity: Rarity?
-    var description: String?
-    var franchise: Franchise?
-    var collection: MyCollection?
-    var condition: Condition?
-    var itemState: State?
-    var boxState: State?
-
-    init() {}
+    dynamic var name: String = ""
+    dynamic var number: Int = 0
+    dynamic var image: String?
+    dynamic var paidPrice: Double = 0.0
+    dynamic var estimatedValue: Double = 0.0
+    dynamic var dateBought: Date?
+    dynamic var quantity: Int = 1
+    dynamic var rarity: String = "Common"
+    dynamic var itemDescription: String?
+    dynamic var franchise: String?
+    dynamic var collection: String?
+    dynamic var condition: String = "CIB"
+    dynamic var itemState: String = "Mint"
+    dynamic var boxState: String = "Mint"
 }

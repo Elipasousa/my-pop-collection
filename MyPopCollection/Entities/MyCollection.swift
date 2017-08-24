@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-class MyCollection {
+class MyCollection : Object {
     
-    var name: String?
-    
-    init() {}
+    dynamic var name: String = ""
 }
