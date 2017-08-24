@@ -59,7 +59,7 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
         if (cell == nil) {
             cell = Bundle.main.loadNibNamed("ItemCollectionViewCell", owner: self, options: nil)![0] as! ItemCollectionViewCell
         }
-        cell.setName(self.items[indexPath.row].name)
+        cell.setItem(self.items[indexPath.row])
         return cell;
     }
     

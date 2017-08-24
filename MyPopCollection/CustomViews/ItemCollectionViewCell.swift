@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
     //MARK : - Outlets
     @IBOutlet weak var labelName: UILabel!
-    
+    @IBOutlet weak var imageViewPicture: UIImageView!
+
     //MARK : - Vars
     
     //MARK : - Lifecycle
@@ -22,7 +24,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setName(_ name: String) {
-        self.labelName.text = name
+    func setItem(_ item: Item) {
+        self.labelName.text = item.name
+        
+        if let image = item.image {
+            self.imageViewPicture.sd_setShowActivityIndicatorView(true)
+            self.imageViewPicture.sd_setIndicatorStyle(.gray)
+            self.imageViewPicture.sd_setImage(with: URL(string: image), placeholderImage: nil)
+        }
     }
 }
