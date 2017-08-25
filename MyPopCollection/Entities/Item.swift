@@ -9,27 +9,6 @@
 import Foundation
 import RealmSwift
 
-enum Condition {
-    case CIB
-    case BoxOnly
-    case PopOnly
-}
-
-enum State {
-    case Mint
-    case NearMint
-    case Good
-    case SlightlyDamaged
-    case VeryDamaged
-}
-
-enum Rarity {
-    case VeryRare
-    case Rare
-    case Uncommon
-    case Common
-}
-
 class Item : Object {
     
     dynamic var name: String = ""

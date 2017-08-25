@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
+import SwiftDate
 
 class AddNewItemViewController: BaseViewViewController {
 
@@ -112,7 +114,15 @@ class AddNewItemViewController: BaseViewViewController {
     //MARK: - Rarity
 
     @IBAction func rarityTouched(_ sender: Any) {
-        
+        self.view.endEditing(true)
+        ActionSheetStringPicker.show(withTitle: "Pick rarity",
+                                     rows: rarities,
+                                     initialSelection: 0,
+                                     doneBlock: { picker, index, value in
+                                        self.labelRarityValue.text = value as? String
+                                        
+        }, cancel: { ActionStringCancelBlock in
+        }, origin: self.view)
     }
     
     //MARK: - Condition
@@ -147,18 +157,42 @@ class AddNewItemViewController: BaseViewViewController {
     //MARK: - Pop State
     
     @IBAction func popStateTouched(_ sender: Any) {
-        
+        self.view.endEditing(true)
+        ActionSheetStringPicker.show(withTitle: "Pick pop state",
+                                     rows: states,
+                                     initialSelection: 0,
+                                     doneBlock: { picker, index, value in
+                                        self.labelPopStateValue.text = value as? String
+                                        
+        }, cancel: { ActionStringCancelBlock in
+        }, origin: self.view)
     }
     
     //MARK: - Box State
     
     @IBAction func boxStateTouched(_ sender: Any) {
-        
+        self.view.endEditing(true)
+        ActionSheetStringPicker.show(withTitle: "Pick box state",
+                                     rows: states,
+                                     initialSelection: 0,
+                                     doneBlock: { picker, index, value in
+                                        self.labelBoxStateValue.text = value as? String
+                                        
+        }, cancel: { ActionStringCancelBlock in
+        }, origin: self.view)
     }
     
     //MARK: - Date Bought
 
     @IBAction func dateBoughtTouched(_ sender: Any) {
-        
+        self.view.endEditing(true)
+        ActionSheetDatePicker.show(withTitle: "Pick date bought",
+                                   datePickerMode: .date,
+                                   selectedDate: Date(),
+                                   doneBlock: { (picker, value, index) in
+                                    let date = value as? Date
+                                    self.labelDateBoughtValue.text = date!.string(format: .custom("dd MMM yyyy"))
+        }, cancel: { ActionStringCancelBlock in
+        }, origin: self.view)
     }
 }
