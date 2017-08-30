@@ -50,7 +50,7 @@ class ServiceMock {
             p2.number = 2
             p2.image = "https://cdn.poppriceguide.com/guide/itmimg/thumb/3700_ronweasley.jpg"
             p2.franchise = "Harry Potter"
-            p1.category = "Pop Vinyl Pop Harry Potter"
+            p2.category = "Pop Vinyl Pop Harry Potter"
             p2.paidPrice = 12.50
             p2.estimatedValue = 15.00
             p2.rarity = "Common"
