@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import UIImageViewAlignedSwift
 
 class ItemDetailsViewController: BaseViewViewController {
 
     //MARK : - Outlets
     // --- info ---
     @IBOutlet weak var imageViewPicture: UIImageView!
+    @IBOutlet weak var imageViewBackground: UIImageViewAligned!
     @IBOutlet weak var viewNumber: UIView!
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelName: UILabel!
@@ -83,12 +85,21 @@ class ItemDetailsViewController: BaseViewViewController {
         if let image = self.item.image {
             self.imageViewPicture.sd_setShowActivityIndicatorView(true)
             self.imageViewPicture.sd_setIndicatorStyle(.gray)
-            self.imageViewPicture.sd_setImage(with: URL(string: image), placeholderImage: nil)
+            self.imageViewPicture.sd_setImage(with: URL(string: image), placeholderImage: nil, completed: { (image, error, cacheTypr, url) in
+                if let image = image {
+                    let contextImage: UIImage = UIImage(cgImage: image.cgImage!)
+                    let clippedRect = CGRect(x: 0.0, y: 0.0, width: contextImage.size.width * 0.4, height: contextImage.size.height)
+                    let imageRef = contextImage.cgImage!.cropping(to: clippedRect)!
+                    self.imageViewBackground.image = UIImage(cgImage: imageRef)
+                }
+            })
         }
         
         if item.inMyCollection {
-            self.labelInMyCollection.text = "You have this item in your collection"
+            self.labelInMyCollection.isHidden = true
             self.stackViewInMyCollection.isHidden = false
+            self.imageViewBackground.isHidden = false
+            
             self.labelRarityValue.text = self.item.rarity
             self.labelConditionValue.text = self.item.condition
             self.labelPopStateValue.text = self.item.itemState
@@ -106,10 +117,11 @@ class ItemDetailsViewController: BaseViewViewController {
                 default:
                     break
             }
-
         } else {
             self.labelInMyCollection.text = "You don't have this item in your collection"
+            self.labelInMyCollection.isHidden = false
             self.stackViewInMyCollection.isHidden = true
+            self.imageViewBackground.isHidden = true
         }
     }
 }
