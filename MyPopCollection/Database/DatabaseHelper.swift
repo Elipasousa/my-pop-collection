@@ -75,10 +75,13 @@ class DatabaseHelper {
         return Array(realm.objects(Franchise.self).filter("inMyCollection = true"))
     }
     
-    class func getAllItemsFromMyCollection(fromFranchise franchise: Franchise) -> [Item] {
+    class func getItemsFromFranchise(fromFranchise franchise: Franchise, inMyCollectionOnly: Bool) -> [Item] {
         let realm = try! Realm()
         
-        let predicate = NSPredicate(format: "franchise = %@ AND inMyCollection = true", franchise.name)
+        var predicate = NSPredicate(format: "franchise = %@", franchise.name)
+        if inMyCollectionOnly {
+            predicate = NSPredicate(format: "franchise = %@ AND inMyCollection = true", franchise.name)
+        }
         
         return Array(realm.objects(Item.self).filter(predicate))
     }

@@ -21,6 +21,7 @@ enum State : String {
     case Good = "Good"
     case SlightlyDamaged = "SlightlyDamaged"
     case VeryDamaged = "VeryDamaged"
+    case NA = "N/A"
 }
 
 enum Rarity : String {
@@ -32,7 +33,7 @@ enum Rarity : String {
 
 let conditions: [String] = [Condition.CIB.rawValue, Condition.BoxOnly.rawValue, Condition.PopOnly.rawValue]
 
-let states: [String] = [State.Mint.rawValue, State.NearMint.rawValue, State.Good.rawValue, State.SlightlyDamaged.rawValue, State.VeryDamaged.rawValue]
+let states: [String] = [State.Mint.rawValue, State.NearMint.rawValue, State.Good.rawValue, State.SlightlyDamaged.rawValue, State.VeryDamaged.rawValue, State.NA.rawValue]
 
 let rarities: [String] = [Rarity.VeryRare.rawValue, Rarity.Rare.rawValue, Rarity.Uncommon.rawValue, Rarity.Common.rawValue]
 
