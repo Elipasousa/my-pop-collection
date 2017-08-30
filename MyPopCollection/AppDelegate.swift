@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        for f in ServiceMock.sharedInstance.getAllFranchises() {
+            DatabaseHelper.addFranchise(f)
+            
+            for i in ServiceMock.sharedInstance.getItems(fromFranchise: f) {
+                DatabaseHelper.addItem(i)
+            }
+        }
+        
         return true
     }
 

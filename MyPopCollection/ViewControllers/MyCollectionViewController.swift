@@ -14,13 +14,17 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     @IBOutlet weak var tableView: UITableView!
     
     //MARK : - Vars
-    var myCollections: [MyCollection] = []
+    var myCollections: [Franchise] = []
     
     //MARK : - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibs()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         reloadMyCollections()
     }
     
@@ -34,15 +38,14 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        self.title = "My Collections"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(buttonAddTouched))
+        self.title = "My Collection"
     }
     
     //MARK: - Table View Methods
     
     func reloadMyCollections() {
         self.myCollections.removeAll()
-        self.myCollections = DatabaseHelper.getAllMyCollections()
+        self.myCollections = DatabaseHelper.getAllFranchisesFromMyCollection()
         self.tableView.reloadData()
     }
     
@@ -63,7 +66,7 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
         if (cell == nil) {
             cell = Bundle.main.loadNibNamed("MyCollectionTableViewCell", owner: self, options: nil)![0] as! MyCollectionTableViewCell
         }
-        cell.setName(self.myCollections[indexPath.row].name)
+        cell.setFranchise(self.myCollections[indexPath.row])
         return cell;
     }
     
@@ -73,48 +76,6 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presentMyCollectionDetails(fromCollection: self.myCollections[indexPath.row])
-    }
-    
-    //MARK : - Actions
-    
-    func buttonAddTouched() {
-        presentAddNewCollection()
-    }
-    
-    //MARK : - Auxs
-    
-    func addNewCollection(withName name: String) {
-        if !DatabaseHelper.existsCollection(withName: name) {
-            let c = MyCollection()
-            c.name = name
-            DatabaseHelper.addMyCollection(c)
-            self.reloadMyCollections()
-        } else {
-            self.showError(message: "Already exists a collection named '" + name + "'")
-        }
-    }
-    
-    //MARK : - WireFrame
-    
-    func presentAddNewCollection() {
-        let alert = UIAlertController(title: "Add New Collection",
-                                      message: "Enter your collection name",
-                                      preferredStyle: .alert)
-        
-        alert.addTextField { (textField) in
-            textField.placeholder = "Name"
-        }
-        
-        alert.addAction(UIAlertAction(title: "Add",
-                                      style: .default,
-                                      handler: { (_) in
-                                        let textField = alert.textFields!.first!
-                                        if let text = textField.text {
-                                            self.addNewCollection(withName: text)
-                                        }
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
+        presentMyCollectionDetails(fromFranchise: self.myCollections[indexPath.row])
     }
 }

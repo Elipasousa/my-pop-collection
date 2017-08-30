@@ -10,7 +10,7 @@ import UIKit
 import ActionSheetPicker_3_0
 import SwiftDate
 
-class AddNewItemViewController: BaseViewViewController {
+class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
 
     //MARK : - Outlets
     // --- info ---
@@ -19,11 +19,6 @@ class AddNewItemViewController: BaseViewViewController {
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelFranchise: UILabel!
-    // --- quantity ---
-    @IBOutlet weak var labelQuantityTag: UILabel!
-    @IBOutlet weak var buttonQuantityDecrease: UIButton!
-    @IBOutlet weak var labelQuantityValue: UILabel!
-    @IBOutlet weak var buttonQuantityIncrease: UIButton!
     // --- rarity ---
     @IBOutlet weak var labelRarityTag: UILabel!
     @IBOutlet weak var labelRarityValue: UILabel!
@@ -65,6 +60,9 @@ class AddNewItemViewController: BaseViewViewController {
     
     override func setupViews() {
         self.viewNumber.layer.cornerRadius = self.viewNumber.frame.size.height/2
+        
+        self.textFieldPaidPrice.addDoneCancelToolbar()
+        self.textFieldEstimatedValue.addDoneCancelToolbar()
     }
     
     //MARK: - NavigationBar
@@ -78,7 +76,25 @@ class AddNewItemViewController: BaseViewViewController {
     //MARK: - Actions
     
     func buttonDoneTouched() {
+        var condition = Condition.CIB.rawValue
+        if self.buttonConditionPopOnly.isSelected {
+            condition = Condition.PopOnly.rawValue
+        } else if self.buttonConditionPopOnly.isSelected {
+            condition = Condition.BoxOnly.rawValue
+        }
         
+        let date = self.labelDateBoughtValue.text!.date(format: .custom("dd MMM yyyy"), fromRegion: nil)!.absoluteDate
+
+        DatabaseHelper.updateItem(withName: self.item.name,
+                                  paidPrice: Double(self.textFieldPaidPrice.text!)!,
+                                  estimatedValue: Double(self.textFieldEstimatedValue.text!)!,
+                                  dateBought: date,
+                                  rarity: self.labelRarityValue.text!,
+                                  condition: condition,
+                                  itemState: self.labelPopStateValue.text!,
+                                  boxState: self.labelBoxStateValue.text!)
+        
+        self.popViewController()
     }
     
     //MARK: - Aux
@@ -93,22 +109,30 @@ class AddNewItemViewController: BaseViewViewController {
             self.imageViewPicture.sd_setIndicatorStyle(.gray)
             self.imageViewPicture.sd_setImage(with: URL(string: image), placeholderImage: nil)
         }
-    }
-    
-    //MARK: - Quantity
-
-    @IBAction func quantityIncreaseTouched(_ sender: Any) {
-        var quantity = Int(self.labelQuantityValue.text!)!
-        quantity += 1
-        self.labelQuantityValue.text = "\(quantity)"
-    }
-    
-    @IBAction func quantityDecreaseTouched(_ sender: Any) {
-        var quantity = Int(self.labelQuantityValue.text!)!
-        if quantity > 1 {
-            quantity -= 1
-            self.labelQuantityValue.text = "\(quantity)"
+        
+        self.textFieldPaidPrice.text = "\(self.item.paidPrice)"
+        self.textFieldEstimatedValue.text = "\(self.item.estimatedValue)"
+        self.labelDateBoughtValue.text = self.item.dateBought.string(format: .custom("dd MMM yyyy"))
+        self.labelRarityValue.text = self.item.rarity
+        self.labelPopStateValue.text = self.item.itemState
+        self.labelBoxStateValue.text = self.item.boxState
+        
+        switch self.item.condition {
+            case Condition.CIB.rawValue:
+                cibTouched(self.buttonConditionCIB)
+            case Condition.PopOnly.rawValue:
+                popOnlyTouched(self.buttonConditionPopOnly)
+            case Condition.BoxOnly.rawValue:
+                boxOnlyTouched(self.buttonConditionBoxOnly)
+            default:
+                break
         }
+    }
+    
+    //MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
     
     //MARK: - Rarity

@@ -18,24 +18,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8n-xi-5Xh">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y0X-0L-EFb">
                         <rect key="frame" x="15" y="15" width="345" height="49.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="d8n-xi-5Xh" secondAttribute="trailing" constant="15" id="1cv-Le-NfF"/>
-                    <constraint firstAttribute="bottom" secondItem="d8n-xi-5Xh" secondAttribute="bottom" constant="15" id="9q6-FG-GBZ"/>
-                    <constraint firstItem="d8n-xi-5Xh" firstAttribute="leading" secondItem="hdl-aL-Rpo" secondAttribute="leading" constant="15" id="bJh-mf-CxE"/>
-                    <constraint firstItem="d8n-xi-5Xh" firstAttribute="top" secondItem="hdl-aL-Rpo" secondAttribute="top" constant="15" id="kTS-Jv-GjW"/>
+                    <constraint firstItem="y0X-0L-EFb" firstAttribute="leading" secondItem="hdl-aL-Rpo" secondAttribute="leading" constant="15" id="BQ0-TH-BwY"/>
+                    <constraint firstAttribute="bottom" secondItem="y0X-0L-EFb" secondAttribute="bottom" constant="15" id="FxS-mh-keb"/>
+                    <constraint firstAttribute="trailing" secondItem="y0X-0L-EFb" secondAttribute="trailing" constant="15" id="OWf-Xc-0fQ"/>
+                    <constraint firstItem="y0X-0L-EFb" firstAttribute="top" secondItem="hdl-aL-Rpo" secondAttribute="top" constant="15" id="iie-kc-Aa0"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="labelName" destination="d8n-xi-5Xh" id="JX8-Fh-Bty"/>
+                <outlet property="imageViewLogo" destination="y0X-0L-EFb" id="InM-YL-8tR"/>
             </connections>
             <point key="canvasLocation" x="-46.5" y="16"/>
         </tableViewCell>

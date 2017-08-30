@@ -28,12 +28,14 @@
 		D757ABA61F4F433B0086BD94 /* FranchiseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */; };
 		D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */; };
 		D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */; };
+		D7BEB90A1F542936003853B7 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEB9091F542936003853B7 /* UITextField.swift */; };
+		D7BEB9101F56CA1F003853B7 /* SectionHeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEB90F1F56CA1F003853B7 /* SectionHeaderTitleView.swift */; };
+		D7BEB9121F56CA27003853B7 /* SectionHeaderTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7BEB9111F56CA27003853B7 /* SectionHeaderTitleView.xib */; };
 		D7C807851F4E031400DA4E33 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807841F4E031400DA4E33 /* Item.swift */; };
 		D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */; };
 		D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807881F4E05F800DA4E33 /* StatsViewController.swift */; };
 		D7C8078B1F4E073F00DA4E33 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */; };
 		D7C8078D1F4E08F200DA4E33 /* Franchise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078C1F4E08F200DA4E33 /* Franchise.swift */; };
-		D7C8078F1F4E08FD00DA4E33 /* MyCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078E1F4E08FD00DA4E33 /* MyCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,12 +64,14 @@
 		D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FranchiseDetailsViewController.swift; sourceTree = "<group>"; };
 		D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		D7BEB9091F542936003853B7 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		D7BEB90F1F56CA1F003853B7 /* SectionHeaderTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderTitleView.swift; sourceTree = "<group>"; };
+		D7BEB9111F56CA27003853B7 /* SectionHeaderTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderTitleView.xib; sourceTree = "<group>"; };
 		D7C807841F4E031400DA4E33 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		D7C807881F4E05F800DA4E33 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		D7C8078C1F4E08F200DA4E33 /* Franchise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Franchise.swift; sourceTree = "<group>"; };
-		D7C8078E1F4E08FD00DA4E33 /* MyCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		D757AB6D1F4DBB420086BD94 /* MyPopCollection */ = {
 			isa = PBXGroup;
 			children = (
+				D7BEB9081F54290A003853B7 /* Extensions */,
 				D757AB931F4F108D0086BD94 /* Database */,
 				D757AB8E1F4F0FB30086BD94 /* Fonts */,
 				D757AB831F4DBC3D0086BD94 /* Entities */,
@@ -161,6 +166,8 @@
 				D757ABA31F4F42490086BD94 /* FranchiseTableViewCell.xib */,
 				D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */,
 				D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */,
+				D7BEB90F1F56CA1F003853B7 /* SectionHeaderTitleView.swift */,
+				D7BEB9111F56CA27003853B7 /* SectionHeaderTitleView.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -178,7 +185,6 @@
 			children = (
 				D7C8078C1F4E08F200DA4E33 /* Franchise.swift */,
 				D7C807841F4E031400DA4E33 /* Item.swift */,
-				D7C8078E1F4E08FD00DA4E33 /* MyCollection.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -197,6 +203,14 @@
 				D757AB941F4F10BB0086BD94 /* DatabaseHelper.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		D7BEB9081F54290A003853B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7BEB9091F542936003853B7 /* UITextField.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +282,7 @@
 				D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */,
 				D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */,
 				D757AB901F4F0FEB0086BD94 /* BebasNeue.ttf in Resources */,
+				D7BEB9121F56CA27003853B7 /* SectionHeaderTitleView.xib in Resources */,
 				D757ABA41F4F42490086BD94 /* FranchiseTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -349,7 +364,7 @@
 				D7C8078B1F4E073F00DA4E33 /* ServiceMock.swift in Sources */,
 				D757ABA21F4F423A0086BD94 /* FranchiseTableViewCell.swift in Sources */,
 				D757AB871F4DD6790086BD94 /* MainTabBarViewController.swift in Sources */,
-				D7C8078F1F4E08FD00DA4E33 /* MyCollection.swift in Sources */,
+				D7BEB90A1F542936003853B7 /* UITextField.swift in Sources */,
 				D757AB8D1F4DD7CB0086BD94 /* AddNewItemViewController.swift in Sources */,
 				D757AB9A1F4F21EE0086BD94 /* MyCollectionTableViewCell.swift in Sources */,
 				D7C8078D1F4E08F200DA4E33 /* Franchise.swift in Sources */,
@@ -363,6 +378,7 @@
 				D757AB951F4F10BB0086BD94 /* DatabaseHelper.swift in Sources */,
 				D757ABA61F4F433B0086BD94 /* FranchiseDetailsViewController.swift in Sources */,
 				D757ABA01F4F38980086BD94 /* MyCollectionDetailsViewController.swift in Sources */,
+				D7BEB9101F56CA1F003853B7 /* SectionHeaderTitleView.swift in Sources */,
 				D757AB9E1F4F34410086BD94 /* BaseViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

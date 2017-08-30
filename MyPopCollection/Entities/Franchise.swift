@@ -12,4 +12,6 @@ import RealmSwift
 class Franchise : Object {
 
     dynamic var name: String = ""
+    dynamic var image: String?
+    dynamic var inMyCollection: Bool = false
 }

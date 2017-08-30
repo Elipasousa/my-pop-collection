@@ -9,29 +9,29 @@
 import Foundation
 import UIKit
 
-enum Condition {
-    case CIB
-    case BoxOnly
-    case PopOnly
+enum Condition : String {
+    case CIB = "CIB"
+    case BoxOnly = "BoxOnly"
+    case PopOnly = "PopOnly"
 }
 
-enum State {
-    case Mint
-    case NearMint
-    case Good
-    case SlightlyDamaged
-    case VeryDamaged
+enum State : String {
+    case Mint = "Mint"
+    case NearMint = "NearMint"
+    case Good = "Good"
+    case SlightlyDamaged = "SlightlyDamaged"
+    case VeryDamaged = "VeryDamaged"
 }
 
-enum Rarity {
-    case VeryRare
-    case Rare
-    case Uncommon
-    case Common
+enum Rarity : String {
+    case VeryRare = "VeryRare"
+    case Rare = "Rare"
+    case Uncommon = "Uncommon"
+    case Common = "Common"
 }
 
-let conditions = ["CIB", "Box Only", "Pop Only"]
+let conditions: [String] = [Condition.CIB.rawValue, Condition.BoxOnly.rawValue, Condition.PopOnly.rawValue]
 
-let states = ["Mint", "Near Mint", "Good", "Slighthtly Damaged", "Very Damaged"]
+let states: [String] = [State.Mint.rawValue, State.NearMint.rawValue, State.Good.rawValue, State.SlightlyDamaged.rawValue, State.VeryDamaged.rawValue]
 
-let rarities = ["Very Rare", "Rare", "Uncommon", "Common"]
+let rarities: [String] = [Rarity.VeryRare.rawValue, Rarity.Rare.rawValue, Rarity.Uncommon.rawValue, Rarity.Common.rawValue]

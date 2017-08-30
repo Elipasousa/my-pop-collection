@@ -50,9 +50,9 @@ class BaseViewViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func presentMyCollectionDetails(fromCollection collection: MyCollection) {
+    func presentMyCollectionDetails(fromFranchise franchise: Franchise) {
         let vc: MyCollectionDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyCollectionDetailsViewController") as! MyCollectionDetailsViewController
-        vc.collection = collection
+        vc.franchise = franchise
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -72,5 +72,9 @@ class BaseViewViewController: UIViewController {
         let vc: AddNewItemViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNewItemViewController") as! AddNewItemViewController
         vc.item = item
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func popViewController() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

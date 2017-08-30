@@ -15,16 +15,20 @@ class ServiceMock {
     func getAllFranchises() -> [Franchise] {
         let f1 = Franchise()
         f1.name = "Harry Potter"
+        f1.image = "https://goo.gl/jBX2k9"
         
         let f2 = Franchise()
         f2.name = "Futurama"
-        
+        f2.image = "https://goo.gl/jBX2k9"
+
         let f3 = Franchise()
         f3.name = "Game of Thrones"
-        
+        f3.image = "https://goo.gl/jBX2k9"
+
         let f4 = Franchise()
         f4.name = "Doraemon"
-    
+        f4.image = "https://goo.gl/jBX2k9"
+
         return [f1, f2, f3, f4]
     }
     
@@ -35,8 +39,6 @@ class ServiceMock {
         p1.image = "https://goo.gl/XTB35D"
         p1.paidPrice = 12.50
         p1.estimatedValue = 15.00
-        p1.dateBought = Date()
-        p1.quantity = 1
         p1.rarity = "Common"
         p1.franchise = "Harry Potter"
         p1.condition = "CIB"
@@ -49,8 +51,6 @@ class ServiceMock {
         p2.image = "https://goo.gl/4MCRrM"
         p2.paidPrice = 12.50
         p2.estimatedValue = 15.00
-        p2.dateBought = Date()
-        p2.quantity = 1
         p2.rarity = "Common"
         p2.franchise = "Harry Potter"
         p2.condition = "CIB"

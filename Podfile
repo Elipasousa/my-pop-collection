@@ -10,7 +10,7 @@ def default_pods
     pod 'SwiftDate'
     pod 'RealmSwift'
     pod 'SDWebImage'
-
+    pod 'UIImageViewAlignedSwift'
 end
 
 target 'MyPopCollection' do

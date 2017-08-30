@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import UIImageViewAlignedSwift
 
 class MyCollectionTableViewCell: UITableViewCell {
     
     //MARK : - Outlets
-    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var imageViewLogo: UIImageView!
     
     //MARK : - Vars
     
@@ -28,7 +29,17 @@ class MyCollectionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setName(_ name: String) {
-        self.labelName.text = name
+    //MARK : - Setup
+
+    func setupViews() {
+
+    }
+    
+    func setFranchise(_ franchise: Franchise) {
+        if let image = franchise.image {
+            self.imageViewLogo.sd_setShowActivityIndicatorView(true)
+            self.imageViewLogo.sd_setIndicatorStyle(.gray)
+            self.imageViewLogo.sd_setImage(with: URL(string: image), placeholderImage: nil)
+        }
     }
 }

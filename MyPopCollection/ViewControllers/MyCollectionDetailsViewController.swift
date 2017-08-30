@@ -14,14 +14,14 @@ class MyCollectionDetailsViewController: BaseViewViewController, UICollectionVie
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK : - Vars
-    internal var collection: MyCollection!
+    internal var franchise: Franchise!
     internal var items: [Item]!
     
     //MARK : - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.items = DatabaseHelper.getAllItems(fromMyCollection: self.collection)
+        self.items = DatabaseHelper.getAllItemsFromMyCollection(fromFranchise: self.franchise)
         registerNibs()
         self.collectionView.reloadData()
     }
@@ -36,7 +36,7 @@ class MyCollectionDetailsViewController: BaseViewViewController, UICollectionVie
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        self.title = self.collection.name
+        self.title = self.franchise.name
     }
     
     // MARK: - Collection View Methods
