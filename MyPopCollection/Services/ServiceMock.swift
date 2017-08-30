@@ -62,8 +62,8 @@ class ServiceMock {
             p3.name = "Hermione Granger"
             p3.number = 3
             p3.image = "https://cdn.poppriceguide.com/guide/itmimg/thumb/3702_hermionegranger.jpg"
-            p2.franchise = "Harry Potter"
-            p1.category = "Pop Vinyl Pop Harry Potter"
+            p3.franchise = "Harry Potter"
+            p3.category = "Pop Vinyl Pop Harry Potter"
             p3.paidPrice = 12.50
             p3.estimatedValue = 15.00
             p3.rarity = "Common"
