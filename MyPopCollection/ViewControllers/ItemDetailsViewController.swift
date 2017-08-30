@@ -15,7 +15,7 @@ class ItemDetailsViewController: BaseViewViewController {
     @IBOutlet weak var viewNumber: UIView!
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var labelFranchise: UILabel!
+    @IBOutlet weak var labelCategory: UILabel!
     
     //MARK : - Vars
     internal var item: Item!
@@ -51,7 +51,7 @@ class ItemDetailsViewController: BaseViewViewController {
     
     func setItem() {
         self.labelName.text = self.item.name
-        self.labelFranchise.text = self.item.franchise
+        self.labelCategory.text = self.item.category
         self.labelNumber.text = "\(self.item.number)"
         
         if let image = self.item.image {

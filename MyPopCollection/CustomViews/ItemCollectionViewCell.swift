@@ -21,7 +21,14 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupViews()
+    }
+    
+    //MARK : - Setup
+    
+    func setupViews() {
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = Colors.clearGray.cgColor
     }
     
     func setItem(_ item: Item) {

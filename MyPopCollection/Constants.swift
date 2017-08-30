@@ -35,3 +35,9 @@ let conditions: [String] = [Condition.CIB.rawValue, Condition.BoxOnly.rawValue, 
 let states: [String] = [State.Mint.rawValue, State.NearMint.rawValue, State.Good.rawValue, State.SlightlyDamaged.rawValue, State.VeryDamaged.rawValue]
 
 let rarities: [String] = [Rarity.VeryRare.rawValue, Rarity.Rare.rawValue, Rarity.Uncommon.rawValue, Rarity.Common.rawValue]
+
+struct Colors {
+    static let normalYellow = UIColor(hex: 0xF2B742, alpha: 1.0)
+    static let lightGray = UIColor.lightGray
+    static let clearGray = UIColor.lightGray.withAlphaComponent(0.2)
+}

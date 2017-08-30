@@ -15,6 +15,7 @@ class Item : Object {
     dynamic var number: Int = 0
     dynamic var image: String?
     dynamic var franchise: String = ""
+    dynamic var category: String = ""
     // --- from my collection ---
     dynamic var paidPrice: Double = 0.0
     dynamic var estimatedValue: Double = 0.0

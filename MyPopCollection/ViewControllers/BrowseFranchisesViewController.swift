@@ -102,6 +102,7 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //presentFranchiseDetails(fromFranchise: self.franchises[indexPath.row])
+        let a = self.franchises[self.letters[indexPath.section]]!
+        presentFranchiseDetails(fromFranchise: a[indexPath.row])
     }
 }
