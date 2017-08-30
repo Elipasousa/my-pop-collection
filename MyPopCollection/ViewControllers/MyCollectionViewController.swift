@@ -12,7 +12,8 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     
     //MARK : - Outlets
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var labelNoItems: UILabel!
+
     //MARK : - Vars
     var myCollections: [Franchise] = []
     
@@ -46,7 +47,15 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     func reloadMyCollections() {
         self.myCollections.removeAll()
         self.myCollections = DatabaseHelper.getAllFranchisesFromMyCollection()
-        self.tableView.reloadData()
+        
+        if self.myCollections.count == 0 {
+            self.labelNoItems.isHidden = false
+            self.tableView.isHidden = true
+        } else {
+            self.labelNoItems.isHidden = true
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
     }
     
     func registerNibs() {
