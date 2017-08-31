@@ -66,7 +66,12 @@ class ItemDetailsViewController: BaseViewViewController {
     override func setupNavigationBar() {
         super.setupNavigationBar()
         self.title = self.item.name
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(buttonAddTouched))
+        
+        var navButtonTitle = "Add"
+        if item.inMyCollection {
+            navButtonTitle = "Edit"
+        }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: navButtonTitle, style: .plain, target: self, action: #selector(buttonAddTouched))
     }
     
     //MARK: - Actions
@@ -105,6 +110,7 @@ class ItemDetailsViewController: BaseViewViewController {
             self.labelBoxStateValue.text = self.item.boxState
             self.labelPaidPriceValue.text = "\(self.item.paidPrice)"
             self.labelEstimatedValueValue.text = "\(self.item.estimatedValue)"
+            self.labelDateBoughtValue.text = self.item.dateBought.string(format: .custom("dd MMM yyyy"))
 
             switch self.item.condition {
                 case Condition.CIB.rawValue:

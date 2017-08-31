@@ -84,10 +84,20 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
         }
         
         let date = self.labelDateBoughtValue.text!.date(format: .custom("dd MMM yyyy"), fromRegion: nil)!.absoluteDate
+        var paidPrice = 0.0
+        var estimatedValue = 0.0
 
+        if let number = NumberFormatter().number(from: self.textFieldPaidPrice.text!) {
+            paidPrice = Double(number)
+        }
+        
+        if let number = NumberFormatter().number(from: self.textFieldEstimatedValue.text!) {
+            estimatedValue = Double(number)
+        }
+        
         DatabaseHelper.updateItem(withName: self.item.name,
-                                  paidPrice: Double(self.textFieldPaidPrice.text!)!,
-                                  estimatedValue: Double(self.textFieldEstimatedValue.text!)!,
+                                  paidPrice: paidPrice,
+                                  estimatedValue: estimatedValue,
                                   dateBought: date,
                                   rarity: self.labelRarityValue.text!,
                                   condition: condition,

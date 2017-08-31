@@ -28,7 +28,8 @@ class StatsViewController: BaseViewViewController {
     
     override func setupViews() {
         let totalItems = DatabaseHelper.getAllItemsFromMyCollection()
-        
+        let wishlistItems = DatabaseHelper.getAllItemsFromMyWishlist()
+
         var paidPrice = 0.0
         var estimatedValue = 0.0
         
@@ -38,6 +39,7 @@ class StatsViewController: BaseViewViewController {
         }
         
         self.labelTotalItems.text = "\(totalItems.count)"
+        self.labelWishlistItems.text = "\(wishlistItems.count)"
         self.labelPaidPrice.text = "\(paidPrice)"
         self.labelEstimatedValue.text = "\(estimatedValue)"
     }
