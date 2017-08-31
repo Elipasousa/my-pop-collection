@@ -71,7 +71,20 @@ class ServiceMock {
             p3.itemState = "Mint"
             p3.boxState = "Mint"
             
-            items = [p1, p2, p3]
+            let p4 = Item()
+            p4.name = "Ginny Weasley"
+            p4.number = 46
+            p4.image = "https://cdn.poppriceguide.com/guide/itmimg/thumb/11160_ginnyweasley_1503376459.jpg"
+            p4.franchise = "Harry Potter"
+            p4.category = "Pop Vinyl Pop Harry Potter"
+            p4.paidPrice = 12.50
+            p4.estimatedValue = 15.00
+            p4.rarity = "Common"
+            p4.condition = "CIB"
+            p4.itemState = "Mint"
+            p4.boxState = "Mint"
+            
+            items = [p1, p4, p2, p3]
         }
         return items
     }

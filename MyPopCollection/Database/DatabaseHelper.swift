@@ -32,9 +32,15 @@ class DatabaseHelper {
         }
     }
     
-    class func getAllItems() -> [Item] {
+    class func getAllItems(inMyCollectionOnly: Bool) -> [Item] {
         let realm = try! Realm()
-        return Array(realm.objects(Item.self))
+        
+        if inMyCollectionOnly {
+            return Array(realm.objects(Item.self).filter("inMyCollection = true"))
+        } else {
+            return Array(realm.objects(Item.self))
+
+        }
     }
     
     class func updateItem(withName name: String, paidPrice: Double, estimatedValue: Double, dateBought: Date, rarity: String, condition: String, itemState: String, boxState: String) {
@@ -72,7 +78,7 @@ class DatabaseHelper {
 
     class func getAllFranchisesFromMyCollection() -> [Franchise] {
         let realm = try! Realm()
-        return Array(realm.objects(Franchise.self).filter("inMyCollection = true"))
+        return Array(realm.objects(Franchise.self).filter("inMyCollection = true")).sorted(by: {$0.name < $1.name})
     }
     
     class func getItemsFromFranchise(fromFranchise franchise: Franchise, inMyCollectionOnly: Bool) -> [Item] {
@@ -83,7 +89,7 @@ class DatabaseHelper {
             predicate = NSPredicate(format: "franchise = %@ AND inMyCollection = true", franchise.name)
         }
         
-        return Array(realm.objects(Item.self).filter(predicate))
+        return Array(realm.objects(Item.self).filter(predicate)).sorted(by: {$0.number < $1.number})
     }
     
     //MARK : - Franchises

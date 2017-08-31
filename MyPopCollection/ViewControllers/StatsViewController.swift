@@ -11,7 +11,11 @@ import UIKit
 class StatsViewController: BaseViewViewController {
 
     //MARK : - Outlets
-    
+    @IBOutlet weak var labelTotalItems: UILabel!
+    @IBOutlet weak var labelWishlistItems: UILabel!
+    @IBOutlet weak var labelPaidPrice: UILabel!
+    @IBOutlet weak var labelEstimatedValue: UILabel!
+
     //MARK : - Vars
     
     //MARK : - Lifecycle
@@ -23,6 +27,18 @@ class StatsViewController: BaseViewViewController {
     //MARK: - Setups
     
     override func setupViews() {
+        let totalItems = DatabaseHelper.getAllItems(inMyCollectionOnly: true)
         
+        var paidPrice = 0.0
+        var estimatedValue = 0.0
+        
+        for i in totalItems {
+            paidPrice += i.paidPrice
+            estimatedValue += i.estimatedValue
+        }
+        
+        self.labelTotalItems.text = "\(totalItems.count)"
+        self.labelPaidPrice.text = "\(paidPrice)"
+        self.labelEstimatedValue.text = "\(estimatedValue)"
     }
 }
