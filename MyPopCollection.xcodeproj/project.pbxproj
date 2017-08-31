@@ -38,6 +38,8 @@
 		D7C8078B1F4E073F00DA4E33 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */; };
 		D7C8078D1F4E08F200DA4E33 /* Franchise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078C1F4E08F200DA4E33 /* Franchise.swift */; };
 		D7EA55701F5851360014E1EA /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EA556F1F5851360014E1EA /* WishlistViewController.swift */; };
+		D7EA55721F5857760014E1EA /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EA55711F5857760014E1EA /* WishlistTableViewCell.swift */; };
+		D7EA55741F58577E0014E1EA /* WishlistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7EA55731F58577E0014E1EA /* WishlistTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		D7C8078C1F4E08F200DA4E33 /* Franchise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Franchise.swift; sourceTree = "<group>"; };
 		D7EA556F1F5851360014E1EA /* WishlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
+		D7EA55711F5857760014E1EA /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
+		D7EA55731F58577E0014E1EA /* WishlistTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WishlistTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,8 @@
 				D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */,
 				D7BEB90F1F56CA1F003853B7 /* SectionHeaderTitleView.swift */,
 				D7BEB9111F56CA27003853B7 /* SectionHeaderTitleView.xib */,
+				D7EA55711F5857760014E1EA /* WishlistTableViewCell.swift */,
+				D7EA55731F58577E0014E1EA /* WishlistTableViewCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 				D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */,
 				D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */,
 				D757AB901F4F0FEB0086BD94 /* BebasNeue.ttf in Resources */,
+				D7EA55741F58577E0014E1EA /* WishlistTableViewCell.xib in Resources */,
 				D7BEB9121F56CA27003853B7 /* SectionHeaderTitleView.xib in Resources */,
 				D757ABA41F4F42490086BD94 /* FranchiseTableViewCell.xib in Resources */,
 			);
@@ -378,6 +385,7 @@
 				D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */,
 				D7C807851F4E031400DA4E33 /* Item.swift in Sources */,
 				D757AB8B1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift in Sources */,
+				D7EA55721F5857760014E1EA /* WishlistTableViewCell.swift in Sources */,
 				D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */,
 				D7EA55701F5851360014E1EA /* WishlistViewController.swift in Sources */,
 				D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */,

@@ -11,8 +11,8 @@ import RealmSwift
 
 class DatabaseHelper {
     
-    //MARK : - Items
-    
+    //MARK : - Database
+
     class func addItem(_ item: Item) {
         let realm = try! Realm()
         
@@ -32,14 +32,45 @@ class DatabaseHelper {
         }
     }
     
-    class func getAllItems(inMyCollectionOnly: Bool) -> [Item] {
+    class func addFranchise(_ franchise: Franchise) {
         let realm = try! Realm()
         
-        if inMyCollectionOnly {
-            return Array(realm.objects(Item.self).filter("inMyCollection = true"))
-        } else {
-            return Array(realm.objects(Item.self))
-
+        /*try! realm.write {
+         realm.delete(item)
+         }*/
+        
+        let predicate = NSPredicate(format: "name = %@", franchise.name)
+        let a = Array(realm.objects(Franchise.self).filter(predicate))
+        
+        if a.count != 0 {
+            return
+        }
+        
+        try! realm.write {
+            realm.add(franchise)
+        }
+    }
+    
+    //MARK : - Items
+    
+    class func getAllItemsFromMyCollection() -> [Item] {
+        let realm = try! Realm()
+        return Array(realm.objects(Item.self).filter("inMyCollection = true"))
+    }
+    
+    class func getAllItemsFromMyWishlist() -> [Item] {
+        let realm = try! Realm()
+        return Array(realm.objects(Item.self).filter("inMyWishlist = true"))
+    }
+    
+    class func addItemToMyWishlist(withName name: String) {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "name = %@", name)
+        let item = realm.objects(Item.self).filter(predicate).first!
+        
+        try! realm.write {
+            item.inMyWishlist = true
         }
     }
     
@@ -58,12 +89,17 @@ class DatabaseHelper {
             item.itemState = itemState
             item.boxState = boxState
             item.inMyCollection = true
+            item.inMyWishlist = false
         }
-        
         addFranchiseToMyCollection(franchiseWithName: item.franchise)
     }
     
-    //MARK : - Collections
+    //MARK : - Franchises
+    
+    class func getAllFranchises() -> [Franchise] {
+        let realm = try! Realm()
+        return Array(realm.objects(Franchise.self))
+    }
     
     class func addFranchiseToMyCollection(franchiseWithName name: String) {
         let realm = try! Realm()
@@ -90,31 +126,5 @@ class DatabaseHelper {
         }
         
         return Array(realm.objects(Item.self).filter(predicate)).sorted(by: {$0.number < $1.number})
-    }
-    
-    //MARK : - Franchises
-    
-    class func getAllFranchises() -> [Franchise] {
-        let realm = try! Realm()
-        return Array(realm.objects(Franchise.self))
-    }
-    
-    class func addFranchise(_ franchise: Franchise) {
-        let realm = try! Realm()
-        
-        /*try! realm.write {
-         realm.delete(item)
-         }*/
-        
-        let predicate = NSPredicate(format: "name = %@", franchise.name)
-        let a = Array(realm.objects(Franchise.self).filter(predicate))
-        
-        if a.count != 0 {
-            return
-        }
-        
-        try! realm.write {
-            realm.add(franchise)
-        }
     }
 }

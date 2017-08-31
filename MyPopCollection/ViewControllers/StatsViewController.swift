@@ -27,7 +27,7 @@ class StatsViewController: BaseViewViewController {
     //MARK: - Setups
     
     override func setupViews() {
-        let totalItems = DatabaseHelper.getAllItems(inMyCollectionOnly: true)
+        let totalItems = DatabaseHelper.getAllItemsFromMyCollection()
         
         var paidPrice = 0.0
         var estimatedValue = 0.0

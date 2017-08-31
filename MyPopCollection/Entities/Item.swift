@@ -25,4 +25,5 @@ class Item : Object {
     dynamic var itemState: String = State.Mint.rawValue
     dynamic var boxState: String = State.Mint.rawValue
     dynamic var inMyCollection: Bool = false
+    dynamic var inMyWishlist: Bool = false
 }

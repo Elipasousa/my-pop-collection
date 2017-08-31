@@ -40,10 +40,6 @@ class ServiceMock {
             p1.category = "Pop Vinyl Pop Harry Potter"
             p1.paidPrice = 12.50
             p1.estimatedValue = 15.00
-            p1.rarity = "Common"
-            p1.condition = "CIB"
-            p1.itemState = "Mint"
-            p1.boxState = "Mint"
             
             let p2 = Item()
             p2.name = "Ron Weasley"
@@ -53,10 +49,6 @@ class ServiceMock {
             p2.category = "Pop Vinyl Pop Harry Potter"
             p2.paidPrice = 12.50
             p2.estimatedValue = 15.00
-            p2.rarity = "Common"
-            p2.condition = "CIB"
-            p2.itemState = "Mint"
-            p2.boxState = "Mint"
             
             let p3 = Item()
             p3.name = "Hermione Granger"
@@ -66,10 +58,6 @@ class ServiceMock {
             p3.category = "Pop Vinyl Pop Harry Potter"
             p3.paidPrice = 12.50
             p3.estimatedValue = 15.00
-            p3.rarity = "Common"
-            p3.condition = "CIB"
-            p3.itemState = "Mint"
-            p3.boxState = "Mint"
             
             let p4 = Item()
             p4.name = "Ginny Weasley"
@@ -79,10 +67,6 @@ class ServiceMock {
             p4.category = "Pop Vinyl Pop Harry Potter"
             p4.paidPrice = 12.50
             p4.estimatedValue = 15.00
-            p4.rarity = "Common"
-            p4.condition = "CIB"
-            p4.itemState = "Mint"
-            p4.boxState = "Mint"
             
             items = [p1, p4, p2, p3]
         }

@@ -29,9 +29,7 @@ class BaseViewViewController: UIViewController {
     //MARK: - NavigationBar
     
     func setupNavigationBar() {
-        self.title = ""
-        self.navigationItem.leftBarButtonItem = nil
-        self.navigationItem.rightBarButtonItem = nil
+        
     }
 
     //MARK: - Navigation
