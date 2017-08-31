@@ -37,6 +37,7 @@
 		D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C807881F4E05F800DA4E33 /* StatsViewController.swift */; };
 		D7C8078B1F4E073F00DA4E33 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */; };
 		D7C8078D1F4E08F200DA4E33 /* Franchise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C8078C1F4E08F200DA4E33 /* Franchise.swift */; };
+		D7EA55701F5851360014E1EA /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EA556F1F5851360014E1EA /* WishlistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		D7C807881F4E05F800DA4E33 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		D7C8078A1F4E073F00DA4E33 /* ServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		D7C8078C1F4E08F200DA4E33 /* Franchise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Franchise.swift; sourceTree = "<group>"; };
+		D7EA556F1F5851360014E1EA /* WishlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */,
 				D757AB9F1F4F38980086BD94 /* MyCollectionDetailsViewController.swift */,
 				D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */,
+				D7EA556F1F5851360014E1EA /* WishlistViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				D7C807851F4E031400DA4E33 /* Item.swift in Sources */,
 				D757AB8B1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift in Sources */,
 				D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */,
+				D7EA55701F5851360014E1EA /* WishlistViewController.swift in Sources */,
 				D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */,
 				D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */,
 				D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */,
