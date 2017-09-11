@@ -29,7 +29,7 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
     //MARK: - Setups
     
     override func setupViews() {
-
+        super.setupViews()
     }
     
     func parseFranchises() {

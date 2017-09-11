@@ -32,13 +32,7 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     //MARK: - Setups
     
     override func setupViews() {
-        
-    }
-    
-    //MARK: - NavigationBar
-    
-    override func setupNavigationBar() {
-        super.setupNavigationBar()
+        super.setupViews()
         self.title = "My Collection"
     }
     

@@ -13,9 +13,6 @@ import PKHUD
 class ItemDetailsViewController: BaseViewViewController {
 
     //MARK : - Outlets
-    // --- buttons ---
-    @IBOutlet weak var buttonWishlist: UIButton!
-    @IBOutlet weak var buttonCollection: UIButton!
     // --- info ---
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var imageViewBackground: UIImageViewAligned!
@@ -59,50 +56,42 @@ class ItemDetailsViewController: BaseViewViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupAddButtons()
+        setupNavigationBarButtons()
         setItem()
     }
     
     //MARK: - Setups
     
     override func setupViews() {
+        super.setupViews()
+
         self.viewNumber.layer.cornerRadius = self.viewNumber.frame.size.height/2
     }
     
-    func setupAddButtons() {
+    func setupNavigationBarButtons() {
         if self.item.inMyCollection {
-            self.buttonCollection.setTitle("Edit from my collection", for: .normal)
-            self.buttonCollection.isHidden = false
-            self.buttonWishlist.isHidden = true
+            let editButton = UIBarButtonItem(image: UIImage(named: "ic_edit"), style: .plain, target: self, action: #selector(buttonAddTouched))
+            self.navigationItem.rightBarButtonItems = [editButton]
             
         } else if self.item.inMyWishlist {
-            self.buttonCollection.setTitle("Add to collection", for: .normal)
-            self.buttonWishlist.setTitle("Remove from wishlist", for: .normal)
-            self.buttonCollection.isHidden = false
-            self.buttonWishlist.isHidden = false
-            
+            let favoriteButton = UIBarButtonItem(image: UIImage(named: "ic_favorite"), style: .plain, target: self, action: #selector(buttonWishlistTouched))
+            let addButton = UIBarButtonItem(image: UIImage(named: "ic_add"), style: .plain, target: self, action: #selector(buttonAddTouched))
+            self.navigationItem.rightBarButtonItems = [addButton, favoriteButton]
+
         } else {
-            self.buttonCollection.setTitle("Add to collection", for: .normal)
-            self.buttonWishlist.setTitle("Add to wishlist", for: .normal)
-            self.buttonCollection.isHidden = false
-            self.buttonWishlist.isHidden = false
+            let unfavoriteButton = UIBarButtonItem(image: UIImage(named: "ic_unfavorite"), style: .plain, target: self, action: #selector(buttonWishlistTouched))
+            let addButton = UIBarButtonItem(image: UIImage(named: "ic_add"), style: .plain, target: self, action: #selector(buttonAddTouched))
+            self.navigationItem.rightBarButtonItems = [addButton, unfavoriteButton]
         }
-    }
-    
-    //MARK: - NavigationBar
-    
-    override func setupNavigationBar() {
-        super.setupNavigationBar()
-        self.title = self.item.name
     }
     
     //MARK: - Actions
     
-    @IBAction func collectionTouched(_ sender: Any) {
+    func buttonAddTouched() {
         self.presentAddItem(self.item)
     }
     
-    @IBAction func wishlistTouched(_ sender: Any) {
+    func buttonWishlistTouched() {
         if self.item.inMyWishlist {
             DatabaseHelper.removeItemFromMyWishlist(withName: self.item.name)
             HUD.flash(.image(UIImage(named: "unfavorite")), delay: HUDTime.success)
@@ -110,7 +99,7 @@ class ItemDetailsViewController: BaseViewViewController {
             DatabaseHelper.addItemToMyWishlist(withName: self.item.name)
             HUD.flash(.image(UIImage(named: "favorite")), delay: HUDTime.success)
         }
-        setupAddButtons()
+        setupNavigationBarButtons()
     }
 
     //MARK: - Aux

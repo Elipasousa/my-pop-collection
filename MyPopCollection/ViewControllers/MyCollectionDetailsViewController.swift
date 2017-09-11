@@ -34,13 +34,7 @@ class MyCollectionDetailsViewController: BaseViewViewController, UICollectionVie
     //MARK: - Setups
     
     override func setupViews() {
-        
-    }
-    
-    //MARK: - NavigationBar
-    
-    override func setupNavigationBar() {
-        super.setupNavigationBar()
+        super.setupViews()
         self.title = self.franchise.name
     }
     

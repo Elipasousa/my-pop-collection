@@ -14,7 +14,6 @@ import PKHUD
 class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
 
     //MARK : - Outlets
-    @IBOutlet weak var buttonRemoveFromMyCollection: UIButton!
     // --- info ---
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var viewNumber: UIView!
@@ -58,21 +57,33 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
         setItem()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBarButtons()
+    }
+    
     //MARK: - Setups
     
     override func setupViews() {
+        super.setupViews()
+
         self.viewNumber.layer.cornerRadius = self.viewNumber.frame.size.height/2
         
         self.textFieldPaidPrice.addDoneCancelToolbar()
         self.textFieldEstimatedValue.addDoneCancelToolbar()
     }
     
-    //MARK: - NavigationBar
-    
-    override func setupNavigationBar() {
-        super.setupNavigationBar()
-        self.title = self.item.name
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(buttonDoneTouched))
+    func setupNavigationBarButtons() {
+        if item.inMyCollection {
+            let doneButton = UIBarButtonItem(image: UIImage(named: "ic_done"), style: .plain, target: self, action: #selector(buttonDoneTouched))
+            let removeButton = UIBarButtonItem(image: UIImage(named: "ic_delete"), style: .plain, target: self, action: #selector(buttonRemoveTouched))
+            removeButton.tintColor = Colors.normalRed
+            self.navigationItem.rightBarButtonItems = [doneButton, removeButton]
+
+        } else {
+            let doneButton = UIBarButtonItem(image: UIImage(named: "ic_done"), style: .plain, target: self, action: #selector(buttonDoneTouched))
+            self.navigationItem.rightBarButtonItems = [doneButton]
+        }
     }
     
     //MARK: - Actions
@@ -111,7 +122,7 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func removeFromMyCollectionTouched(_ sender: Any) {
+    func buttonRemoveTouched() {
         showRemoveConfirmation()
     }
     
@@ -144,12 +155,6 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
                 boxOnlyTouched(self.buttonConditionBoxOnly)
             default:
                 break
-        }
-        
-        if item.inMyCollection {
-            self.buttonRemoveFromMyCollection.isHidden = false
-        } else {
-            self.buttonRemoveFromMyCollection.isHidden = true
         }
     }
     

@@ -27,6 +27,8 @@ class StatsViewController: BaseViewViewController {
     //MARK: - Setups
     
     override func setupViews() {
+        super.setupViews()
+
         let totalItems = DatabaseHelper.getAllItemsFromMyCollection()
         let wishlistItems = DatabaseHelper.getAllItemsFromMyWishlist()
 

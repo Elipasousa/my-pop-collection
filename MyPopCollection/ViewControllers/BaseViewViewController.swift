@@ -29,7 +29,7 @@ class BaseViewViewController: UIViewController {
     //MARK: - NavigationBar
     
     func setupNavigationBar() {
-        
+        self.navigationController?.navigationBar.tintColor = Colors.normalYellow
     }
 
     //MARK: - Navigation
