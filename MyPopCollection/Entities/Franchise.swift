@@ -13,5 +13,5 @@ class Franchise : Object {
 
     dynamic var name: String = ""
     dynamic var image: String?
-    dynamic var inMyCollection: Bool = false
+    dynamic var itemsInMyCollection: Int = 0
 }

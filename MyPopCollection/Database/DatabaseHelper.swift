@@ -102,7 +102,7 @@ class DatabaseHelper {
             item.inMyCollection = true
             item.inMyWishlist = false
         }
-        addFranchiseToMyCollection(franchiseWithName: item.franchise)
+        increaseItemOfFranchiseFromMyCollection(franchiseWithName: item.franchise)
     }
     
     //MARK : - Franchises
@@ -112,20 +112,31 @@ class DatabaseHelper {
         return Array(realm.objects(Franchise.self))
     }
     
-    class func addFranchiseToMyCollection(franchiseWithName name: String) {
+    class func increaseItemOfFranchiseFromMyCollection(franchiseWithName name: String) {
         let realm = try! Realm()
         
         let predicate = NSPredicate(format: "name = %@", name)
         let franchise = realm.objects(Franchise.self).filter(predicate).first
 
         try! realm.write {
-            franchise?.inMyCollection = true
+            franchise?.itemsInMyCollection += 1
+        }
+    }
+    
+    class func decreaseItemOfFranchiseFromMyCollection(franchiseWithName name: String) {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "name = %@", name)
+        let franchise = realm.objects(Franchise.self).filter(predicate).first
+        
+        try! realm.write {
+            franchise?.itemsInMyCollection -= 1
         }
     }
 
     class func getAllFranchisesFromMyCollection() -> [Franchise] {
         let realm = try! Realm()
-        return Array(realm.objects(Franchise.self).filter("inMyCollection = true")).sorted(by: {$0.name < $1.name})
+        return Array(realm.objects(Franchise.self).filter("itemsInMyCollection != 0")).sorted(by: {$0.name < $1.name})
     }
     
     class func getItemsFromFranchise(fromFranchise franchise: Franchise, inMyCollectionOnly: Bool) -> [Item] {
