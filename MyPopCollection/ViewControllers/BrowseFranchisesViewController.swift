@@ -53,6 +53,10 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
             self.franchises[firstCharacter] = a
         }
         self.letters = Array(self.franchises.keys).sorted(by: {$0 < $1})
+        
+        for l in self.letters {
+            self.franchises[l] = self.franchises[l]?.sorted(by: {$0.name < $1.name})
+        }
     }
     
     //MARK: - Table View Methods
