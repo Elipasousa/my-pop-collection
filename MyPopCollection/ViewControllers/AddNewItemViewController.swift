@@ -9,6 +9,7 @@
 import UIKit
 import ActionSheetPicker_3_0
 import SwiftDate
+import PKHUD
 
 class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
 
@@ -104,7 +105,9 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
                                   itemState: self.labelPopStateValue.text!,
                                   boxState: self.labelBoxStateValue.text!)
         
-        self.popViewController()
+        HUD.flash(.labeledSuccess(title: "Done", subtitle: nil), delay: HUDTime.success) { finished in
+            self.popViewController()
+        }
     }
     
     //MARK: - Aux

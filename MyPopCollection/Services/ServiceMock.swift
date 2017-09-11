@@ -40,7 +40,7 @@ class ServiceMock {
         var items: [Item] = []
         
         if franchise.name == "Halo" {
-            var p = Item()
+            let p = Item()
             p.name = "Cortana"
             p.number = 6
             p.image = "https://cdn.poppriceguide.com/guide/itmimg/thumb/378_Cortana.jpg"

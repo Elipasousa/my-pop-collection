@@ -1,6 +1,7 @@
 PODS:
   - ActionSheetPicker-3.0 (2.2.0)
   - IQKeyboardManagerSwift (4.0.10)
+  - PKHUD (4.2.3)
   - Realm (2.8.3):
     - Realm/Headers (= 2.8.3)
   - Realm/Headers (2.8.3)
@@ -16,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - IQKeyboardManagerSwift
+  - PKHUD
   - RealmSwift
   - Reveal-SDK
   - SDWebImage
@@ -25,6 +27,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
+  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
@@ -32,6 +35,6 @@ SPEC CHECKSUMS:
   SwiftDate: 029be76691ee89176da3a46c7df3415b6734bc5b
   UIImageViewAlignedSwift: e72ef2a85a75a01d19b4509ac92a3bdb872cd73c
 
-PODFILE CHECKSUM: 6e89f2775fded4fdd5a4104172100a1a949a07e8
+PODFILE CHECKSUM: bc08d90e6e62c529772803d0dd375f892b2a0687
 
 COCOAPODS: 1.1.1

@@ -8,6 +8,7 @@
 
 import UIKit
 import UIImageViewAlignedSwift
+import PKHUD
 
 class ItemDetailsViewController: BaseViewViewController {
 
@@ -105,8 +106,10 @@ class ItemDetailsViewController: BaseViewViewController {
     @IBAction func wishlistTouched(_ sender: Any) {
         if self.item.inMyWishlist {
             DatabaseHelper.removeItemFromMyWishlist(withName: self.item.name)
+            HUD.flash(.image(UIImage(named: "unfavorite")), delay: HUDTime.success)
         } else {
             DatabaseHelper.addItemToMyWishlist(withName: self.item.name)
+            HUD.flash(.image(UIImage(named: "favorite")), delay: HUDTime.success)
         }
         setupAddButtons()
     }

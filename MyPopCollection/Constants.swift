@@ -42,3 +42,7 @@ struct Colors {
     static let lightGray = UIColor.lightGray
     static let clearGray = UIColor.lightGray.withAlphaComponent(0.2)
 }
+
+struct HUDTime {
+    static let success = TimeInterval(0.6)
+}

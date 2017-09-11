@@ -11,6 +11,7 @@ def default_pods
     pod 'RealmSwift'
     pod 'SDWebImage'
     pod 'UIImageViewAlignedSwift'
+    pod 'PKHUD'
 end
 
 target 'MyPopCollection' do
