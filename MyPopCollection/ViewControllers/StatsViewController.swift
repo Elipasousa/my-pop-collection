@@ -24,14 +24,24 @@ class StatsViewController: BaseViewViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupMyStats()
+    }
+    
     //MARK: - Setups
     
     override func setupViews() {
         super.setupViews()
+        self.title = "Stats"
+    }
+    
+    //MARK: - Aux
 
+    func setupMyStats() {
         let totalItems = DatabaseHelper.getAllItemsFromMyCollection()
         let wishlistItems = DatabaseHelper.getAllItemsFromMyWishlist()
-
+        
         var paidPrice = 0.0
         var estimatedValue = 0.0
         

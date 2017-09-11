@@ -30,6 +30,7 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
     
     override func setupViews() {
         super.setupViews()
+        self.title = "Search"
     }
     
     func parseFranchises() {
