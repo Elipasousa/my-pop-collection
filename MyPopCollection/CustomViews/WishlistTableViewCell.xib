@@ -31,7 +31,7 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QWc-kH-LKs">
-                        <rect key="frame" x="79.5" y="18.5" width="280.5" height="44.5"/>
+                        <rect key="frame" x="79.5" y="17.5" width="280.5" height="44.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDD-nE-0Cd">
                                 <rect key="frame" x="0.0" y="0.0" width="280.5" height="26.5"/>
@@ -41,7 +41,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi0-ED-s8u">
                                 <rect key="frame" x="0.0" y="26.5" width="280.5" height="18"/>
                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="15"/>
-                                <color key="textColor" red="0.94901960780000005" green="0.71764705880000002" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -56,6 +56,11 @@
                     <constraint firstItem="QWc-kH-LKs" firstAttribute="leading" secondItem="Naw-h4-JDi" secondAttribute="trailing" constant="15" id="o75-wp-yCU"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="imageViewPicture" destination="Naw-h4-JDi" id="bel-qZ-NGb"/>
+                <outlet property="labelCategory" destination="bi0-ED-s8u" id="Gq0-Am-3xj"/>
+                <outlet property="labelName" destination="HDD-nE-0Cd" id="gSQ-s8-Fzv"/>
+            </connections>
             <point key="canvasLocation" x="-118.5" y="62"/>
         </tableViewCell>
     </objects>

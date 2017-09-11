@@ -55,12 +55,12 @@ class DatabaseHelper {
     
     class func getAllItemsFromMyCollection() -> [Item] {
         let realm = try! Realm()
-        return Array(realm.objects(Item.self).filter("inMyCollection = true"))
+        return Array(realm.objects(Item.self).filter("inMyCollection == true"))
     }
     
     class func getAllItemsFromMyWishlist() -> [Item] {
         let realm = try! Realm()
-        return Array(realm.objects(Item.self).filter("inMyWishlist = true"))
+        return Array(realm.objects(Item.self).filter("inMyWishlist == true"))
     }
     
     class func addItemToMyWishlist(withName name: String) {
@@ -71,6 +71,17 @@ class DatabaseHelper {
         
         try! realm.write {
             item.inMyWishlist = true
+        }
+    }
+    
+    class func removeItemFromMyWishlist(withName name: String) {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "name = %@", name)
+        let item = realm.objects(Item.self).filter(predicate).first!
+        
+        try! realm.write {
+            item.inMyWishlist = false
         }
     }
     

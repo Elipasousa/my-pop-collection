@@ -80,10 +80,11 @@ class WishlistViewController: BaseViewViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 90.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.presentItemDetails(fromItem: self.wishlist[indexPath.row])
     }
 }

@@ -39,7 +39,7 @@ class WishlistTableViewCell: UITableViewCell {
     
     func setItem(_ item: Item) {
         self.labelName.text = item.name
-        self.labelCategory.text = item.category
+        self.labelCategory.text = item.franchise
 
         if let image = item.image {
             self.imageViewPicture.sd_setShowActivityIndicatorView(true)

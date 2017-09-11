@@ -12,6 +12,9 @@ import UIImageViewAlignedSwift
 class ItemDetailsViewController: BaseViewViewController {
 
     //MARK : - Outlets
+    // --- buttons ---
+    @IBOutlet weak var buttonWishlist: UIButton!
+    @IBOutlet weak var buttonCollection: UIButton!
     // --- info ---
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var imageViewBackground: UIImageViewAligned!
@@ -52,6 +55,11 @@ class ItemDetailsViewController: BaseViewViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAddButtons()
         setItem()
     }
     
@@ -61,23 +69,46 @@ class ItemDetailsViewController: BaseViewViewController {
         self.viewNumber.layer.cornerRadius = self.viewNumber.frame.size.height/2
     }
     
+    func setupAddButtons() {
+        if self.item.inMyCollection {
+            self.buttonCollection.setTitle("Edit from my collection", for: .normal)
+            self.buttonCollection.isHidden = false
+            self.buttonWishlist.isHidden = true
+            
+        } else if self.item.inMyWishlist {
+            self.buttonCollection.setTitle("Add to collection", for: .normal)
+            self.buttonWishlist.setTitle("Remove from wishlist", for: .normal)
+            self.buttonCollection.isHidden = false
+            self.buttonWishlist.isHidden = false
+            
+        } else {
+            self.buttonCollection.setTitle("Add to collection", for: .normal)
+            self.buttonWishlist.setTitle("Add to wishlist", for: .normal)
+            self.buttonCollection.isHidden = false
+            self.buttonWishlist.isHidden = false
+        }
+    }
+    
     //MARK: - NavigationBar
     
     override func setupNavigationBar() {
         super.setupNavigationBar()
         self.title = self.item.name
-        
-        var navButtonTitle = "Add"
-        if item.inMyCollection {
-            navButtonTitle = "Edit"
-        }
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: navButtonTitle, style: .plain, target: self, action: #selector(buttonAddTouched))
     }
     
     //MARK: - Actions
     
-    func buttonAddTouched() {
+    @IBAction func collectionTouched(_ sender: Any) {
         self.presentAddItem(self.item)
+    }
+    
+    @IBAction func wishlistTouched(_ sender: Any) {
+        if self.item.inMyWishlist {
+            DatabaseHelper.removeItemFromMyWishlist(withName: self.item.name)
+        } else {
+            DatabaseHelper.addItemToMyWishlist(withName: self.item.name)
+        }
+        setupAddButtons()
     }
 
     //MARK: - Aux

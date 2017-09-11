@@ -420,7 +420,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcT-yO-Nd0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="880"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="830"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJ0-JQ-YJf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="684"/>
@@ -671,11 +671,44 @@
                                     <constraint firstAttribute="bottom" secondItem="aJ0-JQ-YJf" secondAttribute="bottom" id="mT4-MS-fek"/>
                                 </constraints>
                             </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jcx-pG-r1E">
+                                <rect key="frame" x="0.0" y="850" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCa-pT-oxb">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.71764705880000002" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="17"/>
+                                        <state key="normal" title="Add to wishlist">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="wishlistTouched:" destination="ZMN-5h-2bZ" eventType="touchUpInside" id="YYM-7R-6kn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiZ-JQ-Ano">
+                                        <rect key="frame" x="188" y="0.0" width="187" height="50"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.71764705880000002" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="17"/>
+                                        <state key="normal" title="Add to collection">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="collectionTouched:" destination="ZMN-5h-2bZ" eventType="touchUpInside" id="22v-xK-CnJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oUs-hs-Zwc"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ckV-2T-936" firstAttribute="top" secondItem="dcT-yO-Nd0" secondAttribute="bottom" id="9RU-SD-D2o"/>
+                            <constraint firstItem="Jcx-pG-r1E" firstAttribute="top" secondItem="dcT-yO-Nd0" secondAttribute="bottom" id="D3P-5i-uJt"/>
                             <constraint firstItem="dcT-yO-Nd0" firstAttribute="top" secondItem="dpM-qH-hSB" secondAttribute="bottom" id="Rou-pe-WH3"/>
+                            <constraint firstAttribute="trailing" secondItem="Jcx-pG-r1E" secondAttribute="trailing" id="ZQ3-yy-gil"/>
+                            <constraint firstItem="ckV-2T-936" firstAttribute="top" secondItem="Jcx-pG-r1E" secondAttribute="bottom" id="bRm-Ge-gOQ"/>
+                            <constraint firstItem="Jcx-pG-r1E" firstAttribute="leading" secondItem="5Oi-0i-JoZ" secondAttribute="leading" id="cdr-rl-7ik"/>
                             <constraint firstItem="dcT-yO-Nd0" firstAttribute="leading" secondItem="5Oi-0i-JoZ" secondAttribute="leading" id="kXO-1z-0gH"/>
                             <constraint firstAttribute="trailing" secondItem="dcT-yO-Nd0" secondAttribute="trailing" id="tqV-Ss-yuc"/>
                             <constraint firstItem="aJ0-JQ-YJf" firstAttribute="width" secondItem="5Oi-0i-JoZ" secondAttribute="width" id="udX-6A-cnp"/>
@@ -684,6 +717,8 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
+                        <outlet property="buttonCollection" destination="HiZ-JQ-Ano" id="Pxy-Aq-str"/>
+                        <outlet property="buttonWishlist" destination="ZCa-pT-oxb" id="2qW-e1-HjO"/>
                         <outlet property="imageViewBackground" destination="o2b-Gp-EvS" id="Oxo-xb-qrZ"/>
                         <outlet property="imageViewCondition" destination="nbG-l3-etx" id="v48-TX-61y"/>
                         <outlet property="imageViewPicture" destination="15J-Xd-qO3" id="wIr-tV-tPo"/>
