@@ -174,8 +174,8 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
     }
     
     @IBAction func popOnlyTouched(_ sender: Any) {
-        self.buttonConditionCIB.isSelected = true
-        self.buttonConditionPopOnly.isSelected = false
+        self.buttonConditionCIB.isSelected = false
+        self.buttonConditionPopOnly.isSelected = true
         self.buttonConditionBoxOnly.isSelected = false
         self.viewConditionCIB.alpha = 0.3
         self.viewConditionPopOnly.alpha = 1.0

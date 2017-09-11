@@ -24,7 +24,6 @@ class ItemDetailsViewController: BaseViewViewController {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelCategory: UILabel!
     // --- collection ---
-    @IBOutlet weak var labelInMyCollection: UILabel!
     @IBOutlet weak var stackViewInMyCollection: UIStackView!
     // --- rarity ---
     @IBOutlet weak var labelRarityTag: UILabel!
@@ -135,9 +134,7 @@ class ItemDetailsViewController: BaseViewViewController {
         }
         
         if item.inMyCollection {
-            self.labelInMyCollection.isHidden = true
             self.stackViewInMyCollection.isHidden = false
-            
             self.labelRarityValue.text = self.item.rarity
             self.labelConditionValue.text = self.item.condition
             self.labelPopStateValue.text = self.item.itemState
@@ -157,8 +154,6 @@ class ItemDetailsViewController: BaseViewViewController {
                     break
             }
         } else {
-            self.labelInMyCollection.text = "You don't have this item in your collection"
-            self.labelInMyCollection.isHidden = false
             self.stackViewInMyCollection.isHidden = true
         }
     }

@@ -268,7 +268,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nvu-o3-kif">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="0.19895119859999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ujF-zG-3o8" id="jnh-f2-X0s"/>
@@ -440,7 +440,6 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzv-Gr-Tqe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="39"/>
                                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -488,12 +487,6 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="alignRight" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="You have this pop in your collection!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm6-0y-AJU">
-                                                <rect key="frame" x="15" y="349" width="345" height="20.5"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="17"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rZS-zB-ttC">
                                                 <rect key="frame" x="15" y="334" width="345" height="335"/>
                                                 <subviews>
@@ -529,12 +522,12 @@
                                                                 <rect key="frame" x="72.5" y="0.0" width="272.5" height="35"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="CIB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWZ-6W-ont">
-                                                                        <rect key="frame" x="40" y="6" width="232.5" height="24"/>
+                                                                        <rect key="frame" x="34" y="6" width="238.5" height="24"/>
                                                                         <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popwithbox" translatesAutoresizingMaskIntoConstraints="NO" id="nbG-l3-etx">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                                        <rect key="frame" x="0.0" y="3" width="29" height="29"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="nbG-l3-etx" secondAttribute="height" multiplier="1:1" id="kzl-cj-LHm"/>
                                                                         </constraints>
@@ -544,8 +537,8 @@
                                                                     <constraint firstAttribute="trailing" secondItem="XWZ-6W-ont" secondAttribute="trailing" id="gyN-yT-n3D"/>
                                                                     <constraint firstItem="nbG-l3-etx" firstAttribute="leading" secondItem="nge-nP-PWA" secondAttribute="leading" id="hko-Ra-ZhG"/>
                                                                     <constraint firstItem="XWZ-6W-ont" firstAttribute="centerY" secondItem="nge-nP-PWA" secondAttribute="centerY" id="huW-4F-eJq"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="nbG-l3-etx" secondAttribute="bottom" id="rLC-7e-RGW"/>
-                                                                    <constraint firstItem="nbG-l3-etx" firstAttribute="top" secondItem="nge-nP-PWA" secondAttribute="top" id="w11-HE-Fio"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="nbG-l3-etx" secondAttribute="bottom" constant="3" id="rLC-7e-RGW"/>
+                                                                    <constraint firstItem="nbG-l3-etx" firstAttribute="top" secondItem="nge-nP-PWA" secondAttribute="top" constant="3" id="w11-HE-Fio"/>
                                                                     <constraint firstItem="XWZ-6W-ont" firstAttribute="leading" secondItem="nbG-l3-etx" secondAttribute="trailing" constant="5" id="zJe-NO-vki"/>
                                                                 </constraints>
                                                             </view>
@@ -644,11 +637,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="nm6-0y-AJU" firstAttribute="top" secondItem="C3v-ot-cCx" secondAttribute="bottom" constant="30" id="4h3-MQ-qkv"/>
                                             <constraint firstAttribute="bottom" secondItem="rZS-zB-ttC" secondAttribute="bottom" constant="15" id="6Yl-qw-5fr"/>
                                             <constraint firstItem="rZS-zB-ttC" firstAttribute="top" secondItem="C3v-ot-cCx" secondAttribute="bottom" constant="15" id="AJh-y8-fW9"/>
                                             <constraint firstItem="C3v-ot-cCx" firstAttribute="leading" secondItem="aJ0-JQ-YJf" secondAttribute="leading" id="HZ0-Kr-61l"/>
-                                            <constraint firstAttribute="trailing" secondItem="nm6-0y-AJU" secondAttribute="trailing" constant="15" id="I4W-et-KTB"/>
                                             <constraint firstItem="rZS-zB-ttC" firstAttribute="leading" secondItem="aJ0-JQ-YJf" secondAttribute="leading" constant="15" id="MxV-4C-GFv"/>
                                             <constraint firstAttribute="trailing" secondItem="15J-Xd-qO3" secondAttribute="trailing" id="QfV-6d-1uj"/>
                                             <constraint firstAttribute="trailing" secondItem="rZS-zB-ttC" secondAttribute="trailing" constant="15" id="Qjl-BU-p0C"/>
@@ -660,7 +651,6 @@
                                             <constraint firstItem="o2b-Gp-EvS" firstAttribute="leading" secondItem="aJ0-JQ-YJf" secondAttribute="leading" id="nKr-pn-0U1"/>
                                             <constraint firstItem="15J-Xd-qO3" firstAttribute="top" secondItem="aJ0-JQ-YJf" secondAttribute="top" id="rTg-bu-KHD"/>
                                             <constraint firstAttribute="bottom" secondItem="o2b-Gp-EvS" secondAttribute="bottom" id="tab-Zf-Bng"/>
-                                            <constraint firstItem="nm6-0y-AJU" firstAttribute="leading" secondItem="aJ0-JQ-YJf" secondAttribute="leading" constant="15" id="yAm-3Q-9Zw"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -731,7 +721,6 @@
                         <outlet property="labelDateBoughtValue" destination="hQY-fN-Vxz" id="737-kP-WhY"/>
                         <outlet property="labelEstimatedValueTag" destination="0xv-bI-QeX" id="ge0-OM-YvH"/>
                         <outlet property="labelEstimatedValueValue" destination="VqH-de-6Qu" id="wKX-kG-DJ4"/>
-                        <outlet property="labelInMyCollection" destination="nm6-0y-AJU" id="vU3-kj-Lb5"/>
                         <outlet property="labelName" destination="xqv-oB-dyS" id="sx4-YI-Szj"/>
                         <outlet property="labelNumber" destination="Fzv-Gr-Tqe" id="GaC-HQ-NjF"/>
                         <outlet property="labelPaidPriceTag" destination="z3F-Xc-6zl" id="ZIa-7s-ZID"/>
@@ -1331,6 +1320,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.94901960780000005" green="0.71764705880000002" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.94901960784313721" green="0.71764705882352942" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="vhy-nn-HrB" kind="relationship" relationship="viewControllers" id="awb-lh-9tB"/>
