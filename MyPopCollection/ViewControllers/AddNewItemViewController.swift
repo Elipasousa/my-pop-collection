@@ -14,6 +14,7 @@ import PKHUD
 class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
 
     //MARK : - Outlets
+    @IBOutlet weak var buttonRemoveFromMyCollection: UIButton!
     // --- info ---
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var viewNumber: UIView!
@@ -110,6 +111,10 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func removeFromMyCollectionTouched(_ sender: Any) {
+        showRemoveConfirmation()
+    }
+    
     //MARK: - Aux
     
     func setItem() {
@@ -139,6 +144,12 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
                 boxOnlyTouched(self.buttonConditionBoxOnly)
             default:
                 break
+        }
+        
+        if item.inMyCollection {
+            self.buttonRemoveFromMyCollection.isHidden = false
+        } else {
+            self.buttonRemoveFromMyCollection.isHidden = true
         }
     }
     
@@ -231,5 +242,28 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
                                     self.labelDateBoughtValue.text = date!.string(format: .custom("dd MMM yyyy"))
         }, cancel: { ActionStringCancelBlock in
         }, origin: self.view)
+    }
+    
+    //MARK: - Aux
+    
+    func showRemoveConfirmation(withTitle title: String = "Attention", message: String = "This action cannot be undone. Do you want to remove this item?") {
+        
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel",
+                                      style: .cancel,
+                                      handler: { (_) in
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Yes",
+                                      style: .default,
+                                      handler: { (_) in
+                                        DatabaseHelper.removeItem(withName: self.item.name)
+                                        self.popViewController()
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

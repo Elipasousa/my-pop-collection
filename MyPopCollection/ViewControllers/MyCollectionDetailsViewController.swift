@@ -12,18 +12,23 @@ class MyCollectionDetailsViewController: BaseViewViewController, UICollectionVie
     
     //MARK : - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var labelNoItems: UILabel!
+
     //MARK : - Vars
     internal var franchise: Franchise!
-    internal var items: [Item]!
+    internal var items: [Item] = []
     
     //MARK : - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.items = DatabaseHelper.getItemsFromFranchise(fromFranchise: self.franchise, inMyCollectionOnly: true)
         registerNibs()
-        self.collectionView.reloadData()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadCollectionDetails()
     }
     
     //MARK: - Setups
@@ -40,6 +45,20 @@ class MyCollectionDetailsViewController: BaseViewViewController, UICollectionVie
     }
     
     // MARK: - Collection View Methods
+    
+    func reloadCollectionDetails() {
+        self.items.removeAll()
+        self.items = DatabaseHelper.getItemsFromFranchise(fromFranchise: self.franchise, inMyCollectionOnly: true)
+        
+        if self.items.count == 0 {
+            self.labelNoItems.isHidden = false
+            self.collectionView.isHidden = true
+        } else {
+            self.labelNoItems.isHidden = true
+            self.collectionView.isHidden = false
+            self.collectionView.reloadData()
+        }
+    }
     
     func registerNibs() {
         self.collectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCell")

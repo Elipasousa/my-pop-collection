@@ -390,17 +390,27 @@
                                     <outlet property="delegate" destination="WB5-J4-if2" id="N8g-wz-RYc"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any item on this collection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnO-S4-xra">
+                                <rect key="frame" x="15" y="321" width="345" height="24"/>
+                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PmY-J1-vUu" firstAttribute="top" secondItem="9ur-CM-nFC" secondAttribute="bottom" id="06N-4h-CMw"/>
                             <constraint firstItem="Mu3-Ip-W5a" firstAttribute="top" secondItem="PmY-J1-vUu" secondAttribute="bottom" id="Jev-RL-rFQ"/>
+                            <constraint firstItem="GnO-S4-xra" firstAttribute="leading" secondItem="4DP-4X-rhN" secondAttribute="leading" constant="15" id="Xbe-6d-FKa"/>
+                            <constraint firstItem="GnO-S4-xra" firstAttribute="centerY" secondItem="4DP-4X-rhN" secondAttribute="centerY" id="aM8-VD-B11"/>
+                            <constraint firstAttribute="trailing" secondItem="GnO-S4-xra" secondAttribute="trailing" constant="15" id="fUK-Qp-29K"/>
                             <constraint firstItem="PmY-J1-vUu" firstAttribute="leading" secondItem="4DP-4X-rhN" secondAttribute="leading" id="tCp-4r-Y8t"/>
                             <constraint firstAttribute="trailing" secondItem="PmY-J1-vUu" secondAttribute="trailing" id="tuD-fw-VIo"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="PmY-J1-vUu" id="3Oj-Tf-RLe"/>
+                        <outlet property="labelNoItems" destination="GnO-S4-xra" id="Sho-zD-NGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N0T-PG-qwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -753,7 +763,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="880"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYW-WF-f0O">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="790"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="855"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0gk-3K-zQ3">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -805,7 +815,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GoU-ib-rI2">
-                                                <rect key="frame" x="15" y="335" width="345" height="440"/>
+                                                <rect key="frame" x="15" y="335" width="345" height="505"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RFT-04-N3Q" userLabel="View Rarity">
                                                         <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
@@ -1176,6 +1186,20 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIo-4P-jdW">
+                                                        <rect key="frame" x="0.0" y="455" width="345" height="50"/>
+                                                        <color key="backgroundColor" red="0.74901960779999999" green="0.38823529410000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="750" constant="50" id="Vvb-1f-SiU"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="17"/>
+                                                        <state key="normal" title="Remove from my collection">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="removeFromMyCollectionTouched:" destination="vYA-bD-YqY" eventType="touchUpInside" id="yMt-xK-Rkh"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="ZBV-qv-APu" firstAttribute="height" secondItem="RFT-04-N3Q" secondAttribute="height" id="2GQ-0j-l64"/>
@@ -1231,6 +1255,7 @@
                         <outlet property="buttonConditionBoxOnly" destination="5PH-8y-sDE" id="1pj-nc-TC7"/>
                         <outlet property="buttonConditionCIB" destination="rcw-uy-f0O" id="CMC-Kq-xOh"/>
                         <outlet property="buttonConditionPopOnly" destination="kJE-zr-3mK" id="ctk-dU-iiZ"/>
+                        <outlet property="buttonRemoveFromMyCollection" destination="NIo-4P-jdW" id="XSy-65-9p3"/>
                         <outlet property="imageViewPicture" destination="0gk-3K-zQ3" id="4cA-ew-BrI"/>
                         <outlet property="labelBoxStateTag" destination="hSP-x9-cU0" id="JlS-gJ-Fct"/>
                         <outlet property="labelBoxStateValue" destination="QFl-Za-j83" id="AIj-wE-XZb"/>

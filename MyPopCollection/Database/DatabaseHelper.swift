@@ -105,6 +105,18 @@ class DatabaseHelper {
         increaseItemOfFranchiseFromMyCollection(franchiseWithName: item.franchise)
     }
     
+    class func removeItem(withName name: String) {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "name = %@", name)
+        let item = realm.objects(Item.self).filter(predicate).first!
+        
+        try! realm.write {
+            item.inMyCollection = false
+        }
+        decreaseItemOfFranchiseFromMyCollection(franchiseWithName: item.franchise)
+    }
+    
     //MARK : - Franchises
     
     class func getAllFranchises() -> [Franchise] {
