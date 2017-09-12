@@ -119,9 +119,16 @@ class DatabaseHelper {
     
     //MARK : - Franchises
     
-    class func getAllFranchises() -> [Franchise] {
+    class func getFranchises(withSearch: String?) -> [Franchise] {
         let realm = try! Realm()
-        return Array(realm.objects(Franchise.self))
+        
+        if withSearch != nil && !withSearch!.isEmpty {
+            let predicate = NSPredicate(format: "name CONTAINS[c] %@", withSearch!)
+            return Array(realm.objects(Franchise.self).filter(predicate))
+
+        } else {
+            return Array(realm.objects(Franchise.self))
+        }
     }
     
     class func increaseItemOfFranchiseFromMyCollection(franchiseWithName name: String) {

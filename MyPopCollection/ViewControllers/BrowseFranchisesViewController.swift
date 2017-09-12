@@ -8,10 +8,12 @@
 
 import UIKit
 
-class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource {
+class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     //MARK : - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var labelNoResultsFound: UILabel!
 
     //MARK : - Vars
     var letters: [String] = []
@@ -22,8 +24,7 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibs()
-        parseFranchises()
-        self.tableView.reloadData()
+        reloadFranchises(fromArray: DatabaseHelper.getFranchises(withSearch: nil))
     }
 
     //MARK: - Setups
@@ -33,11 +34,20 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
         self.title = "Search"
     }
     
-    func parseFranchises() {
+    func reloadFranchises(fromArray: [Franchise]) {
+        if fromArray.isEmpty {
+            self.labelNoResultsFound.isHidden = false
+            self.tableView.isHidden = true
+            return
+        } else {
+            self.labelNoResultsFound.isHidden = true
+            self.tableView.isHidden = false
+        }
+        
         self.franchises.removeAll()
         let letters = CharacterSet.letters
 
-        for f in DatabaseHelper.getAllFranchises() {
+        for f in fromArray {
             var firstCharacter = String(f.name.characters.first!)
             
             if !letters.contains(firstCharacter.unicodeScalars.first!) {
@@ -57,6 +67,7 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
         for l in self.letters {
             self.franchises[l] = self.franchises[l]?.sorted(by: {$0.name < $1.name})
         }
+        self.tableView.reloadData()
     }
     
     //MARK: - Table View Methods
@@ -109,5 +120,21 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
         tableView.deselectRow(at: indexPath, animated: true)
         let a = self.franchises[self.letters[indexPath.section]]!
         presentFranchiseDetails(fromFranchise: a[indexPath.row])
+    }
+    
+    //MARK : - UISearchBarDelegate
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        reloadFranchises(fromArray: DatabaseHelper.getFranchises(withSearch: searchText))
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.text = ""
+        reloadFranchises(fromArray: DatabaseHelper.getFranchises(withSearch: nil))
+        self.searchBar.resignFirstResponder()
     }
 }
