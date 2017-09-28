@@ -69,7 +69,7 @@ class WishlistViewController: BaseViewViewController, UITableViewDelegate, UITab
         if (cell == nil) {
             cell = Bundle.main.loadNibNamed("WishlistTableViewCell", owner: self, options: nil)![0] as! WishlistTableViewCell
         }
-        cell.setItem(self.wishlist[indexPath.row])
+        cell.setItem(self.wishlist[indexPath.row], showValue: false)
         return cell;
     }
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gTI-1M-0HV" id="OhO-KF-ct7">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-h4-JDi">
@@ -30,36 +30,48 @@
                             <constraint firstAttribute="width" secondItem="Naw-h4-JDi" secondAttribute="height" multiplier="1:1" id="jyR-oE-3qz"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QWc-kH-LKs">
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sCl-tE-Gm3">
                         <rect key="frame" x="79.5" y="17.5" width="280.5" height="44.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDD-nE-0Cd">
-                                <rect key="frame" x="0.0" y="0.0" width="280.5" height="26.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QWc-kH-LKs">
+                                <rect key="frame" x="0.0" y="0.0" width="224.5" height="44.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDD-nE-0Cd">
+                                        <rect key="frame" x="0.0" y="0.0" width="224.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="22"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi0-ED-s8u">
+                                        <rect key="frame" x="0.0" y="26.5" width="224.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADs-pd-bda">
+                                <rect key="frame" x="239.5" y="0.0" width="41" height="44.5"/>
                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="22"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi0-ED-s8u">
-                                <rect key="frame" x="0.0" y="26.5" width="280.5" height="18"/>
-                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.94901960780000005" green="0.71764705880000002" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="QWc-kH-LKs" firstAttribute="centerY" secondItem="OhO-KF-ct7" secondAttribute="centerY" id="QZ3-He-iRP"/>
-                    <constraint firstAttribute="trailing" secondItem="QWc-kH-LKs" secondAttribute="trailing" constant="15" id="Tfd-Ls-6x7"/>
+                    <constraint firstAttribute="trailing" secondItem="sCl-tE-Gm3" secondAttribute="trailing" constant="15" id="Uek-ev-tT9"/>
                     <constraint firstItem="Naw-h4-JDi" firstAttribute="leading" secondItem="OhO-KF-ct7" secondAttribute="leading" constant="15" id="aVX-G8-mEy"/>
+                    <constraint firstItem="sCl-tE-Gm3" firstAttribute="centerY" secondItem="Naw-h4-JDi" secondAttribute="centerY" id="aYA-kH-hVW"/>
                     <constraint firstAttribute="bottom" secondItem="Naw-h4-JDi" secondAttribute="bottom" constant="15" id="hon-8K-qyi"/>
+                    <constraint firstItem="sCl-tE-Gm3" firstAttribute="leading" secondItem="Naw-h4-JDi" secondAttribute="trailing" constant="15" id="jZx-W7-Rbd"/>
                     <constraint firstItem="Naw-h4-JDi" firstAttribute="top" secondItem="OhO-KF-ct7" secondAttribute="top" constant="15" id="lgE-E2-leC"/>
-                    <constraint firstItem="QWc-kH-LKs" firstAttribute="leading" secondItem="Naw-h4-JDi" secondAttribute="trailing" constant="15" id="o75-wp-yCU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageViewPicture" destination="Naw-h4-JDi" id="bel-qZ-NGb"/>
                 <outlet property="labelCategory" destination="bi0-ED-s8u" id="Gq0-Am-3xj"/>
                 <outlet property="labelName" destination="HDD-nE-0Cd" id="gSQ-s8-Fzv"/>
+                <outlet property="labelValue" destination="ADs-pd-bda" id="bfA-5d-3lJ"/>
             </connections>
             <point key="canvasLocation" x="-118.5" y="62"/>
         </tableViewCell>

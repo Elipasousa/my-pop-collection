@@ -14,7 +14,8 @@ class WishlistTableViewCell: UITableViewCell {
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelCategory: UILabel!
-
+    @IBOutlet weak var labelValue: UILabel!
+    
     //MARK : - Vars
     
     //MARK : - Lifecycle
@@ -37,7 +38,7 @@ class WishlistTableViewCell: UITableViewCell {
         self.layer.borderColor = Colors.clearGray.cgColor
     }
     
-    func setItem(_ item: Item) {
+    func setItem(_ item: Item, showValue: Bool) {
         self.labelName.text = item.name
         self.labelCategory.text = item.franchise
 
@@ -45,6 +46,13 @@ class WishlistTableViewCell: UITableViewCell {
             self.imageViewPicture.sd_setShowActivityIndicatorView(true)
             self.imageViewPicture.sd_setIndicatorStyle(.gray)
             self.imageViewPicture.sd_setImage(with: URL(string: image), placeholderImage: nil)
+        }
+        
+        if showValue {
+            self.labelValue.text = "\(item.estimatedValue)"
+            self.labelValue.isHidden = false
+        } else {
+            self.labelValue.isHidden = true
         }
     }
 }

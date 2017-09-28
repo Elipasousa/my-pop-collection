@@ -152,15 +152,15 @@
 		D757AB801F4DBC2B0086BD94 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D757AB9D1F4F34410086BD94 /* BaseViewViewController.swift */,
-				D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */,
-				D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */,
-				D757AB8A1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift */,
-				D7C807881F4E05F800DA4E33 /* StatsViewController.swift */,
 				D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */,
-				D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */,
-				D757AB9F1F4F38980086BD94 /* MyCollectionDetailsViewController.swift */,
+				D757AB9D1F4F34410086BD94 /* BaseViewViewController.swift */,
+				D757AB8A1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift */,
 				D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */,
+				D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */,
+				D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */,
+				D757AB9F1F4F38980086BD94 /* MyCollectionDetailsViewController.swift */,
+				D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */,
+				D7C807881F4E05F800DA4E33 /* StatsViewController.swift */,
 				D7EA556F1F5851360014E1EA /* WishlistViewController.swift */,
 			);
 			path = ViewControllers;
