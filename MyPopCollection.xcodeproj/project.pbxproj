@@ -28,6 +28,7 @@
 		D757ABA61F4F433B0086BD94 /* FranchiseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */; };
 		D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */; };
 		D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */; };
+		D76832621F7E5BC500674EA4 /* pops.csv in Resources */ = {isa = PBXBuildFile; fileRef = D76832611F7E5BC500674EA4 /* pops.csv */; };
 		D773B80D1F56F8BC00FAF557 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773B80C1F56F8BC00FAF557 /* UIColor.swift */; };
 		D7BEB90A1F542936003853B7 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEB9091F542936003853B7 /* UITextField.swift */; };
 		D7BEB9101F56CA1F003853B7 /* SectionHeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEB90F1F56CA1F003853B7 /* SectionHeaderTitleView.swift */; };
@@ -68,6 +69,7 @@
 		D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FranchiseDetailsViewController.swift; sourceTree = "<group>"; };
 		D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		D76832611F7E5BC500674EA4 /* pops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pops.csv; sourceTree = "<group>"; };
 		D773B80C1F56F8BC00FAF557 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D7BEB9091F542936003853B7 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		D7BEB90F1F56CA1F003853B7 /* SectionHeaderTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderTitleView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		D757AB6D1F4DBB420086BD94 /* MyPopCollection */ = {
 			isa = PBXGroup;
 			children = (
+				D76832611F7E5BC500674EA4 /* pops.csv */,
 				D7BEB9081F54290A003853B7 /* Extensions */,
 				D757AB931F4F108D0086BD94 /* Database */,
 				D757AB8E1F4F0FB30086BD94 /* Fonts */,
@@ -290,6 +293,7 @@
 			files = (
 				D757AB791F4DBB420086BD94 /* LaunchScreen.storyboard in Resources */,
 				D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */,
+				D76832621F7E5BC500674EA4 /* pops.csv in Resources */,
 				D757AB9C1F4F21F60086BD94 /* MyCollectionTableViewCell.xib in Resources */,
 				D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */,
 				D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */,

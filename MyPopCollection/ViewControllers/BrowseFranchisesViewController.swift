@@ -48,7 +48,7 @@ class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegat
         let letters = CharacterSet.letters
 
         for f in fromArray {
-            var firstCharacter = String(f.name.characters.first!)
+            var firstCharacter = String(f.name.characters.first!).uppercased()
             
             if !letters.contains(firstCharacter.unicodeScalars.first!) {
                 firstCharacter = "#"

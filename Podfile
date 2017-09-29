@@ -12,6 +12,7 @@ def default_pods
     pod 'SDWebImage'
     pod 'UIImageViewAlignedSwift'
     pod 'PKHUD'
+    pod 'CSV.swift'
 end
 
 target 'MyPopCollection' do

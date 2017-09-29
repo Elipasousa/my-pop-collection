@@ -12,7 +12,7 @@ import RealmSwift
 class Item : Object {
     
     dynamic var name: String = ""
-    dynamic var number: Int = 0
+    dynamic var number: Int = -1
     dynamic var image: String?
     dynamic var franchise: String = ""
     dynamic var category: String = ""
