@@ -113,6 +113,7 @@ class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableV
             HUD.show(.systemActivity)
             ServiceMock.sharedInstance.parseItems {
                 HUD.hide()
+                ServiceMock.sharedInstance.checkDoubles()
             }
         }
     }
