@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -103,5 +104,16 @@ class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //self.presentItemDetails(fromItem: self.wishlist[indexPath.row])
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func updateDatabaseTouched(_ sender: Any) {
+        DispatchQueue.main.async {
+            HUD.show(.systemActivity)
+            ServiceMock.sharedInstance.parseItems {
+                HUD.hide()
+            }
+        }
     }
 }
