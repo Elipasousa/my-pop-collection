@@ -1,5 +1,5 @@
 //
-//  BrowseFranchisesViewController.swift
+//  SearchFranchisesViewController.swift
 //  MyPopCollection
 //
 //  Created by Elisabete Sousa on 23/08/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BrowseFranchisesViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class SearchFranchisesViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     //MARK : - Outlets
     @IBOutlet weak var tableView: UITableView!

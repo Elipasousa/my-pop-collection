@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5671953850C6F00DA956CA53 /* Pods_MyPopCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560B916DFC744D6FF14E93CC /* Pods_MyPopCollection.framework */; };
 		D70721B11F7E9BD500EC49C8 /* pops.csv in Resources */ = {isa = PBXBuildFile; fileRef = D70721B01F7E9BD500EC49C8 /* pops.csv */; };
+		D70721BC1F8B8FC800EC49C8 /* SearchCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */; };
+		D70721BE1F8B90B200EC49C8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BD1F8B90B200EC49C8 /* Category.swift */; };
+		D70721C01F8B951200EC49C8 /* CategoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */; };
 		D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB6E1F4DBB420086BD94 /* AppDelegate.swift */; };
 		D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D757AB721F4DBB420086BD94 /* Main.storyboard */; };
 		D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D757AB751F4DBB420086BD94 /* Assets.xcassets */; };
@@ -16,7 +19,7 @@
 		D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB841F4DBC8B0086BD94 /* Constants.swift */; };
 		D757AB871F4DD6790086BD94 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */; };
 		D757AB891F4DD7340086BD94 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */; };
-		D757AB8B1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB8A1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift */; };
+		D757AB8B1F4DD7B50086BD94 /* SearchFranchisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB8A1F4DD7B50086BD94 /* SearchFranchisesViewController.swift */; };
 		D757AB8D1F4DD7CB0086BD94 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */; };
 		D757AB901F4F0FEB0086BD94 /* BebasNeue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D757AB8F1F4F0FEB0086BD94 /* BebasNeue.ttf */; };
 		D757AB951F4F10BB0086BD94 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB941F4F10BB0086BD94 /* DatabaseHelper.swift */; };
@@ -48,6 +51,9 @@
 		6D8CD9F49D33ABA91209AF89 /* Pods-MyPopCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPopCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPopCollection/Pods-MyPopCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		9A9A3D5E1276AC562AC666C7 /* Pods-MyPopCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPopCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPopCollection/Pods-MyPopCollection.release.xcconfig"; sourceTree = "<group>"; };
 		D70721B01F7E9BD500EC49C8 /* pops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pops.csv; sourceTree = "<group>"; };
+		D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryViewController.swift; sourceTree = "<group>"; };
+		D70721BD1F8B90B200EC49C8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewController.swift; sourceTree = "<group>"; };
 		D757AB6B1F4DBB420086BD94 /* MyPopCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPopCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D757AB6E1F4DBB420086BD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D757AB731F4DBB420086BD94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,7 +63,7 @@
 		D757AB841F4DBC8B0086BD94 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
-		D757AB8A1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseFranchisesViewController.swift; sourceTree = "<group>"; };
+		D757AB8A1F4DD7B50086BD94 /* SearchFranchisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFranchisesViewController.swift; sourceTree = "<group>"; };
 		D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
 		D757AB8F1F4F0FEB0086BD94 /* BebasNeue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.ttf; sourceTree = "<group>"; };
 		D757AB941F4F10BB0086BD94 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
@@ -157,7 +163,7 @@
 			children = (
 				D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */,
 				D757AB9D1F4F34410086BD94 /* BaseViewViewController.swift */,
-				D757AB8A1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift */,
+				D757AB8A1F4DD7B50086BD94 /* SearchFranchisesViewController.swift */,
 				D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */,
 				D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */,
 				D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */,
@@ -165,6 +171,8 @@
 				D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */,
 				D7C807881F4E05F800DA4E33 /* StatsViewController.swift */,
 				D7EA556F1F5851360014E1EA /* WishlistViewController.swift */,
+				D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */,
+				D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 			children = (
 				D7C8078C1F4E08F200DA4E33 /* Franchise.swift */,
 				D7C807841F4E031400DA4E33 /* Item.swift */,
+				D70721BD1F8B90B200EC49C8 /* Category.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -388,13 +397,16 @@
 				D7C8078D1F4E08F200DA4E33 /* Franchise.swift in Sources */,
 				D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */,
 				D7C807851F4E031400DA4E33 /* Item.swift in Sources */,
-				D757AB8B1F4DD7B50086BD94 /* BrowseFranchisesViewController.swift in Sources */,
+				D757AB8B1F4DD7B50086BD94 /* SearchFranchisesViewController.swift in Sources */,
 				D7EA55721F5857760014E1EA /* WishlistTableViewCell.swift in Sources */,
 				D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */,
 				D7EA55701F5851360014E1EA /* WishlistViewController.swift in Sources */,
 				D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */,
+				D70721BE1F8B90B200EC49C8 /* Category.swift in Sources */,
+				D70721C01F8B951200EC49C8 /* CategoryDetailsViewController.swift in Sources */,
 				D7C807891F4E05F800DA4E33 /* StatsViewController.swift in Sources */,
 				D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */,
+				D70721BC1F8B8FC800EC49C8 /* SearchCategoryViewController.swift in Sources */,
 				D757AB951F4F10BB0086BD94 /* DatabaseHelper.swift in Sources */,
 				D757ABA61F4F433B0086BD94 /* FranchiseDetailsViewController.swift in Sources */,
 				D757ABA01F4F38980086BD94 /* MyCollectionDetailsViewController.swift in Sources */,

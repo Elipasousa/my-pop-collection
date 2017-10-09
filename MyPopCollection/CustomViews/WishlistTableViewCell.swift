@@ -38,9 +38,8 @@ class WishlistTableViewCell: UITableViewCell {
         self.layer.borderColor = Colors.clearGray.cgColor
     }
     
-    func setItem(_ item: Item, showValue: Bool) {
+    func setItem(_ item: Item, showCategory: Bool, showPrice: Bool) {
         self.labelName.text = item.name
-        self.labelCategory.text = item.franchise
 
         if let image = item.image {
             self.imageViewPicture.sd_setShowActivityIndicatorView(true)
@@ -48,7 +47,16 @@ class WishlistTableViewCell: UITableViewCell {
             self.imageViewPicture.sd_setImage(with: URL(string: image), placeholderImage: nil)
         }
         
-        if showValue {
+        if showCategory {
+            self.labelCategory.text = item.franchise
+            self.labelCategory.isHidden = false
+            self.labelName.numberOfLines = 1
+        } else {
+            self.labelCategory.isHidden = true
+            self.labelName.numberOfLines = 0
+        }
+        
+        if showPrice {
             self.labelValue.text = "\(item.estimatedValue)"
             self.labelValue.isHidden = false
         } else {

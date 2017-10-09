@@ -11,6 +11,7 @@ import RealmSwift
 
 class Item : Object {
     
+    dynamic var identifier: Int = 0
     dynamic var name: String = ""
     dynamic var number: Int = -1
     dynamic var image: String?

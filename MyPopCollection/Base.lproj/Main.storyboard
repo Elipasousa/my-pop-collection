@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Browse Franchises View Controller-->
+        <!--Search Franchises View Controller-->
         <scene sceneID="lWx-jI-dl0">
             <objects>
-                <viewController storyboardIdentifier="BrowseFranchisesViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oyw-oq-suC" customClass="BrowseFranchisesViewController" customModule="MyPopCollection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchFranchisesViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oyw-oq-suC" customClass="SearchFranchisesViewController" customModule="MyPopCollection" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aix-pT-hWi"/>
                         <viewControllerLayoutGuide type="bottom" id="SQq-bF-Q69"/>
@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVN-Rk-bQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-496" y="1335"/>
+            <point key="canvasLocation" x="-495" y="1334"/>
         </scene>
         <!--Stats View Controller-->
         <scene sceneID="mGr-Le-HDd">
@@ -338,6 +338,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6T7-hl-St4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="916" y="1439"/>
+        </scene>
+        <!--Search Category View Controller-->
+        <scene sceneID="e5z-Gg-lNO">
+            <objects>
+                <viewController storyboardIdentifier="SearchCategoryViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L4W-Kj-Xl5" customClass="SearchCategoryViewController" customModule="MyPopCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7a7-Ui-L73"/>
+                        <viewControllerLayoutGuide type="bottom" id="nZf-pf-k1h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lH1-xj-FTn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ui2-fs-iMR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="L4W-Kj-Xl5" id="RcU-WF-15c"/>
+                                    <outlet property="delegate" destination="L4W-Kj-Xl5" id="BYv-d1-ozn"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj9-RZ-8cv">
+                                <rect key="frame" x="15" y="321.5" width="345" height="24"/>
+                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nZf-pf-k1h" firstAttribute="top" secondItem="Ui2-fs-iMR" secondAttribute="bottom" id="2eL-Mn-ECR"/>
+                            <constraint firstItem="Ui2-fs-iMR" firstAttribute="top" secondItem="7a7-Ui-L73" secondAttribute="bottom" id="4c8-OP-ABV"/>
+                            <constraint firstItem="mj9-RZ-8cv" firstAttribute="centerY" secondItem="lH1-xj-FTn" secondAttribute="centerY" id="6Ff-2K-LuR"/>
+                            <constraint firstItem="mj9-RZ-8cv" firstAttribute="leading" secondItem="lH1-xj-FTn" secondAttribute="leading" constant="15" id="GSG-nH-wC5"/>
+                            <constraint firstItem="Ui2-fs-iMR" firstAttribute="leading" secondItem="lH1-xj-FTn" secondAttribute="leading" id="WgG-9d-qzP"/>
+                            <constraint firstAttribute="trailing" secondItem="Ui2-fs-iMR" secondAttribute="trailing" id="oOg-SH-22v"/>
+                            <constraint firstAttribute="trailing" secondItem="mj9-RZ-8cv" secondAttribute="trailing" constant="15" id="rok-wL-HqP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="foI-wE-md8"/>
+                    <connections>
+                        <outlet property="labelNoResultsFound" destination="mj9-RZ-8cv" id="Rxa-AZ-r7u"/>
+                        <outlet property="tableView" destination="Ui2-fs-iMR" id="bDC-nh-Y2f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kog-XF-uDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3079" y="1334"/>
         </scene>
         <!--Wishlist View Controller-->
         <scene sceneID="rDU-bT-LDv">
@@ -1369,7 +1417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5I-wG-ZRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-496" y="2107"/>
+            <point key="canvasLocation" x="-481" y="2106"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="mJN-Fj-jIV">
@@ -1429,7 +1477,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Oyw-oq-suC" kind="relationship" relationship="rootViewController" id="vd7-y3-3CC"/>
+                        <segue destination="Oyw-oq-suC" kind="relationship" relationship="rootViewController" id="YDZ-sI-p4L"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WpK-pa-e2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1473,6 +1521,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22s-E0-3Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="201" y="501"/>
+        </scene>
+        <!--Category Details View Controller-->
+        <scene sceneID="I6e-IJ-rIl">
+            <objects>
+                <viewController storyboardIdentifier="CategoryDetailsViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eu4-bQ-NPS" customClass="CategoryDetailsViewController" customModule="MyPopCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aGQ-Al-n1f"/>
+                        <viewControllerLayoutGuide type="bottom" id="iaS-az-Vtu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UoD-oK-9Ud">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mSp-GI-IcW">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" red="0.94901960780000005" green="0.71764705880000002" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Eu4-bQ-NPS" id="XWj-sZ-BdM"/>
+                                    <outlet property="delegate" destination="Eu4-bQ-NPS" id="GsJ-bh-IXs"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yh1-3J-04N">
+                                <rect key="frame" x="15" y="91" width="345" height="24"/>
+                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVn-7Y-lAJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="Eu4-bQ-NPS" id="eAv-Au-fXy"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93709164860000005" green="0.93694382909999996" blue="0.95754462480000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Yh1-3J-04N" secondAttribute="trailing" constant="15" id="FJa-gg-18x"/>
+                            <constraint firstItem="aVn-7Y-lAJ" firstAttribute="leading" secondItem="UoD-oK-9Ud" secondAttribute="leading" id="U5I-hI-nLM"/>
+                            <constraint firstItem="Yh1-3J-04N" firstAttribute="leading" secondItem="UoD-oK-9Ud" secondAttribute="leading" constant="15" id="cvw-La-EiC"/>
+                            <constraint firstItem="Yh1-3J-04N" firstAttribute="top" secondItem="aVn-7Y-lAJ" secondAttribute="bottom" constant="15" id="hVD-nM-MEE"/>
+                            <constraint firstAttribute="trailing" secondItem="aVn-7Y-lAJ" secondAttribute="trailing" id="mcS-6I-4J8"/>
+                            <constraint firstItem="aVn-7Y-lAJ" firstAttribute="top" secondItem="aGQ-Al-n1f" secondAttribute="bottom" id="oHq-Gk-3c3"/>
+                            <constraint firstAttribute="trailing" secondItem="mSp-GI-IcW" secondAttribute="trailing" id="s8j-BF-yev"/>
+                            <constraint firstItem="mSp-GI-IcW" firstAttribute="top" secondItem="aVn-7Y-lAJ" secondAttribute="bottom" id="uem-N1-Jw6"/>
+                            <constraint firstItem="mSp-GI-IcW" firstAttribute="leading" secondItem="UoD-oK-9Ud" secondAttribute="leading" id="xzO-m0-LwO"/>
+                            <constraint firstItem="iaS-az-Vtu" firstAttribute="top" secondItem="mSp-GI-IcW" secondAttribute="bottom" id="yFZ-YR-dAA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nQG-dA-i7x"/>
+                    <connections>
+                        <outlet property="labelNoResultsFound" destination="Yh1-3J-04N" id="mLk-Rc-bMY"/>
+                        <outlet property="searchBar" destination="aVn-7Y-lAJ" id="O6o-ZR-XOh"/>
+                        <outlet property="tableView" destination="mSp-GI-IcW" id="jSb-Ac-Xum"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7a8-gZ-EnO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3079" y="2007"/>
         </scene>
     </scenes>
     <resources>

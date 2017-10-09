@@ -51,6 +51,25 @@ class DatabaseHelper {
         }
     }
     
+    class func addCategory(_ category: Category) {
+        let realm = try! Realm()
+        
+        /*try! realm.write {
+         realm.delete(item)
+         }*/
+        
+        let predicate = NSPredicate(format: "name = %@", category.name)
+        let a = Array(realm.objects(Category.self).filter(predicate))
+        
+        if a.count != 0 {
+            return
+        }
+        
+        try! realm.write {
+            realm.add(category)
+        }
+    }
+    
     //MARK : - Items
     
     class func getAllItemsFromMyCollection() -> [Item] {
@@ -166,6 +185,23 @@ class DatabaseHelper {
             predicate = NSPredicate(format: "franchise = %@ AND inMyCollection = true", franchise.name)
         }
         
+        return Array(realm.objects(Item.self).filter(predicate)).sorted(by: {$0.number < $1.number})
+    }
+    
+    //MARK : - Categories
+
+    class func getCategories() -> [Category] {
+        let realm = try! Realm()
+        return Array(realm.objects(Category.self)).sorted(by: {$0.name < $1.name})
+    }
+    
+    class func getItemsFromCategory(_ category: Category, withSearch: String?) -> [Item] {
+        let realm = try! Realm()
+        var predicate = NSPredicate(format: "category = %@", category.name)
+
+        if withSearch != nil && !withSearch!.isEmpty {
+            predicate = NSPredicate(format: "category = %@ AND name CONTAINS[c] %@", category.name, withSearch!)
+        }
         return Array(realm.objects(Item.self).filter(predicate)).sorted(by: {$0.number < $1.number})
     }
 }

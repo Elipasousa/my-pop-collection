@@ -1,56 +1,52 @@
 //
-//  WishlistViewController.swift
+//  CategoryDetailsViewController.swift
 //  MyPopCollection
 //
-//  Created by Elisabete Sousa on 31/08/2017.
+//  Created by Elisabete Sousa on 09/10/2017.
 //  Copyright © 2017 Elisabete Sousa. All rights reserved.
 //
 
 import UIKit
 
-class WishlistViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoryDetailsViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     //MARK : - Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var labelNoItems: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var labelNoResultsFound: UILabel!
     
     //MARK : - Vars
-    var wishlist: [Item] = []
+    internal var category: Category!
+    internal var items: [Item] = []
     
     //MARK : - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibs()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        reloadWishlist()
+        self.items = DatabaseHelper.getItemsFromCategory(self.category, withSearch: nil)
+        reloadItems()
     }
     
     //MARK: - Setups
     
     override func setupViews() {
         super.setupViews()
-        self.title = "Wishlist"
+    }
+    
+    func reloadItems() {
+        if self.items.isEmpty {
+            self.labelNoResultsFound.isHidden = false
+            self.tableView.isHidden = true
+            return
+        } else {
+            self.labelNoResultsFound.isHidden = true
+            self.tableView.isHidden = false
+        }
+        self.tableView.reloadData()
     }
     
     //MARK: - Table View Methods
-    
-    func reloadWishlist() {
-        self.wishlist.removeAll()
-        self.wishlist = DatabaseHelper.getAllItemsFromMyWishlist()
-        
-        if self.wishlist.count == 0 {
-            self.labelNoItems.isHidden = false
-            self.tableView.isHidden = true
-        } else {
-            self.labelNoItems.isHidden = true
-            self.tableView.isHidden = false
-            self.tableView.reloadData()
-        }
-    }
     
     func registerNibs() {
         self.tableView.register(UINib(nibName: "WishlistTableViewCell", bundle: nil), forCellReuseIdentifier: "WishlistTableViewCell")
@@ -61,7 +57,7 @@ class WishlistViewController: BaseViewViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.wishlist.count
+        return self.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,8 +65,8 @@ class WishlistViewController: BaseViewViewController, UITableViewDelegate, UITab
         if (cell == nil) {
             cell = Bundle.main.loadNibNamed("WishlistTableViewCell", owner: self, options: nil)![0] as! WishlistTableViewCell
         }
-        cell.setItem(self.wishlist[indexPath.row], showCategory: true, showPrice: false)
-        return cell
+        cell.setItem(self.items[indexPath.row], showCategory: false, showPrice: false)
+        return cell;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,6 +75,24 @@ class WishlistViewController: BaseViewViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.presentItemDetails(fromItem: self.wishlist[indexPath.row])
+        presentItemDetails(fromItem: self.items[indexPath.row])
+    }
+    
+    //MARK : - UISearchBarDelegate
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.items = DatabaseHelper.getItemsFromCategory(self.category, withSearch: searchText)
+        reloadItems()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.text = ""
+        self.items = DatabaseHelper.getItemsFromCategory(self.category, withSearch: nil)
+        reloadItems()
+        self.searchBar.resignFirstResponder()
     }
 }

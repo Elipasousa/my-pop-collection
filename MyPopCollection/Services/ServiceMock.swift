@@ -41,7 +41,11 @@ class ServiceMock {
                     let f = Franchise()
                     f.name = csv["franchise"]!
                     
+                    let c = Category()
+                    c.name = csv["category"]!
+                    
                     DatabaseHelper.addFranchise(f)
+                    DatabaseHelper.addCategory(c)
                     DatabaseHelper.addItem(p)
                     
                     /*print("\(csv["name"])")
@@ -53,9 +57,7 @@ class ServiceMock {
                      print("\(csv["release_date"])")
                      print("----------------------")*/
                     
-                }/* else {
-                 print("DENIED: \(csv["category"]!)")
-                 }*/
+                }
             }
             completion()
         }
@@ -63,6 +65,8 @@ class ServiceMock {
     
     func checkDoubles() {
         let franchises = DatabaseHelper.getFranchises(withSearch: nil)
+        print("TOTAL FRACHISES: \(franchises.count)")
+        var dif_f_c = 0
         
         for f in franchises {
             let items = DatabaseHelper.getItemsFromFranchise(fromFranchise: f, inMyCollectionOnly: false)
@@ -74,11 +78,13 @@ class ServiceMock {
                 }
             }
             if category_names.count > 1 {
+                dif_f_c += 1
                 print("\n" + f.name)
                 for s in category_names {
                     print("\t" + s)
                 }
             }
         }
+        print("DIF FRACHISES: \(dif_f_c)")
     }
 }

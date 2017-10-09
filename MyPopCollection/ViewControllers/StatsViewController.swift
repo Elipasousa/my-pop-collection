@@ -93,7 +93,7 @@ class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableV
         if (cell == nil) {
             cell = Bundle.main.loadNibNamed("WishlistTableViewCell", owner: self, options: nil)![0] as! WishlistTableViewCell
         }
-        cell.setItem(self.allSortedItems[indexPath.row], showValue: true)
+        cell.setItem(self.allSortedItems[indexPath.row], showCategory: true, showPrice: true)
         return cell;
     }
     
