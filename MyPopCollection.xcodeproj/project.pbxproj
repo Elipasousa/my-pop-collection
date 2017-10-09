@@ -12,6 +12,7 @@
 		D70721BC1F8B8FC800EC49C8 /* SearchCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */; };
 		D70721BE1F8B90B200EC49C8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BD1F8B90B200EC49C8 /* Category.swift */; };
 		D70721C01F8B951200EC49C8 /* CategoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */; };
+		D70721C21F8BD76F00EC49C8 /* FranchisePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721C11F8BD76F00EC49C8 /* FranchisePickerViewController.swift */; };
 		D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB6E1F4DBB420086BD94 /* AppDelegate.swift */; };
 		D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D757AB721F4DBB420086BD94 /* Main.storyboard */; };
 		D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D757AB751F4DBB420086BD94 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryViewController.swift; sourceTree = "<group>"; };
 		D70721BD1F8B90B200EC49C8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewController.swift; sourceTree = "<group>"; };
+		D70721C11F8BD76F00EC49C8 /* FranchisePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchisePickerViewController.swift; sourceTree = "<group>"; };
 		D757AB6B1F4DBB420086BD94 /* MyPopCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPopCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D757AB6E1F4DBB420086BD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D757AB731F4DBB420086BD94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,16 +165,17 @@
 			children = (
 				D757AB8C1F4DD7CB0086BD94 /* AddNewItemViewController.swift */,
 				D757AB9D1F4F34410086BD94 /* BaseViewViewController.swift */,
-				D757AB8A1F4DD7B50086BD94 /* SearchFranchisesViewController.swift */,
+				D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */,
 				D757ABA51F4F433B0086BD94 /* FranchiseDetailsViewController.swift */,
 				D7C807861F4E049400DA4E33 /* ItemDetailsViewController.swift */,
 				D757AB861F4DD6790086BD94 /* MainTabBarViewController.swift */,
 				D757AB9F1F4F38980086BD94 /* MyCollectionDetailsViewController.swift */,
 				D757AB881F4DD7340086BD94 /* MyCollectionViewController.swift */,
+				D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */,
+				D757AB8A1F4DD7B50086BD94 /* SearchFranchisesViewController.swift */,
 				D7C807881F4E05F800DA4E33 /* StatsViewController.swift */,
 				D7EA556F1F5851360014E1EA /* WishlistViewController.swift */,
-				D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */,
-				D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */,
+				D70721C11F8BD76F00EC49C8 /* FranchisePickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				D7EA55721F5857760014E1EA /* WishlistTableViewCell.swift in Sources */,
 				D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */,
 				D7EA55701F5851360014E1EA /* WishlistViewController.swift in Sources */,
+				D70721C21F8BD76F00EC49C8 /* FranchisePickerViewController.swift in Sources */,
 				D7C807871F4E049400DA4E33 /* ItemDetailsViewController.swift in Sources */,
 				D70721BE1F8B90B200EC49C8 /* Category.swift in Sources */,
 				D70721C01F8B951200EC49C8 /* CategoryDetailsViewController.swift in Sources */,

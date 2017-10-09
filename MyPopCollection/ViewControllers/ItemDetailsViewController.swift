@@ -10,7 +10,7 @@ import UIKit
 import UIImageViewAlignedSwift
 import PKHUD
 
-class ItemDetailsViewController: BaseViewViewController {
+class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol {
 
     //MARK : - Outlets
     // --- info ---
@@ -20,6 +20,8 @@ class ItemDetailsViewController: BaseViewViewController {
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelCategory: UILabel!
+    @IBOutlet weak var labelFranchise: UILabel!
+    @IBOutlet weak var buttonChangeFranchise: UIButton!
     // --- collection ---
     @IBOutlet weak var stackViewInMyCollection: UIStackView!
     // --- rarity ---
@@ -101,12 +103,19 @@ class ItemDetailsViewController: BaseViewViewController {
         }
         setupNavigationBarButtons()
     }
-
+    
+    @IBAction func changeFranchiseTouched(_ sender: Any) {
+        let vc: FranchisePickerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FranchisePickerViewController") as! FranchisePickerViewController
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     //MARK: - Aux
     
     func setItem() {
         self.labelName.text = self.item.name
         self.labelCategory.text = self.item.category
+        self.labelFranchise.text = self.item.franchise
         self.labelNumber.text = "\(self.item.number)"
         
         if let image = self.item.image {
@@ -145,5 +154,11 @@ class ItemDetailsViewController: BaseViewViewController {
         } else {
             self.stackViewInMyCollection.isHidden = true
         }
+    }
+    
+    //MARK: - FranchisePickerProtocol
+    
+    func didFinishPickingFranchise(withFranchise franchise: Franchise) {
+        //TODO
     }
 }
