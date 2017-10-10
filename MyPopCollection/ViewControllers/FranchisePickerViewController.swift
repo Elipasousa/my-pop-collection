@@ -123,6 +123,7 @@ class FranchisePickerViewController: BaseViewViewController, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.searchBar.resignFirstResponder()
         let a = self.franchises[self.letters[indexPath.section]]!
         if let delegate = self.delegate {
             delegate.didFinishPickingFranchise(withFranchise: a[indexPath.row])

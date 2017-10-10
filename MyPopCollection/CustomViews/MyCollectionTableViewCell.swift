@@ -13,6 +13,7 @@ class MyCollectionTableViewCell: UITableViewCell {
     
     //MARK : - Outlets
     @IBOutlet weak var imageViewLogo: UIImageView!
+    @IBOutlet weak var labelName: UILabel!
     
     //MARK : - Vars
     
@@ -40,6 +41,12 @@ class MyCollectionTableViewCell: UITableViewCell {
             self.imageViewLogo.sd_setShowActivityIndicatorView(true)
             self.imageViewLogo.sd_setIndicatorStyle(.gray)
             self.imageViewLogo.sd_setImage(with: URL(string: image), placeholderImage: nil)
+            self.imageViewLogo.isHidden = false
+            self.labelName.isHidden = true
+        } else {
+            self.labelName.text = franchise.name
+            self.imageViewLogo.isHidden = true
+            self.labelName.isHidden = false
         }
     }
 }
