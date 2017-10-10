@@ -20,7 +20,7 @@ class DatabaseHelper {
          realm.delete(item)
          }*/
         
-        let predicate = NSPredicate(format: "name = %@", item.name)
+        let predicate = NSPredicate(format: "identifier = %d", item.identifier)
         let a = Array(realm.objects(Item.self).filter(predicate))
         
         if a.count != 0 {
@@ -32,6 +32,7 @@ class DatabaseHelper {
         }
     }
     
+    //TODO franchise id
     class func addFranchise(_ franchise: Franchise) {
         let realm = try! Realm()
         
@@ -51,6 +52,7 @@ class DatabaseHelper {
         }
     }
     
+    //TODO category id
     class func addCategory(_ category: Category) {
         let realm = try! Realm()
         
@@ -82,10 +84,10 @@ class DatabaseHelper {
         return Array(realm.objects(Item.self).filter("inMyWishlist == true"))
     }
     
-    class func addItemToMyWishlist(withName name: String) {
+    class func addItemToMyWishlist(withIdentifier identifier: Int) {
         let realm = try! Realm()
         
-        let predicate = NSPredicate(format: "name = %@", name)
+        let predicate = NSPredicate(format: "identifier = %d", identifier)
         let item = realm.objects(Item.self).filter(predicate).first!
         
         try! realm.write {
@@ -93,10 +95,10 @@ class DatabaseHelper {
         }
     }
     
-    class func removeItemFromMyWishlist(withName name: String) {
+    class func removeItemFromMyWishlist(withIdentifier identifier: Int) {
         let realm = try! Realm()
         
-        let predicate = NSPredicate(format: "name = %@", name)
+        let predicate = NSPredicate(format: "identifier = %d", identifier)
         let item = realm.objects(Item.self).filter(predicate).first!
         
         try! realm.write {
@@ -104,10 +106,22 @@ class DatabaseHelper {
         }
     }
     
-    class func updateItem(withName name: String, paidPrice: Double, estimatedValue: Double, dateBought: Date, rarity: String, condition: String, itemState: String, boxState: String) {
+    //TODO franchise id
+    class func changeItemFranchise(withIdentifier identifier: Int, toFranchise franchise: String) {
         let realm = try! Realm()
         
-        let predicate = NSPredicate(format: "name = %@", name)
+        let predicate = NSPredicate(format: "identifier = %d", identifier)
+        let item = realm.objects(Item.self).filter(predicate).first!
+        
+        try! realm.write {
+            item.franchise = franchise
+        }
+    }
+    
+    class func updateItem(withIdentifier identifier: Int, paidPrice: Double, estimatedValue: Double, dateBought: Date, rarity: String, condition: String, itemState: String, boxState: String) {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "identifier = %d", identifier)
         let item = realm.objects(Item.self).filter(predicate).first!
         
         try! realm.write {
@@ -124,10 +138,10 @@ class DatabaseHelper {
         increaseItemOfFranchiseFromMyCollection(franchiseWithName: item.franchise)
     }
     
-    class func removeItem(withName name: String) {
+    class func removeItem(withIdentifier identifier: Int) {
         let realm = try! Realm()
         
-        let predicate = NSPredicate(format: "name = %@", name)
+        let predicate = NSPredicate(format: "identifier = %d", identifier)
         let item = realm.objects(Item.self).filter(predicate).first!
         
         try! realm.write {
@@ -150,6 +164,7 @@ class DatabaseHelper {
         }
     }
     
+    //TODO franchise id
     class func increaseItemOfFranchiseFromMyCollection(franchiseWithName name: String) {
         let realm = try! Realm()
         
@@ -161,6 +176,7 @@ class DatabaseHelper {
         }
     }
     
+    //TODO franchise id
     class func decreaseItemOfFranchiseFromMyCollection(franchiseWithName name: String) {
         let realm = try! Realm()
         
@@ -177,6 +193,7 @@ class DatabaseHelper {
         return Array(realm.objects(Franchise.self).filter("itemsInMyCollection != 0")).sorted(by: {$0.name < $1.name})
     }
     
+    //TODO franchise id
     class func getItemsFromFranchise(fromFranchise franchise: Franchise, inMyCollectionOnly: Bool) -> [Item] {
         let realm = try! Realm()
         
@@ -195,6 +212,7 @@ class DatabaseHelper {
         return Array(realm.objects(Category.self)).sorted(by: {$0.name < $1.name})
     }
     
+    //TODO category id
     class func getItemsFromCategory(_ category: Category, withSearch: String?) -> [Item] {
         let realm = try! Realm()
         var predicate = NSPredicate(format: "category = %@", category.name)

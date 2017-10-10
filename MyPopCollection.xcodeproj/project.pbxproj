@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5671953850C6F00DA956CA53 /* Pods_MyPopCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 560B916DFC744D6FF14E93CC /* Pods_MyPopCollection.framework */; };
-		D70721B11F7E9BD500EC49C8 /* pops.csv in Resources */ = {isa = PBXBuildFile; fileRef = D70721B01F7E9BD500EC49C8 /* pops.csv */; };
 		D70721BC1F8B8FC800EC49C8 /* SearchCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */; };
 		D70721BE1F8B90B200EC49C8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BD1F8B90B200EC49C8 /* Category.swift */; };
 		D70721C01F8B951200EC49C8 /* CategoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */; };
 		D70721C21F8BD76F00EC49C8 /* FranchisePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721C11F8BD76F00EC49C8 /* FranchisePickerViewController.swift */; };
+		D70721C41F8CE3F900EC49C8 /* pops.csv in Resources */ = {isa = PBXBuildFile; fileRef = D70721C31F8CE3F800EC49C8 /* pops.csv */; };
 		D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB6E1F4DBB420086BD94 /* AppDelegate.swift */; };
 		D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D757AB721F4DBB420086BD94 /* Main.storyboard */; };
 		D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D757AB751F4DBB420086BD94 /* Assets.xcassets */; };
@@ -51,11 +51,11 @@
 		560B916DFC744D6FF14E93CC /* Pods_MyPopCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPopCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8CD9F49D33ABA91209AF89 /* Pods-MyPopCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPopCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPopCollection/Pods-MyPopCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		9A9A3D5E1276AC562AC666C7 /* Pods-MyPopCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPopCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPopCollection/Pods-MyPopCollection.release.xcconfig"; sourceTree = "<group>"; };
-		D70721B01F7E9BD500EC49C8 /* pops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pops.csv; sourceTree = "<group>"; };
 		D70721BB1F8B8FC800EC49C8 /* SearchCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryViewController.swift; sourceTree = "<group>"; };
 		D70721BD1F8B90B200EC49C8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewController.swift; sourceTree = "<group>"; };
 		D70721C11F8BD76F00EC49C8 /* FranchisePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchisePickerViewController.swift; sourceTree = "<group>"; };
+		D70721C31F8CE3F800EC49C8 /* pops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pops.csv; sourceTree = "<group>"; };
 		D757AB6B1F4DBB420086BD94 /* MyPopCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPopCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D757AB6E1F4DBB420086BD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D757AB731F4DBB420086BD94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		D757AB6D1F4DBB420086BD94 /* MyPopCollection */ = {
 			isa = PBXGroup;
 			children = (
-				D70721B01F7E9BD500EC49C8 /* pops.csv */,
+				D70721C31F8CE3F800EC49C8 /* pops.csv */,
 				D7BEB9081F54290A003853B7 /* Extensions */,
 				D757AB931F4F108D0086BD94 /* Database */,
 				D757AB8E1F4F0FB30086BD94 /* Fonts */,
@@ -305,7 +305,7 @@
 			files = (
 				D757AB791F4DBB420086BD94 /* LaunchScreen.storyboard in Resources */,
 				D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */,
-				D70721B11F7E9BD500EC49C8 /* pops.csv in Resources */,
+				D70721C41F8CE3F900EC49C8 /* pops.csv in Resources */,
 				D757AB9C1F4F21F60086BD94 /* MyCollectionTableViewCell.xib in Resources */,
 				D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */,
 				D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */,

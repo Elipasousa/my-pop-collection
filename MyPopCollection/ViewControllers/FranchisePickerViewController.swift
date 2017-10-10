@@ -36,7 +36,7 @@ class FranchisePickerViewController: BaseViewViewController, UITableViewDelegate
     
     override func setupViews() {
         super.setupViews()
-        self.title = "Search"
+        self.title = "Pick new"
     }
     
     func reloadFranchises(fromArray: [Franchise]) {
@@ -127,7 +127,7 @@ class FranchisePickerViewController: BaseViewViewController, UITableViewDelegate
         if let delegate = self.delegate {
             delegate.didFinishPickingFranchise(withFranchise: a[indexPath.row])
         }
-        self.dismiss(animated: true, completion: nil)
+        self.popViewController()
     }
     
     //MARK : - UISearchBarDelegate

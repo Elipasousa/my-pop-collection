@@ -28,6 +28,7 @@ class ServiceMock {
                 
                 if csv["category"]!.hasPrefix("Pop! Vinyl Pop!") {
                     let p = Item()
+                    p.identifier = Int(csv["pop_id"]!)!
                     p.name = csv["name"]!
                     p.image = csv["image_url"]
                     p.franchise = csv["franchise"]!
@@ -48,7 +49,8 @@ class ServiceMock {
                     DatabaseHelper.addCategory(c)
                     DatabaseHelper.addItem(p)
                     
-                    /*print("\(csv["name"])")
+                    /*print("\(csv["pop_id"])")
+                     print("\(csv["name"])")
                      print("\(csv["franchise"])")
                      print("\(csv["category"])")
                      print("\(csv["price"])")

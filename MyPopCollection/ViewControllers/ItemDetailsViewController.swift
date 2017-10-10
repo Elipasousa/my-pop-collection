@@ -95,10 +95,10 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
     
     func buttonWishlistTouched() {
         if self.item.inMyWishlist {
-            DatabaseHelper.removeItemFromMyWishlist(withName: self.item.name)
+            DatabaseHelper.removeItemFromMyWishlist(withIdentifier: self.item.identifier)
             HUD.flash(.image(UIImage(named: "unfavorite")), delay: HUDTime.success)
         } else {
-            DatabaseHelper.addItemToMyWishlist(withName: self.item.name)
+            DatabaseHelper.addItemToMyWishlist(withIdentifier: self.item.identifier)
             HUD.flash(.image(UIImage(named: "favorite")), delay: HUDTime.success)
         }
         setupNavigationBarButtons()
@@ -107,7 +107,7 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
     @IBAction func changeFranchiseTouched(_ sender: Any) {
         let vc: FranchisePickerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FranchisePickerViewController") as! FranchisePickerViewController
         vc.delegate = self
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - Aux
@@ -159,6 +159,6 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
     //MARK: - FranchisePickerProtocol
     
     func didFinishPickingFranchise(withFranchise franchise: Franchise) {
-        //TODO
+        DatabaseHelper.changeItemFranchise(withIdentifier: self.item.identifier, toFranchise: franchise.name)
     }
 }

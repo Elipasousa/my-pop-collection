@@ -108,7 +108,7 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
             estimatedValue = Double(number)
         }
         
-        DatabaseHelper.updateItem(withName: self.item.name,
+        DatabaseHelper.updateItem(withIdentifier: self.item.identifier,
                                   paidPrice: paidPrice,
                                   estimatedValue: estimatedValue,
                                   dateBought: date,
@@ -265,7 +265,7 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "Yes",
                                       style: .default,
                                       handler: { (_) in
-                                        DatabaseHelper.removeItem(withName: self.item.name)
+                                        DatabaseHelper.removeItem(withIdentifier: self.item.identifier)
                                         self.popViewController()
         }))
         
