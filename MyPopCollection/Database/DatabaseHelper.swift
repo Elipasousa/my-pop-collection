@@ -113,6 +113,11 @@ class DatabaseHelper {
         let predicate = NSPredicate(format: "identifier = %d", identifier)
         let item = realm.objects(Item.self).filter(predicate).first!
         
+        if item.inMyCollection {
+            DatabaseHelper.decreaseItemOfFranchiseFromMyCollection(franchiseWithName: item.franchise)
+            DatabaseHelper.increaseItemOfFranchiseFromMyCollection(franchiseWithName: franchise)
+        }
+        
         try! realm.write {
             item.franchise = franchise
         }
