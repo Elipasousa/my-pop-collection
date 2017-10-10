@@ -7,7 +7,7 @@ def default_pods
     pod 'Reveal-SDK', :configurations => ['Debug']
     pod 'IQKeyboardManagerSwift'
     pod 'ActionSheetPicker-3.0'
-    pod 'SwiftDate'
+    pod 'SwiftDate', '~> 4.3.0'
     pod 'RealmSwift'
     pod 'SDWebImage'
     pod 'UIImageViewAlignedSwift'

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class BaseViewViewController: UIViewController {
 
@@ -23,7 +24,7 @@ class BaseViewViewController: UIViewController {
     //MARK: - Setups
     
     func setupViews() {
-        
+        IQKeyboardManager.sharedManager().enable = true
     }
     
     //MARK: - NavigationBar
