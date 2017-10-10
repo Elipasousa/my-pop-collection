@@ -68,6 +68,12 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
         super.setupViews()
 
         self.viewNumber.layer.cornerRadius = self.viewNumber.frame.size.height/2
+
+        let attributes: [String : Any] = [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+                                          NSFontAttributeName: self.buttonChangeFranchise.titleLabel!.font,
+                                          NSForegroundColorAttributeName: Colors.lightGray]
+        let attributedText = NSAttributedString(string: self.buttonChangeFranchise.currentTitle!, attributes: attributes)
+        self.buttonChangeFranchise.setAttributedTitle(attributedText, for: .normal)
     }
     
     func setupNavigationBarButtons() {
@@ -116,7 +122,12 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
         self.labelName.text = self.item.name
         self.labelCategory.text = self.item.category
         self.labelFranchise.text = self.item.franchise
-        self.labelNumber.text = "\(self.item.number)"
+        
+        if self.item.number != -1 {
+            self.labelNumber.text = "\(self.item.number)"
+        } else {
+            self.labelNumber.text = "-"
+        }
         
         if let image = self.item.image {
             self.imageViewPicture.sd_setShowActivityIndicatorView(true)
