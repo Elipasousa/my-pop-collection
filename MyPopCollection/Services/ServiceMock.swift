@@ -25,47 +25,69 @@ class ServiceMock {
             
             while let _ = csv.next() {
                 //print("\(row)")
-                
-                if csv["category"]!.hasPrefix("Pop! Vinyl Pop!") {
+                if csv["category_name"]!.hasPrefix("Pop! Vinyl Pop!") {
                     let p = Item()
                     p.identifier = Int(csv["pop_id"]!)!
                     p.name = csv["name"]!
                     p.image = csv["image_url"]
-                    p.franchise = csv["franchise"]!
-                    p.category = csv["category"]!
+                    p.franchiseId = Int(csv["franchise_id"]!)!
+                    p.categoryId = Int(csv["category_id"]!)!
                     if let n = Int(csv["item_number"]!) {
                         p.number = n
                     } else {
                         p.number = -1
                     }
-                    
-                    let f = Franchise()
-                    f.name = csv["franchise"]!
-                    
-                    let c = Category()
-                    c.name = csv["category"]!
-                    
-                    DatabaseHelper.addFranchise(f)
-                    DatabaseHelper.addCategory(c)
                     DatabaseHelper.addItem(p)
-                    
-                    /*print("\(csv["pop_id"])")
-                     print("\(csv["name"])")
-                     print("\(csv["franchise"])")
-                     print("\(csv["category"])")
-                     print("\(csv["price"])")
-                     print("\(csv["item_number"])")
-                     print("\(csv["image_url"])")
-                     print("\(csv["release_date"])")
-                     print("----------------------")*/
-                    
                 }
             }
             completion()
         }
     }
     
-    func checkDoubles() {
+    func parseFranchises(completion: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            let filePath = Bundle.main.path(forResource: "franchises", ofType: "csv")!
+            let stream = InputStream(fileAtPath: filePath)!
+            let csv = try! CSVReader(stream: stream,
+                                     hasHeaderRow: true)
+            
+            let headerRow = csv.headerRow!
+            print("\(headerRow)")
+            
+            while let _ = csv.next() {
+                //print("\(row)")
+                let f = Franchise()
+                f.identifier = Int(csv["franchise_id"]!)!
+                f.name = csv["name"]!
+                f.image = csv["image_url"]
+                DatabaseHelper.addFranchise(f)
+            }
+            completion()
+        }
+    }
+    
+    func parseCategories(completion: @escaping () -> Void) {
+        DispatchQueue.main.async {
+            let filePath = Bundle.main.path(forResource: "categories", ofType: "csv")!
+            let stream = InputStream(fileAtPath: filePath)!
+            let csv = try! CSVReader(stream: stream,
+                                     hasHeaderRow: true)
+            
+            let headerRow = csv.headerRow!
+            print("\(headerRow)")
+            
+            while let _ = csv.next() {
+                //print("\(row)")
+                let c = Category()
+                c.identifier = Int(csv["category_id"]!)!
+                c.name = csv["name"]!
+                DatabaseHelper.addCategory(c)
+            }
+            completion()
+        }
+    }
+    
+    /*func checkDoubles() {
         let franchises = DatabaseHelper.getFranchises(withSearch: nil)
         print("TOTAL FRACHISES: \(franchises.count)")
         var dif_f_c = 0
@@ -88,5 +110,5 @@ class ServiceMock {
             }
         }
         print("DIF FRACHISES: \(dif_f_c)")
-    }
+    }*/
 }

@@ -42,7 +42,7 @@ class MyCollectionDetailsViewController: BaseViewViewController, UICollectionVie
     
     func reloadCollectionDetails() {
         self.items.removeAll()
-        self.items = DatabaseHelper.getItemsFromFranchise(fromFranchise: self.franchise, inMyCollectionOnly: true)
+        self.items = DatabaseHelper.getItemsFromFranchise(withIdentifier: self.franchise.identifier, inMyCollectionOnly: true)
         
         if self.items.count == 0 {
             self.labelNoItems.isHidden = false

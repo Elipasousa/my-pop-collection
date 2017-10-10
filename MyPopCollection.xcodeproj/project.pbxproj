@@ -12,7 +12,6 @@
 		D70721BE1F8B90B200EC49C8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BD1F8B90B200EC49C8 /* Category.swift */; };
 		D70721C01F8B951200EC49C8 /* CategoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */; };
 		D70721C21F8BD76F00EC49C8 /* FranchisePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70721C11F8BD76F00EC49C8 /* FranchisePickerViewController.swift */; };
-		D70721C41F8CE3F900EC49C8 /* pops.csv in Resources */ = {isa = PBXBuildFile; fileRef = D70721C31F8CE3F800EC49C8 /* pops.csv */; };
 		D757AB6F1F4DBB420086BD94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB6E1F4DBB420086BD94 /* AppDelegate.swift */; };
 		D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D757AB721F4DBB420086BD94 /* Main.storyboard */; };
 		D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D757AB751F4DBB420086BD94 /* Assets.xcassets */; };
@@ -45,6 +44,9 @@
 		D7EA55701F5851360014E1EA /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EA556F1F5851360014E1EA /* WishlistViewController.swift */; };
 		D7EA55721F5857760014E1EA /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EA55711F5857760014E1EA /* WishlistTableViewCell.swift */; };
 		D7EA55741F58577E0014E1EA /* WishlistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7EA55731F58577E0014E1EA /* WishlistTableViewCell.xib */; };
+		D7ECC7D41F8D575E00FCE7CF /* categories.csv in Resources */ = {isa = PBXBuildFile; fileRef = D7ECC7D11F8D575D00FCE7CF /* categories.csv */; };
+		D7ECC7D51F8D575E00FCE7CF /* pops.csv in Resources */ = {isa = PBXBuildFile; fileRef = D7ECC7D21F8D575E00FCE7CF /* pops.csv */; };
+		D7ECC7D61F8D575E00FCE7CF /* franchises.csv in Resources */ = {isa = PBXBuildFile; fileRef = D7ECC7D31F8D575E00FCE7CF /* franchises.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +57,6 @@
 		D70721BD1F8B90B200EC49C8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D70721BF1F8B951200EC49C8 /* CategoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewController.swift; sourceTree = "<group>"; };
 		D70721C11F8BD76F00EC49C8 /* FranchisePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchisePickerViewController.swift; sourceTree = "<group>"; };
-		D70721C31F8CE3F800EC49C8 /* pops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pops.csv; sourceTree = "<group>"; };
 		D757AB6B1F4DBB420086BD94 /* MyPopCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPopCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D757AB6E1F4DBB420086BD94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D757AB731F4DBB420086BD94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +91,9 @@
 		D7EA556F1F5851360014E1EA /* WishlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
 		D7EA55711F5857760014E1EA /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
 		D7EA55731F58577E0014E1EA /* WishlistTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WishlistTableViewCell.xib; sourceTree = "<group>"; };
+		D7ECC7D11F8D575D00FCE7CF /* categories.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = categories.csv; path = ../../../../Downloads/categories.csv; sourceTree = "<group>"; };
+		D7ECC7D21F8D575E00FCE7CF /* pops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pops.csv; path = ../../../../Downloads/pops.csv; sourceTree = "<group>"; };
+		D7ECC7D31F8D575E00FCE7CF /* franchises.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = franchises.csv; path = ../../../../Downloads/franchises.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +146,9 @@
 		D757AB6D1F4DBB420086BD94 /* MyPopCollection */ = {
 			isa = PBXGroup;
 			children = (
-				D70721C31F8CE3F800EC49C8 /* pops.csv */,
+				D7ECC7D11F8D575D00FCE7CF /* categories.csv */,
+				D7ECC7D31F8D575E00FCE7CF /* franchises.csv */,
+				D7ECC7D21F8D575E00FCE7CF /* pops.csv */,
 				D7BEB9081F54290A003853B7 /* Extensions */,
 				D757AB931F4F108D0086BD94 /* Database */,
 				D757AB8E1F4F0FB30086BD94 /* Fonts */,
@@ -305,11 +311,13 @@
 			files = (
 				D757AB791F4DBB420086BD94 /* LaunchScreen.storyboard in Resources */,
 				D757AB761F4DBB420086BD94 /* Assets.xcassets in Resources */,
-				D70721C41F8CE3F900EC49C8 /* pops.csv in Resources */,
+				D7ECC7D61F8D575E00FCE7CF /* franchises.csv in Resources */,
 				D757AB9C1F4F21F60086BD94 /* MyCollectionTableViewCell.xib in Resources */,
 				D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */,
 				D757AB741F4DBB420086BD94 /* Main.storyboard in Resources */,
 				D757AB901F4F0FEB0086BD94 /* BebasNeue.ttf in Resources */,
+				D7ECC7D41F8D575E00FCE7CF /* categories.csv in Resources */,
+				D7ECC7D51F8D575E00FCE7CF /* pops.csv in Resources */,
 				D7EA55741F58577E0014E1EA /* WishlistTableViewCell.xib in Resources */,
 				D7BEB9121F56CA27003853B7 /* SectionHeaderTitleView.xib in Resources */,
 				D757ABA41F4F42490086BD94 /* FranchiseTableViewCell.xib in Resources */,
@@ -327,22 +335,28 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyPopCollection/Pods-MyPopCollection-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-9/iOS/RevealServer.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-11/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/UIImageViewAlignedSwift/UIImageViewAlignedSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageViewAlignedSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,7 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -21,8 +21,8 @@ class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var labelNoItems: UILabel!
     
     //MARK : - Vars
-    let allSortedItems = DatabaseHelper.getAllItemsFromMyCollection().sorted(by: {$0.estimatedValue > $1.estimatedValue})
-    let wishlistItems = DatabaseHelper.getAllItemsFromMyWishlist()
+    internal var allSortedItems: [Item] = []
+    internal var wishlistItems: [Item] = []
 
     //MARK : - Lifecycle
     
@@ -33,6 +33,8 @@ class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.allSortedItems = DatabaseHelper.getAllItemsFromMyCollection().sorted(by: {$0.estimatedValue > $1.estimatedValue})
+        self.wishlistItems = DatabaseHelper.getAllItemsFromMyWishlist()
         setupMyStats()
         reloadTopTen()
     }
@@ -112,8 +114,11 @@ class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableV
         DispatchQueue.main.async {
             HUD.show(.systemActivity)
             ServiceMock.sharedInstance.parseItems {
-                HUD.hide()
-                ServiceMock.sharedInstance.checkDoubles()
+                ServiceMock.sharedInstance.parseFranchises {
+                    ServiceMock.sharedInstance.parseCategories {
+                        HUD.hide()
+                    }
+                }
             }
         }
     }

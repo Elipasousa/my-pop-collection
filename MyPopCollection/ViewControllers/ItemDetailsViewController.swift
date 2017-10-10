@@ -120,8 +120,8 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
     
     func setItem() {
         self.labelName.text = self.item.name
-        self.labelCategory.text = self.item.category
-        self.labelFranchise.text = self.item.franchise
+        self.labelCategory.text = self.item.categoryName()
+        self.labelFranchise.text = self.item.franchiseName()
         
         if self.item.number != -1 {
             self.labelNumber.text = "\(self.item.number)"
@@ -170,6 +170,6 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
     //MARK: - FranchisePickerProtocol
     
     func didFinishPickingFranchise(withFranchise franchise: Franchise) {
-        DatabaseHelper.changeItemFranchise(withIdentifier: self.item.identifier, toFranchise: franchise.name)
+        DatabaseHelper.changeItemFranchise(withItemIdentifier: self.item.identifier, toFranchiseIdentifier: franchise.identifier)
     }
 }

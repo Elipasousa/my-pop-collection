@@ -130,7 +130,7 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
     
     func setItem() {
         self.labelName.text = self.item.name
-        self.labelCategory.text = self.item.category
+        self.labelCategory.text = self.item.categoryName()
         self.labelNumber.text = "\(self.item.number)"
         
         if let image = self.item.image {

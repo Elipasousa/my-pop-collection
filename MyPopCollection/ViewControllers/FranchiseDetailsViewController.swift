@@ -26,7 +26,7 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.items = DatabaseHelper.getItemsFromFranchise(fromFranchise: self.franchise, inMyCollectionOnly: false)
+        self.items = DatabaseHelper.getItemsFromFranchise(withIdentifier: self.franchise.identifier, inMyCollectionOnly: false)
         self.collectionView.reloadData()
     }
     

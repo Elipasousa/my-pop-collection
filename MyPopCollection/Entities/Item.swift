@@ -15,8 +15,8 @@ class Item : Object {
     dynamic var name: String = ""
     dynamic var number: Int = -1
     dynamic var image: String?
-    dynamic var franchise: String = ""
-    dynamic var category: String = ""
+    dynamic var franchiseId: Int = 0
+    dynamic var categoryId: Int = 0
     // --- from my collection ---
     dynamic var paidPrice: Double = 0.0
     dynamic var estimatedValue: Double = 0.0
@@ -27,4 +27,12 @@ class Item : Object {
     dynamic var boxState: String = State.Mint.rawValue
     dynamic var inMyCollection: Bool = false
     dynamic var inMyWishlist: Bool = false
+    
+    func franchiseName() -> String {
+        return DatabaseHelper.getFranchise(withIdentifier: self.franchiseId).name
+    }
+    
+    func categoryName() -> String {
+        return DatabaseHelper.getCategory(withIdentifier: self.categoryId).name
+    }
 }

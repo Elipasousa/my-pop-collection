@@ -24,7 +24,7 @@ class CategoryDetailsViewController: BaseViewViewController, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibs()
-        self.items = DatabaseHelper.getItemsFromCategory(self.category, withSearch: nil)
+        self.items = DatabaseHelper.getItemsFromCategory(withIdentifier: self.category.identifier, withSearch: nil)
         reloadItems()
     }
     
@@ -81,7 +81,7 @@ class CategoryDetailsViewController: BaseViewViewController, UITableViewDelegate
     //MARK : - UISearchBarDelegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.items = DatabaseHelper.getItemsFromCategory(self.category, withSearch: searchText)
+        self.items = DatabaseHelper.getItemsFromCategory(withIdentifier: self.category.identifier, withSearch: searchText)
         reloadItems()
     }
     
@@ -91,7 +91,7 @@ class CategoryDetailsViewController: BaseViewViewController, UITableViewDelegate
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.text = ""
-        self.items = DatabaseHelper.getItemsFromCategory(self.category, withSearch: nil)
+        self.items = DatabaseHelper.getItemsFromCategory(withIdentifier: self.category.identifier, withSearch: nil)
         reloadItems()
         self.searchBar.resignFirstResponder()
     }

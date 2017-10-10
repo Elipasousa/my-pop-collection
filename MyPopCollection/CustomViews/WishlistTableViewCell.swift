@@ -48,7 +48,7 @@ class WishlistTableViewCell: UITableViewCell {
         }
         
         if showCategory {
-            self.labelCategory.text = item.franchise
+            self.labelCategory.text = item.franchiseName()
             self.labelCategory.isHidden = false
             self.labelName.numberOfLines = 1
         } else {
