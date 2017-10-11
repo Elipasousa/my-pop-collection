@@ -12,11 +12,13 @@ import SDWebImage
 class ItemCollectionViewCell: UICollectionViewCell {
     
     //MARK : - Outlets
+    @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var viewNumber: UIView!
     @IBOutlet weak var labelNumber: UILabel!
-    
+    @IBOutlet weak var imageViewBulkSelection: UIImageView!
+
     //MARK : - Vars
     
     //MARK : - Lifecycle
@@ -49,6 +51,21 @@ class ItemCollectionViewCell: UICollectionViewCell {
             self.imageViewPicture.sd_setShowActivityIndicatorView(true)
             self.imageViewPicture.sd_setIndicatorStyle(.gray)
             self.imageViewPicture.sd_setImage(with: URL(string: image), placeholderImage: nil)
+        }
+    }
+    
+    func setBulkSelectionMode(isOn isBulkSelection: Bool, isSelected: Bool) {
+        if isBulkSelection {
+            if isSelected {
+                self.viewMain.alpha = 0.2
+                self.imageViewBulkSelection.isHidden = false
+            } else {
+                self.viewMain.alpha = 1.0
+                self.imageViewBulkSelection.isHidden = true
+            }
+        } else {
+            self.viewMain.alpha = 1.0
+            self.imageViewBulkSelection.isHidden = true
         }
     }
 }

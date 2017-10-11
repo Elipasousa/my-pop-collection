@@ -17,11 +17,15 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     internal var franchise: Franchise!
     internal var items: [Item]!
     
+    private var isBulkSelecting: Bool = false
+    private var bulkSelectedIdentifiers: [Int] = []
+
     //MARK : - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibs()
+        setupNavigationBarButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +39,17 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     override func setupViews() {
         super.setupViews()
         self.title = self.franchise.name
+    }
+    
+    func setupNavigationBarButtons() {
+        if self.isBulkSelecting {
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(buttonCancelTouched))
+            self.navigationItem.rightBarButtonItems = [cancelButton]
+            
+        } else {
+            let selectButton = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(buttonSelectTouched))
+            self.navigationItem.rightBarButtonItems = [selectButton]
+        }
     }
     
     // MARK: - Collection View Methods
@@ -56,17 +71,46 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
         if (cell == nil) {
             cell = Bundle.main.loadNibNamed("ItemCollectionViewCell", owner: self, options: nil)![0] as! ItemCollectionViewCell
         }
-        cell.setItem(self.items[indexPath.row])
+        let item = self.items[indexPath.row]
+        cell.setItem(item)
+        cell.setBulkSelectionMode(isOn: self.isBulkSelecting, isSelected: self.bulkSelectedIdentifiers.contains(item.identifier))
         return cell;
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        self.presentItemDetails(fromItem: self.items[indexPath.row])
+        collectionView.deselectItem(at: indexPath, animated: false)
+        let item = self.items[indexPath.row]
+        
+        if self.isBulkSelecting {
+            if let index = self.bulkSelectedIdentifiers.index(of: item.identifier) {
+                self.bulkSelectedIdentifiers.remove(at: index)
+            } else {
+                self.bulkSelectedIdentifiers.append(item.identifier)
+            }
+            let cell = collectionView.cellForItem(at: indexPath) as! ItemCollectionViewCell
+            cell.setBulkSelectionMode(isOn: self.isBulkSelecting, isSelected: self.bulkSelectedIdentifiers.contains(item.identifier))
+        } else {
+            self.presentItemDetails(fromItem: item)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = ((collectionView.frame.size.width - (15.0 * 3)) / 2)
         return CGSize(width: size, height: size * 1.2)
+    }
+    
+    //MARK: - Actions
+    
+    @objc func buttonSelectTouched() {
+        self.isBulkSelecting = true
+        setupNavigationBarButtons()
+        self.collectionView.reloadData()
+    }
+    
+    @objc func buttonCancelTouched() {
+        self.isBulkSelecting = false
+        self.bulkSelectedIdentifiers = []
+        setupNavigationBarButtons()
+        self.collectionView.reloadData()
     }
 }

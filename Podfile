@@ -13,6 +13,7 @@ def default_pods
     pod 'UIImageViewAlignedSwift'
     pod 'PKHUD'
     pod 'CSV.swift'
+    pod 'Firebase/Core'
 end
 
 target 'MyPopCollection' do
