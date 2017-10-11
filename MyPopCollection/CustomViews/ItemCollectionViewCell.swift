@@ -57,10 +57,10 @@ class ItemCollectionViewCell: UICollectionViewCell {
     func setBulkSelectionMode(isOn isBulkSelection: Bool, isSelected: Bool) {
         if isBulkSelection {
             if isSelected {
-                self.viewMain.alpha = 0.2
+                self.viewMain.alpha = 1.0
                 self.imageViewBulkSelection.isHidden = false
             } else {
-                self.viewMain.alpha = 1.0
+                self.viewMain.alpha = 0.2
                 self.imageViewBulkSelection.isHidden = true
             }
         } else {

@@ -45,5 +45,5 @@ struct Colors {
 }
 
 struct HUDTime {
-    static let success = TimeInterval(0.6)
+    static let success = TimeInterval(0.4)
 }

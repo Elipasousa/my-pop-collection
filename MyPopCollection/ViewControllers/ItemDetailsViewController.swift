@@ -102,10 +102,8 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
     func buttonWishlistTouched() {
         if self.item.inMyWishlist {
             DatabaseHelper.removeItemFromMyWishlist(withIdentifier: self.item.identifier)
-            HUD.flash(.image(UIImage(named: "unfavorite")), delay: HUDTime.success)
         } else {
             DatabaseHelper.addItemToMyWishlist(withIdentifier: self.item.identifier)
-            HUD.flash(.image(UIImage(named: "favorite")), delay: HUDTime.success)
         }
         setupNavigationBarButtons()
     }

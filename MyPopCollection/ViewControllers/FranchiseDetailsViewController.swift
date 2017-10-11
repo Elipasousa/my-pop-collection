@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import PKHUD
 
 class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //MARK : - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var buttonAddToWishlist: UIButton!
+    @IBOutlet weak var buttonAddToMyCollection: UIButton!
+    
     //MARK : - Vars
     internal var franchise: Franchise!
     internal var items: [Item]!
@@ -39,6 +42,8 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     override func setupViews() {
         super.setupViews()
         self.title = self.franchise.name
+        self.buttonAddToWishlist.isHidden = true
+        self.buttonAddToMyCollection.isHidden = true
     }
     
     func setupNavigationBarButtons() {
@@ -101,14 +106,35 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     
     //MARK: - Actions
     
+    @IBAction func addToWishlistTouched(_ sender: Any) {
+        for identifier in self.bulkSelectedIdentifiers {
+            DatabaseHelper.addItemToMyWishlist(withIdentifier: identifier)
+        }
+        self.buttonCancelTouched()
+        HUD.flash(.labeledSuccess(title: "Done", subtitle: nil), delay: HUDTime.success)
+    }
+    
+    @IBAction func addToMyCollectionTouched(_ sender: Any) {
+        for identifier in self.bulkSelectedIdentifiers {
+            DatabaseHelper.addItemToMyCollection(withIdentifier: identifier)
+        }
+        self.buttonCancelTouched()
+        HUD.flash(.labeledSuccess(title: "Done", subtitle: nil), delay: HUDTime.success)
+
+    }
+    
     @objc func buttonSelectTouched() {
         self.isBulkSelecting = true
+        self.buttonAddToWishlist.isHidden = false
+        self.buttonAddToMyCollection.isHidden = false
         setupNavigationBarButtons()
         self.collectionView.reloadData()
     }
     
     @objc func buttonCancelTouched() {
         self.isBulkSelecting = false
+        self.buttonAddToWishlist.isHidden = true
+        self.buttonAddToMyCollection.isHidden = true
         self.bulkSelectedIdentifiers = []
         setupNavigationBarButtons()
         self.collectionView.reloadData()

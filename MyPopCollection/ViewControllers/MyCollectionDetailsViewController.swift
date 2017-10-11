@@ -72,6 +72,7 @@ class MyCollectionDetailsViewController: BaseViewViewController, UICollectionVie
             cell = Bundle.main.loadNibNamed("ItemCollectionViewCell", owner: self, options: nil)![0] as! ItemCollectionViewCell
         }
         cell.setItem(self.items[indexPath.row])
+        cell.setBulkSelectionMode(isOn: false, isSelected: false)
         return cell;
     }
     

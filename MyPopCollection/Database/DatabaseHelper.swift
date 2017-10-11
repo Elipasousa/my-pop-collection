@@ -76,8 +76,26 @@ class DatabaseHelper {
         let predicate = NSPredicate(format: "identifier = %d", identifier)
         let item = realm.objects(Item.self).filter(predicate).first!
         
+        if !item.inMyCollection {
+            try! realm.write {
+                item.inMyWishlist = true
+            }
+        }
+    }
+    
+    class func addItemToMyCollection(withIdentifier identifier: Int) {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "identifier = %d", identifier)
+        let item = realm.objects(Item.self).filter(predicate).first!
+        
+        if !item.inMyCollection {
+            increaseItemAmountOfFranchiseFromMyCollection(withFranchiseIdentifier: item.franchiseId)
+        }
+        
         try! realm.write {
-            item.inMyWishlist = true
+            item.inMyCollection = true
+            item.inMyWishlist = false
         }
     }
     
@@ -114,6 +132,10 @@ class DatabaseHelper {
         let predicate = NSPredicate(format: "identifier = %d", identifier)
         let item = realm.objects(Item.self).filter(predicate).first!
         
+        if !item.inMyCollection {
+            increaseItemAmountOfFranchiseFromMyCollection(withFranchiseIdentifier: item.franchiseId)
+        }
+        
         try! realm.write {
             item.paidPrice = paidPrice
             item.estimatedValue = estimatedValue
@@ -125,7 +147,6 @@ class DatabaseHelper {
             item.inMyCollection = true
             item.inMyWishlist = false
         }
-        increaseItemAmountOfFranchiseFromMyCollection(withFranchiseIdentifier: item.franchiseId)
     }
     
     class func removeItem(withIdentifier identifier: Int) {
@@ -134,10 +155,13 @@ class DatabaseHelper {
         let predicate = NSPredicate(format: "identifier = %d", identifier)
         let item = realm.objects(Item.self).filter(predicate).first!
         
+        if item.inMyCollection {
+            decreaseItemAmountOfFranchiseFromMyCollection(withFranchiseIdentifier: item.franchiseId)
+        }
+        
         try! realm.write {
             item.inMyCollection = false
         }
-        decreaseItemAmountOfFranchiseFromMyCollection(withFranchiseIdentifier: item.franchiseId)
     }
     
     //MARK : - Franchises
