@@ -23,6 +23,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - PKHUD (5.0.0)
+  - PopupDialog (0.5.4)
   - Realm (2.10.2):
     - Realm/Headers (= 2.10.2)
   - Realm/Headers (2.10.2)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - Firebase/Core
   - IQKeyboardManagerSwift
   - PKHUD
+  - PopupDialog (~> 0.5.4)
   - RealmSwift
   - Reveal-SDK
   - SDWebImage
@@ -58,6 +60,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: e257e513744cf32123eca7061272acea0246fc83
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   Reveal-SDK: 7fa13d04bb55db61ff2342a990cf731d5159361d
@@ -65,6 +68,6 @@ SPEC CHECKSUMS:
   SwiftDate: 64e2312711c5c506f7b51794308ce91f19eb494a
   UIImageViewAlignedSwift: 2e09096e6081ad26b848e19b4bc35a7d69165740
 
-PODFILE CHECKSUM: ead004719c7c12eedc946e63410a17517a053e39
+PODFILE CHECKSUM: 3c76ff94592e71066d3be96cf37b233a5bcf3a4c
 
 COCOAPODS: 1.1.1

@@ -40,10 +40,15 @@ let rarities: [String] = [Rarity.VeryRare.rawValue, Rarity.Rare.rawValue, Rarity
 struct Colors {
     static let normalYellow = UIColor(hex: 0xF2B742, alpha: 1.0)
     static let lightGray = UIColor.lightGray
+    static let darkGray = UIColor.darkGray
     static let clearGray = UIColor.lightGray.withAlphaComponent(0.2)
     static let normalRed = UIColor(hex: 0xBF6361, alpha: 1.0)
 }
 
 struct HUDTime {
     static let success = TimeInterval(0.4)
+}
+
+struct DefaultsKey {
+    static let dontShowAgainPopupMultipleSelection = "dontShowAgainPopupMultipleSelection"
 }

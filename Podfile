@@ -14,6 +14,7 @@ def default_pods
     pod 'PKHUD'
     pod 'CSV.swift'
     pod 'Firebase/Core'
+    pod 'PopupDialog', '~> 0.5.4’
 end
 
 target 'MyPopCollection' do

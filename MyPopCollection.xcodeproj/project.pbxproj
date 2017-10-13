@@ -36,6 +36,7 @@
 		D757ABA81F4F454D0086BD94 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */; };
 		D757ABAA1F4F45560086BD94 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */; };
 		D75BBB9D1F8E59F600260196 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D75BBB9C1F8E59F500260196 /* GoogleService-Info.plist */; };
+		D75BBB9F1F90FB5F00260196 /* PopupConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75BBB9E1F90FB5F00260196 /* PopupConfiguration.swift */; };
 		D773B80D1F56F8BC00FAF557 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773B80C1F56F8BC00FAF557 /* UIColor.swift */; };
 		D7BEB90A1F542936003853B7 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEB9091F542936003853B7 /* UITextField.swift */; };
 		D7BEB9101F56CA1F003853B7 /* SectionHeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEB90F1F56CA1F003853B7 /* SectionHeaderTitleView.swift */; };
@@ -84,6 +85,7 @@
 		D757ABA71F4F454D0086BD94 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		D757ABA91F4F45560086BD94 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		D75BBB9C1F8E59F500260196 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D75BBB9E1F90FB5F00260196 /* PopupConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupConfiguration.swift; sourceTree = "<group>"; };
 		D773B80C1F56F8BC00FAF557 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D7BEB9091F542936003853B7 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		D7BEB90F1F56CA1F003853B7 /* SectionHeaderTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderTitleView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				D7C8078C1F4E08F200DA4E33 /* Franchise.swift */,
 				D7C807841F4E031400DA4E33 /* Item.swift */,
 				D70721BD1F8B90B200EC49C8 /* Category.swift */,
+				D75BBB9E1F90FB5F00260196 /* PopupConfiguration.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				D757AB851F4DBC8B0086BD94 /* Constants.swift in Sources */,
 				D70721BC1F8B8FC800EC49C8 /* SearchCategoryViewController.swift in Sources */,
 				D757AB951F4F10BB0086BD94 /* DatabaseHelper.swift in Sources */,
+				D75BBB9F1F90FB5F00260196 /* PopupConfiguration.swift in Sources */,
 				D757ABA61F4F433B0086BD94 /* FranchiseDetailsViewController.swift in Sources */,
 				D757ABA01F4F38980086BD94 /* MyCollectionDetailsViewController.swift in Sources */,
 				D7BEB9101F56CA1F003853B7 /* SectionHeaderTitleView.swift in Sources */,

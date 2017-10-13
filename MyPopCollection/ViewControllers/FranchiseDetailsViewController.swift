@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import PopupDialog
 
 class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -124,6 +125,10 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     }
     
     @objc func buttonSelectTouched() {
+        if !UserDefaults.standard.bool(forKey: DefaultsKey.dontShowAgainPopupMultipleSelection) {
+            showSelectAlert()
+        }
+        
         self.isBulkSelecting = true
         self.buttonAddToWishlist.isHidden = false
         self.buttonAddToMyCollection.isHidden = false
@@ -138,5 +143,24 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
         self.bulkSelectedIdentifiers = []
         setupNavigationBarButtons()
         self.collectionView.reloadData()
+    }
+    
+    //MARK: - Auxs
+
+    func showSelectAlert() {
+        let popup = PopupDialog(title: "How multiple selection works?",
+                                message: "\nYou can add multiple items at once to your wishlist or collection.\n\nItems that are already in your collection will not be added to the wishlist unless you unfavorite them first.\n\nItems will be added to the collection with default values. You can edit each item later.",
+                                buttonAlignment: .horizontal)
+        
+        let buttonOk = DefaultButton(title: "OK") {}
+        
+        let buttonDontShowAgain = CancelButton(title: "Don't show again") {
+            UserDefaults.standard.set(true, forKey: DefaultsKey.dontShowAgainPopupMultipleSelection)
+            UserDefaults.standard.synchronize()
+        }
+        
+        popup.addButtons([buttonDontShowAgain, buttonOk])
+        
+        self.present(popup, animated: true, completion: nil)
     }
 }
