@@ -110,6 +110,14 @@ class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableV
     
     //MARK: - Actions
     
+    @IBAction func resetHintsTouched(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: DefaultsKey.dontShowAgainPopupMultipleSelection)
+        defaults.set(false, forKey: DefaultsKey.dontShowAgainPopupChangeFranchise)
+        defaults.synchronize()
+        HUD.flash(.labeledSuccess(title: "Hints reset", subtitle: nil), delay: HUDTime.success) { finished in }
+    }
+    
     @IBAction func updateDatabaseTouched(_ sender: Any) {
         DispatchQueue.main.async {
             HUD.show(.systemActivity)
