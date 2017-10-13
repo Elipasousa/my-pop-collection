@@ -11,7 +11,7 @@ import PKHUD
 
 class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource {
 
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var labelTotalItems: UILabel!
     @IBOutlet weak var labelWishlistItems: UILabel!
     @IBOutlet weak var labelPaidPrice: UILabel!
@@ -20,11 +20,11 @@ class StatsViewController: BaseViewViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var constraintHeightTopTenTableView: NSLayoutConstraint!
     @IBOutlet weak var labelNoItems: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     internal var allSortedItems: [Item] = []
     internal var wishlistItems: [Item] = []
 
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

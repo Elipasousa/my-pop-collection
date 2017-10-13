@@ -51,4 +51,5 @@ struct HUDTime {
 
 struct DefaultsKey {
     static let dontShowAgainPopupMultipleSelection = "dontShowAgainPopupMultipleSelection"
+    static let dontShowAgainPopupChangeFranchise = "dontShowAgainPopupChangeFranchise"
 }

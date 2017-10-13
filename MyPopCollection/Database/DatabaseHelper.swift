@@ -11,7 +11,7 @@ import RealmSwift
 
 class DatabaseHelper {
     
-    //MARK : - Database
+    //MARK: - Database
 
     class func addItem(_ item: Item) {
         let realm = try! Realm()
@@ -58,7 +58,7 @@ class DatabaseHelper {
         }
     }
     
-    //MARK : - Items
+    //MARK: - Items
     
     class func getAllItemsFromMyCollection() -> [Item] {
         let realm = try! Realm()
@@ -164,7 +164,7 @@ class DatabaseHelper {
         }
     }
     
-    //MARK : - Franchises
+    //MARK: - Franchises
     
     class func getFranchise(withIdentifier identifier: Int) -> Franchise {
         let realm = try! Realm()
@@ -223,7 +223,7 @@ class DatabaseHelper {
         return Array(realm.objects(Item.self).filter(predicate)).sorted(by: {$0.number < $1.number})
     }
     
-    //MARK : - Categories
+    //MARK: - Categories
     
     class func getCategory(withIdentifier identifier: Int) -> Category {
         let realm = try! Realm()

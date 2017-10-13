@@ -10,14 +10,14 @@ import UIKit
 
 class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var labelNoItems: UILabel!
 
-    //MARK : - Vars
+    //MARK: - Vars
     var myCollections: [Franchise] = []
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

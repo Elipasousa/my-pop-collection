@@ -12,19 +12,19 @@ import PopupDialog
 
 class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var buttonAddToWishlist: UIButton!
     @IBOutlet weak var buttonAddToMyCollection: UIButton!
     
-    //MARK : - Vars
+    //MARK: - Vars
     internal var franchise: Franchise!
     internal var items: [Item]!
     
     private var isBulkSelecting: Bool = false
     private var bulkSelectedIdentifiers: [Int] = []
 
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +126,7 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     
     @objc func buttonSelectTouched() {
         if !UserDefaults.standard.bool(forKey: DefaultsKey.dontShowAgainPopupMultipleSelection) {
-            showSelectAlert()
+            showMultipleSelectionAlert()
         }
         
         self.isBulkSelecting = true
@@ -147,12 +147,12 @@ class FranchiseDetailsViewController: BaseViewViewController, UICollectionViewDe
     
     //MARK: - Auxs
 
-    func showSelectAlert() {
+    func showMultipleSelectionAlert() {
         let popup = PopupDialog(title: "How multiple selection works?",
                                 message: "\nYou can add multiple items at once to your wishlist or collection.\n\nItems that are already in your collection will not be added to the wishlist unless you unfavorite them first.\n\nItems will be added to the collection with default values. You can edit each item later.",
                                 buttonAlignment: .horizontal)
         
-        let buttonOk = DefaultButton(title: "OK") {}
+        let buttonOk = DefaultButton(title: "Got it!") {}
         
         let buttonDontShowAgain = CancelButton(title: "Don't show again") {
             UserDefaults.standard.set(true, forKey: DefaultsKey.dontShowAgainPopupMultipleSelection)

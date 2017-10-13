@@ -10,12 +10,12 @@ import UIKit
 
 class FranchiseTableViewCell: UITableViewCell {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var labelName: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()

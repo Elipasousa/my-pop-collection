@@ -13,7 +13,7 @@ import PKHUD
 
 class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
 
-    //MARK : - Outlets
+    //MARK: - Outlets
     // --- info ---
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var viewNumber: UIView!
@@ -47,10 +47,10 @@ class AddNewItemViewController: BaseViewViewController, UITextFieldDelegate {
     @IBOutlet weak var labelDateBoughtTag: UILabel!
     @IBOutlet weak var labelDateBoughtValue: UILabel!
 
-    //MARK : - Vars
+    //MARK: - Vars
     internal var item: Item!
 
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

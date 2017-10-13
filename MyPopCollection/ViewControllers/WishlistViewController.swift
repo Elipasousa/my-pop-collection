@@ -10,14 +10,14 @@ import UIKit
 
 class WishlistViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var labelNoItems: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     var wishlist: [Item] = []
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,7 +12,7 @@ import PKHUD
 
 class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol {
 
-    //MARK : - Outlets
+    //MARK: - Outlets
     // --- info ---
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var imageViewBackground: UIImageViewAligned!
@@ -47,10 +47,10 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
     @IBOutlet weak var labelDateBoughtTag: UILabel!
     @IBOutlet weak var labelDateBoughtValue: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     internal var item: Item!
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,8 +114,8 @@ class ItemDetailsViewController: BaseViewViewController, FranchisePickerProtocol
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    //MARK: - Aux
-    
+    //MARK: - Setters
+
     func setItem() {
         self.labelName.text = self.item.name
         self.labelCategory.text = self.item.categoryName()

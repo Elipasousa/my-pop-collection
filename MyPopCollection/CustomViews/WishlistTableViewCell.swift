@@ -10,15 +10,15 @@ import UIKit
 
 class WishlistTableViewCell: UITableViewCell {
 
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var imageViewPicture: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelCategory: UILabel!
     @IBOutlet weak var labelValue: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +31,7 @@ class WishlistTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    //MARK : - Setup
+    //MARK: - Setup
     
     func setupViews() {
         self.layer.borderWidth = 1.0

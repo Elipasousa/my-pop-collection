@@ -11,7 +11,7 @@ import SDWebImage
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var viewMain: UIView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var imageViewPicture: UIImageView!
@@ -19,16 +19,16 @@ class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var imageViewBulkSelection: UIImageView!
 
-    //MARK : - Vars
+    //MARK: - Vars
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupViews()
     }
     
-    //MARK : - Setup
+    //MARK: - Setup
     
     func setupViews() {
         self.layer.borderWidth = 1.0

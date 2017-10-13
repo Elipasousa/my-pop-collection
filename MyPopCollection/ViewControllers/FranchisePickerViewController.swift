@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 protocol FranchisePickerProtocol: class {
     func didFinishPickingFranchise(withFranchise franchise: Franchise)
@@ -14,22 +15,29 @@ protocol FranchisePickerProtocol: class {
 
 class FranchisePickerViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var labelNoResultsFound: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     weak var delegate: FranchisePickerProtocol?
     var letters: [String] = []
     var franchises = [String: [Franchise]]()
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibs()
         reloadFranchises(fromArray: DatabaseHelper.getFranchises(withSearch: nil))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !UserDefaults.standard.bool(forKey: DefaultsKey.dontShowAgainPopupChangeFranchise) {
+            showChangeFranchiseAlert()
+        }
     }
     
     //MARK: - Setups
@@ -131,7 +139,7 @@ class FranchisePickerViewController: BaseViewViewController, UITableViewDelegate
         self.popViewController()
     }
     
-    //MARK : - UISearchBarDelegate
+    //MARK: - UISearchBarDelegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         reloadFranchises(fromArray: DatabaseHelper.getFranchises(withSearch: searchText))
@@ -145,5 +153,24 @@ class FranchisePickerViewController: BaseViewViewController, UITableViewDelegate
         self.searchBar.text = ""
         reloadFranchises(fromArray: DatabaseHelper.getFranchises(withSearch: nil))
         self.searchBar.resignFirstResponder()
+    }
+    
+    //MARK: - Aux
+
+    func showChangeFranchiseAlert() {
+        let popup = PopupDialog(title: "How changing franchise works?",
+                                message: "\nIf you believe an item is in the wrong franchise, you can change it to the right one.\n\nThis action will only affect you. You can change it how many times you want it.",
+                                buttonAlignment: .horizontal)
+        
+        let buttonOk = DefaultButton(title: "Got it!") {}
+        
+        let buttonDontShowAgain = CancelButton(title: "Don't show again") {
+            UserDefaults.standard.set(true, forKey: DefaultsKey.dontShowAgainPopupChangeFranchise)
+            UserDefaults.standard.synchronize()
+        }
+        
+        popup.addButtons([buttonDontShowAgain, buttonOk])
+        
+        self.present(popup, animated: true, completion: nil)
     }
 }

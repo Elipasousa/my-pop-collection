@@ -10,14 +10,14 @@ import UIKit
 
 class SearchCategoryViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var labelNoResultsFound: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     internal var categories: [Category] = []
 
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

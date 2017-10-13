@@ -10,16 +10,16 @@ import UIKit
 
 class CategoryDetailsViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var labelNoResultsFound: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     internal var category: Category!
     internal var items: [Item] = []
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +78,7 @@ class CategoryDetailsViewController: BaseViewViewController, UITableViewDelegate
         presentItemDetails(fromItem: self.items[indexPath.row])
     }
     
-    //MARK : - UISearchBarDelegate
+    //MARK: - UISearchBarDelegate
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.items = DatabaseHelper.getItemsFromCategory(withIdentifier: self.category.identifier, withSearch: searchText)

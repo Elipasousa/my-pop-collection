@@ -10,12 +10,12 @@ import UIKit
 
 class SectionHeaderTitleView: UIView {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var labelTitle: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()

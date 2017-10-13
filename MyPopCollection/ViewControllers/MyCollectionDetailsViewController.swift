@@ -10,15 +10,15 @@ import UIKit
 
 class MyCollectionDetailsViewController: BaseViewViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var labelNoItems: UILabel!
 
-    //MARK : - Vars
+    //MARK: - Vars
     internal var franchise: Franchise!
     internal var items: [Item] = []
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,13 +11,13 @@ import UIImageViewAlignedSwift
 
 class MyCollectionTableViewCell: UITableViewCell {
     
-    //MARK : - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     
-    //MARK : - Vars
+    //MARK: - Vars
     
-    //MARK : - Lifecycle
+    //MARK: - Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +30,7 @@ class MyCollectionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    //MARK : - Setup
+    //MARK: - Setup
 
     func setupViews() {
 
