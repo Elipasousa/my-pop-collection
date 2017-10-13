@@ -32,14 +32,21 @@ class PopupConfiguration {
     }
     
     private class func configureButtonAppearance() {
-        let buttonAppearance = DefaultButton.appearance()
-        buttonAppearance.titleFont = UIFont.systemFont(ofSize: 15.0)
-        buttonAppearance.titleColor = UIColor.black
+        // Default button
+        let defaultButton = DefaultButton.appearance()
+        defaultButton.titleFont = UIFont.systemFont(ofSize: 14.0)
+        defaultButton.titleColor = UIColor.black
         
         // Cancel button
-        CancelButton.appearance().titleColor = UIColor.lightGray
+        let cancelButton = CancelButton.appearance()
+        cancelButton.titleColor = UIColor.lightGray
+        cancelButton.titleFont = UIFont.systemFont(ofSize: 14.0)
+
         
         // Destructive button
-        DestructiveButton.appearance().titleColor = UIColor.red
+        let destructiveButton = DestructiveButton.appearance()
+        destructiveButton.titleColor = UIColor.red
+        destructiveButton.titleFont = UIFont.systemFont(ofSize: 14.0)
+
     }
 }
