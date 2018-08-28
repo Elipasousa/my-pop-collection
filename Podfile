@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 use_frameworks!
 
@@ -15,6 +15,7 @@ def default_pods
     pod 'CSV.swift'
     pod 'Firebase/Core'
     pod 'PopupDialog', '~> 0.5.4’
+    pod 'FirebaseUI', '~> 5.0'
 end
 
 target 'MyPopCollection' do

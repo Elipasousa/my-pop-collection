@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/yaslab/CSV.swift.svg?branch=master)](https://travis-ci.org/yaslab/CSV.swift)
 [![codecov](https://codecov.io/gh/yaslab/CSV.swift/branch/master/graph/badge.svg)](https://codecov.io/gh/yaslab/CSV.swift)
+[![Open Source Helpers](https://www.codetriage.com/yaslab/csv.swift/badges/users.svg)](https://www.codetriage.com/yaslab/csv.swift)
 
 CSV reading and writing library written in Swift.
 
@@ -140,19 +141,19 @@ csv.stream.close()
 ### CocoaPods
 
 ```ruby
-pod 'CSV.swift', '~> 2.1.0'
+pod 'CSV.swift', '~> 2.2.1'
 ```
 
 ### Carthage
 
 ```
-github "yaslab/CSV.swift" ~> 2.1.0
+github "yaslab/CSV.swift" ~> 2.2.1
 ```
 
 ### Swift Package Manager
 
 ```swift
-.package(url: "https://github.com/yaslab/CSV.swift.git", .upToNextMinor(from: "2.1.0"))
+.package(url: "https://github.com/yaslab/CSV.swift.git", .upToNextMinor(from: "2.2.1"))
 ```
 
 ## Reference specification
