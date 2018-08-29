@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,11 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PopupConfiguration.configurePopupAppearance()
         
         FirebaseApp.configure()
-        let authUI = FUIAuth.defaultAuthUI()
-        authUI.delegate = self
-        let authViewController = authUI.authViewController()
-        UIApplication.shared.keyWindow?.rootViewController?.present(authViewController, animated: true, completion: nil)
-        
+
         return true
     }
 
@@ -49,8 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
-        // handle user and error as necessary
-    }
+
 }
 

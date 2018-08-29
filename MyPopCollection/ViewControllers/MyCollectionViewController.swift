@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import FirebaseUI
 
-class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource {
+class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, UITableViewDataSource, FUIAuthDelegate {
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +28,15 @@ class MyCollectionViewController: BaseViewViewController, UITableViewDelegate, U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloadMyCollections()
+        
+        let authUI = FUIAuth.defaultAuthUI()!
+        authUI.delegate = self
+        let authViewController = authUI.authViewController()
+        self.present(authViewController, animated: true, completion: nil)
+    }
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        // handle user and error as necessary
     }
     
     //MARK: - Setups

@@ -24,7 +24,7 @@ class BaseViewViewController: UIViewController {
     //MARK: - Setups
     
     func setupViews() {
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
     }
     
     //MARK: - NavigationBar
